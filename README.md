@@ -10,6 +10,10 @@ npm run dev
 
 Abra `http://127.0.0.1:4173/`.
 
+## Publicação
+
+O comando `npm run build` gera a versão estática em `dist/`, usada automaticamente pela Vercel.
+
 ## Arquivos principais
 
 - `index.html`: marcação semântica completa e estilos específicos da página.
