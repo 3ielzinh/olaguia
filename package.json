@@ -1,0 +1,10 @@
+{
+  "name": "olaguia-clone",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:mirror": "node work/mirror/build-mirror.mjs",
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  }
+}
