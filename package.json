@@ -1,0 +1,11 @@
+{
+  "name": "olaguia-clone",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node work/build-vercel.mjs",
+    "build:mirror": "node work/mirror/build-mirror.mjs",
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  }
+}
