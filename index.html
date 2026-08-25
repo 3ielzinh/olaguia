@@ -1546,7 +1546,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .comparison-prompt{margin:0 auto 18px!important;padding:0!important;background:transparent!important;color:#126861!important;font-size:22px!important;font-weight:400!important;line-height:1.1!important;text-align:center!important}
   #compare .comparison-prompt strong{font-weight:800!important}
   #compare .copy-compare-table{display:none!important}
-  #compare .mobile-comparison-table{display:grid!important;width:100%!important;grid-template-columns:minmax(0,1fr) 86px 86px!important;overflow:visible!important;border:0!important;border-radius:0!important;background:#126861!important;box-shadow:none!important}
+  #compare .mobile-comparison-table{display:grid!important;width:100%!important;grid-template-columns:minmax(0,1fr) 86px 86px!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+  #compare .comparison-header-spacer{display:block!important;background:#e1e3dd!important}
   #compare .comparison-cell{display:flex!important;min-width:0!important;align-items:center!important;justify-content:center!important;padding:10px 8px!important;border:0!important;border-right:0!important;border-bottom:0!important;text-align:center!important}
   #compare .comparison-cell:nth-child(3n){border-right:0!important;border-left:0!important}
   #compare .comparison-feature{align-items:flex-start!important;flex-direction:column!important;justify-content:center!important;background:#126861!important;color:#fff!important;text-align:left!important}
@@ -1556,20 +1557,22 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .comparison-ecosystem{background:#f0b53d!important;color:#fff!important;font-size:0!important;font-weight:800!important;line-height:1!important}
   #compare .comparison-ecosystem:before{display:grid!important;width:27px!important;height:27px!important;border-radius:50%!important;background:#08bd51!important;color:#fff!important;content:"✓"!important;font-size:18px!important;place-items:center!important;box-shadow:0 3px 7px rgba(4,73,46,.3)!important}
   #compare .comparison-head{min-height:72px!important;padding:10px 6px!important;background:#0a4a45!important;color:#fff!important;font-size:11px!important;font-weight:800!important;line-height:1.15!important;text-transform:uppercase!important}
+  #compare .comparison-head:not(.is-ecosystem){min-height:50px!important;align-self:end!important;padding:5px 4px!important}
   #compare .comparison-head.comparison-feature{background:#126861!important;text-align:center!important}
-  #compare .comparison-head.is-ecosystem{display:flex!important;flex-direction:column!important;gap:6px!important;background:#f0b53d!important;color:#fff!important;border:0!important;box-shadow:none!important}
+  #compare .comparison-head.is-ecosystem{display:flex!important;min-height:78px!important;flex-direction:column!important;gap:6px!important;padding:8px 5px!important;background:#f0b53d!important;color:#fff!important;border:0!important;box-shadow:none!important}
   #compare .comparison-head.is-ecosystem img{width:28px!important;height:28px!important;filter:brightness(0) invert(1)!important;object-fit:contain!important}
   #compare .comparison-price-label{background:#126861!important;color:#fff!important;font-size:11px!important;font-weight:800!important;line-height:1.15!important;text-transform:uppercase!important}
   #compare .comparison-price{display:flex!important;min-height:88px!important;flex-direction:column!important;background:#0b514b!important;color:#fff!important}
   #compare .comparison-price.is-ecosystem{background:#f0b53d!important;color:#0d403c!important;border:0!important;box-shadow:none!important}
   #compare .comparison-price small{font-size:8px!important;font-weight:700!important;line-height:1!important;text-transform:uppercase!important}
   #compare .comparison-price strong{margin-top:5px!important;font-size:18px!important;line-height:1!important;white-space:nowrap!important}
+  #compare .comparison-price:not(.is-ecosystem) strong{font-size:12px!important}
   #compare .comparison-price span{margin-top:5px!important;font-size:8px!important;line-height:1!important;text-transform:uppercase!important}
   #compare .comparison-cell:nth-child(3n){position:relative!important;z-index:1!important;border:0!important;transform:none!important;box-shadow:none!important}
   #compare .comparison-cell:nth-child(3){z-index:1!important;transform:none!important;box-shadow:none!important}
   #compare .comparison-cell:nth-child(27){z-index:1!important;transform:none!important;box-shadow:none!important}
-  #compare .copy-offer-copy{display:block!important;margin:16px 0 0!important;color:#126861!important;text-align:center!important}
-  #compare .copy-offer-copy p{margin:0!important;font-size:10px!important;line-height:1.3!important}
+  #compare .copy-offer-copy{display:block!important;margin:12px 0 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#126861!important;text-align:center!important}
+  #compare .copy-offer-copy p{margin:0!important;color:#126861!important;font-size:10px!important;line-height:1.3!important}
 }
 </style>
 <script id="mobile-comparison-section-v2-script">
@@ -1597,7 +1600,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   table.className='mobile-comparison-table';
   table.setAttribute('role','table');
   table.setAttribute('aria-label','Comparação entre fazer a divulgação sozinho e o Ecossistema Olá Guia');
-  table.innerHTML='<div class="comparison-cell comparison-head comparison-feature" role="columnheader">O que está incluso</div><div class="comparison-cell comparison-head" role="columnheader">Fazendo sozinho</div><div class="comparison-cell comparison-head is-ecosystem" role="columnheader"><img src="/wp-content/uploads/favicon-olaguia.png" alt=""><span>Ecossistema Olá Guia</span></div>';
+  table.innerHTML='<span class="comparison-header-spacer" aria-hidden="true"></span><div class="comparison-cell comparison-head" role="columnheader">Fazendo sozinho</div><div class="comparison-cell comparison-head is-ecosystem" role="columnheader"><img src="/wp-content/uploads/favicon-olaguia.png" alt=""><span>Ecossistema Olá Guia</span></div>';
   rows.forEach(function(row){
     table.insertAdjacentHTML('beforeend','<div class="comparison-cell comparison-feature" role="cell"><strong>'+row[0]+'</strong><em>'+row[1]+'</em></div><div class="comparison-cell comparison-solo" role="cell">R$ X.000</div><div class="comparison-cell comparison-ecosystem" role="cell" aria-label="Incluído">✓</div>');
   });
@@ -1710,6 +1713,62 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{white-space:normal!important}
   #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row{min-width:0}
   #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{min-width:0;overflow-wrap:anywhere}
+}
+</style>
+<style id="mobile-typography-scale-adjustment">
+@media (max-width:600px){
+  :root{--h2-font-size:24px}
+
+  #publico .us_custom_5d92a27d,
+  #sentencas .us_custom_f9903d7d,
+  #solucao .us_custom_362f24b9,
+  #olaguia .copy-section-heading h2,
+  #olaguia .mobile-tools-heading h2,
+  #olaguia2 .us_custom_c8bd1620,
+  #olaguia2 .us_custom_cc0ffe16 h3:first-child,
+  #daniel-kahneman .copy-psychology-heading h2,
+  #daniel-kahneman .us_custom_a7f9f7c6,
+  #quemsomos .copy-section-heading h2,
+  #pergunta .copy-how-content>h2,
+  #pergunta .copy-how-content>h3,
+  #compare .copy-section-heading h2,
+  #cta4 .us_custom_21f37c85{font-size:28px!important}
+
+  #inicio .us_custom_246b90a5,
+  #solucao .us_custom_7e646980,
+  #olaguia .mobile-tools-heading .tools-intro,
+  #quemsomos .copy-section-heading p,
+  #compare .copy-section-heading p,
+  #cta4 .us_custom_b2785ebc p:nth-of-type(2),
+  #cta3 .commitment-title,
+  #quemsomos .copy-testimonials-title,
+  #pablosanturio .us_custom_3e18fd7c{font-size:24px!important}
+
+  #inicio .us_custom_3fd5d53b,
+  #inicio .us_custom_3fd5d53b strong,
+  #publico .public-swipe-hint,
+  #solucao .us_custom_3fd5d53b,
+  #solucao .us_custom_3fd5d53b p,
+  #solucao .us_custom_3fd5d53b p:nth-of-type(2),
+  #solucao .mobile-solution-points .mobile-solution-intro,
+  #olaguia .copy-section-heading p,
+  #olaguia .mobile-tools-heading p:not(.tools-intro),
+  #olaguia .mobile-tools-heading .tools-swipe-hint,
+  #olaguia .copy-tool-card-content>h4,
+  #olaguia2 .mobile-extra-tool h4,
+  #olaguia2 .us_custom_cc0ffe16 h3:last-child,
+  #cta3 .commitment-body,
+  #daniel-kahneman .us_custom_980bb123,
+  #daniel-kahneman .us_custom_980bb123 p,
+  #quemsomos .testimonial-swipe-hint,
+  #quemsomos .copy-testimonials-grid article p,
+  #pergunta .copy-how-content>p:not(.copy-how-close),
+  #pergunta .copy-how-content>p.copy-how-close,
+  #pablosanturio .us_custom_980bb123,
+  #pablosanturio .us_custom_980bb123 p,
+  #pablosanturio .us_custom_980bb123 p:nth-child(2),
+  #cta4 .us_custom_b2785ebc,
+  #cta4 .us_custom_b2785ebc p:not(:nth-of-type(2)){font-size:16px!important}
 }
 </style></body>
 </html>
