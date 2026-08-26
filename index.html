@@ -1008,12 +1008,13 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #sentencas{margin:0!important;padding:var(--mobile-section-space,32px) 14px!important}
   #sentencas .l-section-h{padding:0!important}
   #sentencas .g-cols.cols_2{gap:var(--mobile-content-gap,18px)!important}
-  #sentencas .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner{display:flex!important;flex-direction:column!important;gap:12px!important}
+  #sentencas .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner{display:flex!important;flex-direction:column!important;gap:18px!important}
   #sentencas .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner>.w-separator{display:none!important}
-  #sentencas .us_custom_e3b4da28{margin:0 0 6px!important}
-  #sentencas .us_custom_f9903d7d{margin:0 0 6px!important;font-size:26px!important;line-height:1.08!important;letter-spacing:-.045em!important}
+  #sentencas .us_custom_e3b4da28{margin:0!important}
+  #sentencas .us_custom_f9903d7d{margin:0!important;font-size:26px!important;line-height:1.08!important;letter-spacing:-.045em!important}
   #sentencas .sentence-mobile-break{display:initial}
   #sentencas .us_custom_13fa9e6c{width:100%!important;margin:0!important;padding:14px!important;font-size:16px!important;line-height:1.25!important}
+  #sentencas .us_custom_13fa9e6c+.us_custom_13fa9e6c{margin-top:-9px!important}
   #sentencas .us_custom_13fa9e6c .w-iconbox-icon{font-size:24px!important}
   #sentencas .us_custom_13fa9e6c p{margin:0!important;font-size:16px!important;line-height:1.25!important}
   #sentencas .g-cols.cols_2>.wpb_column:nth-child(2){overflow:visible!important}
@@ -1803,15 +1804,25 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
 </style>
 <style id="mobile-opening-card-spacing">
 @media (max-width:600px){
+  :root{--mobile-opening-card-gap:36px}
   #publico .us_custom_595be67a>.vc_column-inner>.w-hwrapper:first-child,
+  #sentencas .us_custom_e3b4da28,
   #solucao .us_custom_d984a24d,
-  #pablosanturio .vc_column-inner>.w-hwrapper:first-child{margin-bottom:18px!important}
-  #sentencas .us_custom_e3b4da28{margin-bottom:24px!important}
+  #pablosanturio .vc_column-inner>.w-hwrapper:first-child{margin-bottom:0!important}
+  #publico .us_custom_360d1ee3,
+  #sentencas .us_custom_360d1ee3,
+  #solucao .us_custom_fd38ac54,
+  #pablosanturio .us_custom_360d1ee3{margin-bottom:0!important}
+  #publico .us_custom_5d92a27d,
+  #sentencas .us_custom_f9903d7d,
+  #solucao .us_custom_362f24b9,
+  #pablosanturio .us_custom_3e18fd7c,
   #olaguia .copy-kicker+h2,
   #daniel-kahneman .copy-kicker+h2,
   #quemsomos .copy-kicker+h2,
   #pergunta .copy-kicker+h2,
-  #compare .copy-kicker+h2{margin-top:18px!important}
+  #compare .copy-kicker+h2{margin-top:calc(var(--mobile-opening-card-gap) - var(--mobile-content-gap,18px))!important}
+  #olaguia .copy-kicker+h2{padding-top:0!important}
 }
 </style>
 <style id="mobile-swipe-hint-spacing">
@@ -1820,6 +1831,13 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #olaguia .mobile-tools-heading{margin-bottom:27px!important}
   #olaguia .mobile-tools-heading p.tools-swipe-hint{font-size:12px!important}
   #quemsomos .testimonial-swipe-hint{margin-bottom:27px!important;font-size:12px!important}
+}
+</style>
+<style id="mobile-public-followup-spacing">
+@media (max-width:600px){
+  #publico{padding-bottom:0!important}
+  #cta1{padding-top:18px!important}
+  #cta1 .us_custom_29180eff{margin-top:0!important}
 }
 </style></body>
 </html>
