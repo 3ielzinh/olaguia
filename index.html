@@ -406,7 +406,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   #faq .l-section-h{padding:0!important}
   #faq .us_custom_dc171017{font-size:1.85rem!important;color:#126861!important}
   #faq .w-tabs-section{margin-bottom:.45rem;border:0!important;background:#fff!important;box-shadow:0 .2rem .7rem rgba(18,104,97,.07)}
-  #faq .w-tabs-section-title{font-size:.88rem}
+  #faq .w-tabs-section-title{font-size:16px!important}
   #rodape{padding:38px 16px!important}
 }
 </style>
@@ -839,7 +839,29 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var heroInvestment=document.querySelector('#inicio .us_custom_3fd5d53b p');
   var heroDiscovery=document.querySelector('#inicio .us_custom_63638f30 .w-text-value');
   if(heroTitle)heroTitle.innerHTML='Marketing de <strong>baixo</strong><br class="hero-mobile-only"> <strong>custo</strong> e <strong>alto impacto.</strong>';
-  if(heroInvestment)heroInvestment.innerHTML='<span class="hero-invest-line">Você já investiu tempo e dinheiro em divulgação,</span><br class="hero-mobile-only"> <span class="hero-invest-line">anúncios, redes sociais, cartões, flyers…</span><br class="hero-mobile-only"><strong>E OS RESULTADOS NÃO APARECERAM?</strong>';
+  if(heroInvestment){
+    var heroInvestmentDetails=document.createElement('p');
+    var heroInvestmentResult=document.createElement('p');
+    var heroMobile=window.matchMedia('(max-width:600px)');
+    heroInvestmentDetails.className='hero-invest-details';
+    heroInvestmentResult.className='hero-invest-result';
+    heroInvestmentDetails.hidden=true;
+    heroInvestmentResult.hidden=true;
+    heroInvestment.insertAdjacentElement('afterend',heroInvestmentResult);
+    heroInvestment.insertAdjacentElement('afterend',heroInvestmentDetails);
+    function updateHeroInvestment(event){
+      heroInvestment.innerHTML=event.matches?'Você já investiu tempo e dinheiro em divulgação,':'Você já investiu tempo e dinheiro em divulgação, anúncios, redes sociais, cartões, flyers… <strong>E OS RESULTADOS NÃO APARECERAM?</strong>';
+      heroInvestmentDetails.hidden=!event.matches;
+      heroInvestmentResult.hidden=!event.matches;
+      if(event.matches){
+        heroInvestmentDetails.textContent='anúncios, redes sociais, cartões, flyers…';
+        heroInvestmentResult.innerHTML='<strong>E OS RESULTADOS NÃO APARECERAM?</strong>';
+      }
+    }
+    updateHeroInvestment(heroMobile);
+    if(heroMobile.addEventListener)heroMobile.addEventListener('change',updateHeroInvestment);
+    else heroMobile.addListener(updateHeroInvestment);
+  }
   if(heroDiscovery)heroDiscovery.innerHTML='<span class="hero-discovery-line">Descubra como conseguir</span><br class="hero-mobile-only"> <span class="hero-discovery-line">mais clientes e aumentar o seu</span><br class="hero-mobile-only"> <span class="hero-discovery-line">faturamento sem gastar uma fortuna.</span>';
 })();
 </script>
@@ -1382,12 +1404,14 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
 })();
 </script>
 <style id="mobile-history-testimonials-v2">
+#quemsomos .copy-testimonials-grid>.testimonial-clone{display:none!important}
 @media (max-width:600px){
   #quemsomos .copy-about-intro{margin-top:0!important;margin-bottom:var(--mobile-content-gap,18px)!important;font-size:18px!important;line-height:1.35!important}
   #quemsomos .copy-testimonials-title{display:block!important;margin-top:18px!important;margin-bottom:var(--mobile-content-gap,18px)!important;padding:0!important;font-size:26px!important;line-height:1.08!important;letter-spacing:-.04em!important;text-align:left!important}
   #quemsomos .testimonial-swipe-hint{margin:0 14px var(--mobile-content-gap,18px)!important;color:#fff!important;font-size:17px!important;font-weight:400!important;line-height:1!important;text-align:left!important;text-transform:uppercase!important}
   #quemsomos .copy-testimonials-grid{padding-top:0!important;padding-bottom:6px!important}
   #quemsomos .copy-testimonials-grid article{min-height:260px!important;padding:30px 20px 18px!important}
+  #quemsomos .copy-testimonials-grid>.testimonial-clone{display:flex!important}
   #quemsomos .copy-testimonials-grid article p{display:flex!important;flex:1!important;align-items:center!important;justify-content:center!important;margin:0!important;color:#384542!important;font-size:17px!important;font-style:italic!important;font-weight:400!important;line-height:1.45!important;text-align:center!important}
   #quemsomos .copy-testimonials-grid article .testimonial-stars{margin:14px 0 0!important;color:#bd8509!important;font-size:19px!important;line-height:1!important;letter-spacing:3px!important;text-align:center!important}
   #quemsomos .copy-testimonials-grid article>span{margin:8px 0 0!important;padding:0!important;border:0!important;color:#126861!important;font-size:13px!important;font-weight:400!important;line-height:1.3!important;letter-spacing:0!important;text-align:center!important;text-transform:none!important}
@@ -1423,6 +1447,18 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     hint.textContent='ARRASTE PARA O LADO →';
     scroller.insertAdjacentElement('beforebegin',hint);
   }
+  var loopArticles=articles.slice();
+  if(articles.length>1){
+    var cloneLast=articles[articles.length-1].cloneNode(true);
+    var cloneFirst=articles[0].cloneNode(true);
+    cloneLast.classList.add('testimonial-clone');
+    cloneFirst.classList.add('testimonial-clone');
+    cloneLast.setAttribute('aria-hidden','true');
+    cloneFirst.setAttribute('aria-hidden','true');
+    scroller.insertBefore(cloneLast,articles[0]);
+    scroller.appendChild(cloneFirst);
+    loopArticles=[cloneLast].concat(articles,[cloneFirst]);
+  }
   var indicator=scroller.parentNode.querySelector(':scope>.mobile-scroll-indicator');
   if(indicator&&!section.querySelector('.testimonial-carousel-controls')){
     indicator.removeAttribute('aria-hidden');
@@ -1445,13 +1481,38 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     scroller.insertAdjacentElement('afterend',controls);
     var dots=Array.from(indicator.children);
     var activeIndex=0;
-    function update(){
-      var firstOffset=articles[0]?.offsetLeft||0;
+    var physicalIndex=articles.length>1?1:0;
+    var loopTimer;
+    function cardLeft(index){
+      return loopArticles[index].offsetLeft-loopArticles[0].offsetLeft;
+    }
+    function nearestPhysical(){
       var nearest=Infinity;
-      articles.forEach(function(article,index){
-        var distance=Math.abs(article.offsetLeft-scroller.scrollLeft-firstOffset);
-        if(distance<nearest){nearest=distance;activeIndex=index}
+      var index=0;
+      loopArticles.forEach(function(article,articleIndex){
+        var distance=Math.abs(cardLeft(articleIndex)-scroller.scrollLeft);
+        if(distance<nearest){nearest=distance;index=articleIndex}
       });
+      return index;
+    }
+    function jumpTo(index){
+      physicalIndex=index;
+      scroller.style.scrollBehavior='auto';
+      scroller.scrollLeft=cardLeft(index);
+      requestAnimationFrame(function(){scroller.style.removeProperty('scroll-behavior')});
+    }
+    function normalizeLoop(){
+      if(articles.length<2)return;
+      physicalIndex=nearestPhysical();
+      if(physicalIndex===0)jumpTo(articles.length);
+      else if(physicalIndex===loopArticles.length-1)jumpTo(1);
+      update();
+    }
+    function update(){
+      physicalIndex=nearestPhysical();
+      if(physicalIndex===0)activeIndex=articles.length-1;
+      else if(physicalIndex===loopArticles.length-1)activeIndex=0;
+      else activeIndex=physicalIndex-1;
       dots.forEach(function(dot,index){
         dot.classList.toggle('is-active',index===activeIndex);
         dot.setAttribute('aria-selected',index===activeIndex?'true':'false');
@@ -1459,14 +1520,22 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
       previous.disabled=false;
       next.disabled=false;
     }
+    function goToPhysical(index){
+      physicalIndex=index;
+      scroller.scrollTo({left:cardLeft(index),behavior:'smooth'});
+    }
     function goTo(index){
       activeIndex=(index+articles.length)%articles.length;
-      scroller.scrollTo({left:articles[activeIndex].offsetLeft-articles[0].offsetLeft,behavior:'smooth'});
+      goToPhysical(activeIndex+1);
     }
-    previous.addEventListener('click',function(){goTo(activeIndex-1)});
-    next.addEventListener('click',function(){goTo(activeIndex+1)});
+    previous.addEventListener('click',function(){goToPhysical(activeIndex===0?0:activeIndex)});
+    next.addEventListener('click',function(){goToPhysical(activeIndex===articles.length-1?loopArticles.length-1:activeIndex+2)});
     dots.forEach(function(dot,index){dot.addEventListener('click',function(){goTo(index)})});
-    scroller.addEventListener('scroll',function(){requestAnimationFrame(update)},{passive:true});
+    scroller.addEventListener('scroll',function(){
+      requestAnimationFrame(update);
+      clearTimeout(loopTimer);
+      loopTimer=setTimeout(normalizeLoop,160);
+    },{passive:true});
     var dragging=false,pointerId,startX,startScroll,moved=false;
     scroller.addEventListener('pointerdown',function(event){
       if(event.pointerType!=='mouse'||event.button!==0)return;
@@ -1482,11 +1551,18 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
       if(!dragging||event.pointerId!==pointerId)return;
       dragging=false;scroller.classList.remove('is-dragging');
       if(scroller.hasPointerCapture(pointerId))scroller.releasePointerCapture(pointerId);
-      goTo(activeIndex);
+      goToPhysical(nearestPhysical());
     }
     scroller.addEventListener('pointerup',finish);
     scroller.addEventListener('pointercancel',finish);
     scroller.addEventListener('click',function(event){if(moved){event.preventDefault();event.stopPropagation();moved=false}},true);
+    var carouselMobile=window.matchMedia('(max-width:600px)');
+    function initializeLoop(event){
+      if(event.matches&&articles.length>1)requestAnimationFrame(function(){jumpTo(1);update()});
+    }
+    initializeLoop(carouselMobile);
+    if(carouselMobile.addEventListener)carouselMobile.addEventListener('change',initializeLoop);
+    else carouselMobile.addListener(initializeLoop);
     update();
   }
 })();
@@ -1577,18 +1653,20 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .copy-section-heading p{margin:0!important;color:#126861!important;font-size:21px!important;font-weight:400!important;line-height:1.2!important}
   #compare .copy-section-heading p strong{font-weight:800!important}
   #compare .copy-section-heading h3{margin:0!important;color:#126861!important;font-size:22px!important;line-height:1.1!important}
-  #compare .comparison-prompt{margin:0 auto 18px!important;padding:0!important;background:transparent!important;color:#126861!important;font-size:22px!important;font-weight:400!important;line-height:1.1!important;text-align:center!important}
+  #compare .comparison-prompt{margin:0!important;padding:0!important;background:transparent!important;color:#126861!important;font-size:16px!important;font-weight:400!important;line-height:1.1!important;text-align:center!important;text-transform:none!important}
   #compare .comparison-prompt strong{font-weight:800!important}
   #compare .copy-compare-table{display:none!important}
   #compare .mobile-comparison-table{position:relative!important;display:grid!important;width:100%!important;grid-template-columns:minmax(0,1fr) 86px 86px!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
   #compare .mobile-comparison-table:after{position:absolute!important;z-index:3!important;top:0!important;right:-4px!important;bottom:0!important;width:94px!important;border-radius:9px!important;content:""!important;pointer-events:none!important;box-shadow:-8px 0 18px rgba(4,47,43,.2),8px 0 18px rgba(4,47,43,.15),0 -7px 17px rgba(4,47,43,.14),0 9px 18px rgba(4,47,43,.18)!important}
-  #compare .comparison-header-spacer{display:block!important;background:#e1e3dd!important}
+  #compare .comparison-header-spacer{display:flex!important;min-height:50px!important;align-self:end!important;align-items:center!important;justify-content:center!important;padding:5px 8px!important;background:transparent!important}
   #compare .comparison-cell{display:flex!important;min-width:0!important;align-items:center!important;justify-content:center!important;padding:10px 8px!important;border:0!important;border-right:0!important;border-bottom:0!important;text-align:center!important}
   #compare .comparison-cell:nth-child(3n){border-right:0!important;border-left:0!important}
-  #compare .comparison-feature{align-items:flex-start!important;flex-direction:column!important;justify-content:center!important;background:#126861!important;color:#fff!important;text-align:left!important}
-  #compare .comparison-feature strong{display:block!important;font-size:14px!important;line-height:1.15!important}
-  #compare .comparison-feature em{display:block!important;margin-top:4px!important;font-size:12px!important;font-weight:400!important;line-height:1.25!important}
-  #compare .comparison-solo{background:#0b514b!important;color:#fff!important;font-size:12px!important;font-weight:700!important;line-height:1.15!important}
+  #compare .comparison-feature{display:block!important;align-content:center!important;background:#126861!important;color:#fff!important;text-align:left!important}
+  #compare .comparison-feature strong{display:inline!important;font-size:14px!important;line-height:1!important}
+  #compare .comparison-feature em{display:inline!important;margin:0 0 0 3px!important;font-size:11px!important;font-weight:400!important;line-height:1!important}
+  #compare .comparison-solo{background:#0b514b!important;color:#fff!important;font-size:12px!important;font-weight:400!important;line-height:1.15!important}
+  #compare .comparison-row-light{background:#126861!important}
+  #compare .comparison-row-dark{background:#0b514b!important}
   #compare .comparison-ecosystem{background:#f0b53d!important;color:#fff!important;font-size:0!important;font-weight:800!important;line-height:1!important}
   #compare .comparison-ecosystem:before{display:grid!important;width:27px!important;height:27px!important;border-radius:50%!important;background:#08bd51!important;color:#fff!important;content:"✓"!important;font-size:18px!important;place-items:center!important;box-shadow:0 3px 7px rgba(4,73,46,.3)!important}
   #compare .comparison-head{min-height:72px!important;padding:10px 6px!important;background:#0a4a45!important;color:#fff!important;font-size:11px!important;font-weight:800!important;line-height:1.15!important;text-transform:uppercase!important}
@@ -1596,9 +1674,9 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .comparison-head.comparison-feature{background:#126861!important;text-align:center!important}
   #compare .comparison-head.is-ecosystem{display:flex!important;min-height:78px!important;flex-direction:column!important;gap:6px!important;padding:8px 5px!important;background:#f0b53d!important;color:#fff!important;border:0!important;box-shadow:none!important}
   #compare .comparison-head.is-ecosystem img{width:28px!important;height:28px!important;filter:brightness(0) invert(1)!important;object-fit:contain!important}
-  #compare .comparison-price-label{background:#126861!important;color:#fff!important;font-size:11px!important;font-weight:800!important;line-height:1.15!important;text-transform:uppercase!important}
-  #compare .comparison-price{display:flex!important;min-height:88px!important;flex-direction:column!important;background:#0b514b!important;color:#fff!important}
-  #compare .comparison-price.is-ecosystem{background:#f0b53d!important;color:#0d403c!important;border:0!important;box-shadow:none!important}
+  #compare .comparison-price{display:flex!important;min-height:88px!important;flex-direction:column!important;background:#0b514b!important;color:#fff!important;grid-row:9!important}
+  #compare .comparison-price:not(.is-ecosystem){grid-column:2!important}
+  #compare .comparison-price.is-ecosystem{z-index:5!important;margin-right:-4px!important;margin-left:-4px!important;background:linear-gradient(180deg,#f0b53d 0%,#eaaa24 100%)!important;color:#0d403c!important;border:0!important;border-radius:0 0 9px 9px!important;grid-column:3!important;box-shadow:inset 0 -1px rgba(135,82,0,.16),inset 1px 0 rgba(255,255,255,.2),inset -1px 0 rgba(142,88,0,.12)!important}
   #compare .comparison-price small{font-size:8px!important;font-weight:700!important;line-height:1!important;text-transform:uppercase!important}
   #compare .comparison-price strong{margin-top:5px!important;font-size:18px!important;line-height:1!important;white-space:nowrap!important}
   #compare .comparison-price:not(.is-ecosystem) strong{font-size:12px!important}
@@ -1606,9 +1684,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .comparison-cell:nth-child(3n){position:relative!important;z-index:4!important;margin-right:-4px!important;margin-left:-4px!important;border:0!important;transform:translateZ(0)!important;box-shadow:inset 1px 0 rgba(255,255,255,.26),inset -1px 0 rgba(142,88,0,.12)!important}
   #compare .comparison-ecosystem,#compare .comparison-price.is-ecosystem{margin-top:-1px!important}
   #compare .comparison-cell:nth-child(3){z-index:5!important;border-radius:9px 9px 0 0!important;background:linear-gradient(180deg,#f7c654 0%,#f0b53d 72%)!important;box-shadow:inset 0 1px rgba(255,255,255,.48),inset 1px 0 rgba(255,255,255,.26),inset -1px 0 rgba(142,88,0,.12)!important}
-  #compare .comparison-cell:nth-child(27){z-index:5!important;border-radius:0 0 9px 9px!important;background:linear-gradient(180deg,#f0b53d 0%,#eaaa24 100%)!important;box-shadow:inset 0 -1px rgba(135,82,0,.16),inset 1px 0 rgba(255,255,255,.2),inset -1px 0 rgba(142,88,0,.12)!important}
   #compare .mobile-comparison-table .comparison-cell{outline:1px solid rgba(255,255,255,.9)!important;outline-offset:-1px!important}
-  #compare .copy-offer-copy{display:block!important;margin:12px 0 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#126861!important;text-align:center!important}
+  #compare .copy-offer-copy{display:block!important;margin:12px 0 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#126861!important;text-align:left!important}
   #compare .copy-offer-copy p{margin:0!important;color:#126861!important;font-size:10px!important;line-height:1.3!important}
 }
 </style>
@@ -1632,9 +1709,9 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   if(!picture||section.querySelector('.mobile-comparison-table'))return;
   var rows=[
     ['Site e Blog:','(Contratação de site + Hospedagem + Domínio + Taxa de manutenção + copy para artigos +...)'],
-    ['Instagram:','(Gestor de rede social + Arte finalista para postagens + Profissional de SEO + copy para textos + ...)'],
+    ['Instagram:','(Gestor de rede social + Arte finalista para postagens + SEO + copy para textos + ...)'],
     ['Revista impressa:','(Contratação de espaço + Arte para anúncio + Copy para textos + ...)'],
-    ['Google meu negócio:','(Profissional GMN + Arte para postagens + Copy para textos + Profissional de SEO +...)'],
+    ['Google meu negócio:','(Profissional GMN + Arte para postagens + Copy para textos + SEO +...)'],
     ['Tráfego pago:','(Gestor de tráfego + Arte para Anúncios + Copy para textos + Investimento na Meta + ...)'],
     ['Consultoria:','(Contratação de consultor de tráfego + Compra de Curso + Mentoria + Comunidade / Networking + ...)'],
     ['Biblioteca técnica:','(Compra de livros e cursos + Tempo de leitura + Newsletter + Curadoria de conteúdo + ...)']
@@ -1643,14 +1720,25 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   table.className='mobile-comparison-table';
   table.setAttribute('role','table');
   table.setAttribute('aria-label','Comparação entre fazer a divulgação sozinho e o Ecossistema Olá Guia');
-  table.innerHTML='<span class="comparison-header-spacer" aria-hidden="true"></span><div class="comparison-cell comparison-head" role="columnheader">Fazendo sozinho</div><div class="comparison-cell comparison-head is-ecosystem" role="columnheader"><img src="/wp-content/uploads/favicon-olaguia.png" alt=""><span>Ecossistema Olá Guia</span></div>';
-  rows.forEach(function(row){
-    table.insertAdjacentHTML('beforeend','<div class="comparison-cell comparison-feature" role="cell"><strong>'+row[0]+'</strong><em>'+row[1]+'</em></div><div class="comparison-cell comparison-solo" role="cell">R$ X.000</div><div class="comparison-cell comparison-ecosystem" role="cell" aria-label="Incluído">✓</div>');
+  table.innerHTML='<div class="comparison-header-spacer" role="columnheader"></div><div class="comparison-cell comparison-head" role="columnheader">Fazendo sozinho</div><div class="comparison-cell comparison-head is-ecosystem" role="columnheader"><img src="/wp-content/uploads/favicon-olaguia.png" alt=""><span>Ecossistema Olá Guia</span></div>';
+  rows.forEach(function(row,index){
+    var rowTone=index%2===0?'comparison-row-light':'comparison-row-dark';
+    table.insertAdjacentHTML('beforeend','<div class="comparison-cell comparison-feature '+rowTone+'" role="cell"><strong>'+row[0]+'</strong><em>'+row[1]+'</em></div><div class="comparison-cell comparison-solo '+rowTone+'" role="cell">R$ X.000</div><div class="comparison-cell comparison-ecosystem" role="cell" aria-label="Incluído">✓</div>');
   });
-  table.insertAdjacentHTML('beforeend','<div class="comparison-cell comparison-price-label" role="cell">Investimento mensal</div><div class="comparison-cell comparison-price" role="cell"><small>A partir de</small><strong>R$ 1.800</strong><span>por mês</span></div><div class="comparison-cell comparison-price is-ecosystem" role="cell"><small>A partir de</small><strong>R$ 397*</strong><span>por mês</span></div>');
+  table.insertAdjacentHTML('beforeend','<div class="comparison-cell comparison-price" role="cell"><small>A partir de</small><strong>R$ 1.800</strong><span>por mês</span></div><div class="comparison-cell comparison-price is-ecosystem" role="cell"><small>A partir de</small><strong>R$ 397*</strong><span>por mês</span></div>');
   picture.insertAdjacentElement('afterend',table);
   var prompt=section.querySelector('.copy-section-heading h3');
-  if(prompt){prompt.className='comparison-prompt';prompt.innerHTML='Pense e <strong>compare:</strong>';picture.insertAdjacentElement('beforebegin',prompt)}
+  if(prompt){
+    prompt.className='comparison-prompt';
+    prompt.innerHTML='Pense e <strong>compare:</strong>';
+    function updatePromptPosition(event){
+      if(event.matches)table.querySelector('.comparison-header-spacer').appendChild(prompt);
+      else picture.insertAdjacentElement('beforebegin',prompt);
+    }
+    updatePromptPosition(mobile);
+    if(mobile.addEventListener)mobile.addEventListener('change',updatePromptPosition);
+    else mobile.addListener(updatePromptPosition);
+  }
 })();
 </script>
 <style id="mobile-creator-final-cta-v2">
@@ -1664,7 +1752,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #pablosanturio .w-hwrapper,#pablosanturio .us_custom_3e18fd7c,#pablosanturio .us_custom_ac0382f1,#pablosanturio .us_custom_980bb123{margin:0!important}
   #pablosanturio .w-separator{display:none!important}
   #pablosanturio .us_custom_3e18fd7c{font-size:26px!important;line-height:1.08!important;letter-spacing:-.04em!important}
-  #pablosanturio .us_custom_ac0382f1{font-size:18px!important;line-height:1.2!important}
+  #pablosanturio .us_custom_ac0382f1{margin-top:-12px!important;font-size:12px!important;font-style:italic!important;line-height:1.2!important}
   #pablosanturio .us_custom_980bb123,#pablosanturio .us_custom_980bb123 p{font-size:17px!important;line-height:1.3!important;letter-spacing:normal!important;text-align:center!important}
   #pablosanturio .us_custom_980bb123 .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important}
   #pablosanturio .us_custom_980bb123 p{margin:0!important}
@@ -1680,9 +1768,12 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #cta4 .us_custom_21f37c85,#cta4 .us_custom_b2785ebc,#cta4 .us_custom_b2785ebc p,#cta4 .w-btn-wrapper{margin:0!important}
   #cta4 .us_custom_21f37c85{font-size:26px!important;line-height:1.08!important;letter-spacing:-.04em!important}
   #cta4 .us_custom_b2785ebc,#cta4 .us_custom_b2785ebc p{font-size:17px!important;line-height:1.3!important;text-align:center!important}
+  #cta4 .us_custom_b2785ebc p:nth-of-type(2){font-size:21px!important;font-weight:400!important}
+  #cta4 .us_custom_b2785ebc p:nth-of-type(2) strong{font-weight:800!important}
+  #cta4 .us_custom_b2785ebc p.cta-promo-detail{font-size:21px!important;font-weight:800!important}
+  #cta4 .us_custom_b2785ebc p.cta-final-body{font-size:17px!important}
   #cta4 .us_custom_b2785ebc .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important}
   #cta4 .us_custom_b2785ebc p:empty{display:none!important}
-  #cta4 .us_custom_b2785ebc p:last-child{transform:scaleX(.82)!important;transform-origin:center!important}
   #cta4 .cta-final-line{display:inline-block!important;white-space:nowrap!important}
   #cta4 .cta-characters-figure{width:100%!important;margin:0!important;text-align:center!important}
   #cta4 .cta-characters-figure img{display:block!important;width:100%!important;max-width:468px!important;height:auto!important;margin:0 auto!important}
@@ -1701,7 +1792,23 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   if(cta){
     var copy=cta.querySelector('.us_custom_b2785ebc');
     var ctaParagraphs=copy?Array.from(copy.querySelectorAll('.wpb_wrapper>p')).filter(function(p){return p.textContent.trim()}):[];
-    if(ctaParagraphs[0])ctaParagraphs[0].innerHTML='<strong>Esta promoção de lançamento é extremamente limitada. Só para os primeiros.</strong>';
+    var ctaMobile=window.matchMedia('(max-width:600px)');
+    var ctaPromoDetail=document.createElement('p');
+    ctaPromoDetail.className='cta-promo-detail';
+    ctaPromoDetail.hidden=true;
+    if(ctaParagraphs[0]){
+      ctaParagraphs[0].classList.add('cta-promo-primary');
+      ctaParagraphs[0].insertAdjacentElement('afterend',ctaPromoDetail);
+    }
+    if(ctaParagraphs[1])ctaParagraphs[1].classList.add('cta-final-body');
+    function updateCtaPromo(event){
+      if(ctaParagraphs[0])ctaParagraphs[0].innerHTML=event.matches?'Esta promoção de lançamento é extremamente limitada.':'<strong>Esta promoção de lançamento é extremamente limitada. Só para os primeiros.</strong>';
+      ctaPromoDetail.hidden=!event.matches;
+      if(event.matches)ctaPromoDetail.innerHTML='<strong>Só para os primeiros.</strong>';
+    }
+    updateCtaPromo(ctaMobile);
+    if(ctaMobile.addEventListener)ctaMobile.addEventListener('change',updateCtaPromo);
+    else ctaMobile.addListener(updateCtaPromo);
     if(ctaParagraphs[1])ctaParagraphs[1].textContent='Hoje, divulgar seu trabalho não é uma opção: é uma necessidade urgente para construir sua marca, vender mais e aumentar seus lucros.';
   }
 })();
@@ -1722,8 +1829,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #inicio .us_custom_246b90a5,
   #solucao .us_custom_7e646980,
   #olaguia .mobile-tools-heading .tools-intro,
-  #quemsomos .copy-section-heading p,
-  #cta4 .us_custom_b2785ebc p:nth-of-type(2){font-size:26px!important}
+  #quemsomos .copy-section-heading p{font-size:26px!important}
 
   #publico .us_custom_5d92a27d,
   #sentencas .us_custom_f9903d7d,
@@ -1780,7 +1886,6 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #solucao .us_custom_7e646980,
   #olaguia .mobile-tools-heading .tools-intro,
   #quemsomos .copy-section-heading p,
-  #cta4 .us_custom_b2785ebc p:nth-of-type(2),
   #cta3 .commitment-title,
   #quemsomos .copy-testimonials-title,
   #pablosanturio .us_custom_3e18fd7c{font-size:24px!important}
@@ -1803,11 +1908,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #quemsomos .copy-testimonials-grid article p,
   #pergunta .copy-how-content>p:not(.copy-how-close):not(.access-intro-primary):not(.access-intro-detail),
   #pergunta .copy-how-content>p.copy-how-close,
-  #pablosanturio .us_custom_980bb123,
-  #pablosanturio .us_custom_980bb123 p,
-  #pablosanturio .us_custom_980bb123 p:nth-child(2),
   #cta4 .us_custom_b2785ebc,
-  #cta4 .us_custom_b2785ebc p:not(:nth-of-type(2)){font-size:16px!important}
+  #cta4 .us_custom_b2785ebc p:not(:nth-of-type(2)):not(.cta-promo-detail):not(.cta-final-body){font-size:16px!important}
 }
 </style>
 <style id="mobile-section-boundary-spacing">
@@ -1835,7 +1937,6 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #quemsomos,
   #pergunta,
   #compare,
-  #pablosanturio,
   #cta4,
   #faq{padding-bottom:var(--mobile-fold-boundary-space)!important}
 }
@@ -1891,7 +1992,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #cta3 p>span:nth-child(2){font-size:17px!important}
   #daniel-kahneman .us_custom_980bb123 p{font-size:17px!important}
   #daniel-kahneman .us_custom_980bb123 .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:18px!important}
-  #daniel-kahneman .us_custom_e8a2a9f1{grid-template-columns:1fr!important;width:100%!important}
+  #daniel-kahneman .us_custom_e8a2a9f1{grid-template-columns:1fr!important;width:80%!important}
   #daniel-kahneman .us_custom_c88609d4{width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:376/312!important;background-position:center top!important;background-size:cover!important}
   #daniel-kahneman .us_custom_fd21518e{width:100%!important;height:auto!important;min-height:0!important;overflow:visible!important}
   #quemsomos .copy-section-heading>p{font-size:20px!important}
