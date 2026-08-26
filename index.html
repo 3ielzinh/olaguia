@@ -239,7 +239,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .l-section-h{width:100%!important}
   .w-btn{font-size:.78rem!important}
 
-  #inicio{padding:72px 16px 26px!important;background:#f4f5ed!important}
+  #inicio{padding:78px 16px 36px!important;background:#f4f5ed!important}
   #inicio .l-section-h{padding:0!important}
   #inicio>.l-section-h>.g-cols{display:block!important}
   #inicio .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner{display:flex;flex-direction:column;align-items:stretch}
@@ -458,8 +458,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </style>
 <style id="responsive-horizontal-overflow-guard">
 @media(max-width:1024px){
-  html,body{max-width:100%;overflow-x:hidden!important;overflow-x:clip!important}
-  .l-canvas,.l-main{max-width:100%;overflow-x:hidden;overflow-x:clip}
+  .l-canvas,.l-main{max-width:100%;overflow-x:clip}
 }
 </style>
 <style id="mobile-public-carousel-refinement">
@@ -824,12 +823,12 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #inicio .us_custom_3fd5d53b{width:100%!important;max-width:none!important;font-size:17px!important;line-height:1.2!important;letter-spacing:normal!important}
   #inicio .us_custom_3fd5d53b p{margin:0!important}
   #inicio .hero-invest-line{white-space:normal!important}
-  #inicio .us_custom_3fd5d53b strong{display:inline!important;margin:0!important;white-space:normal!important;font-size:17px!important;line-height:inherit!important;letter-spacing:normal!important}
+  #inicio .us_custom_3fd5d53b strong{display:block!important;margin:18px 0 0!important;white-space:nowrap!important;font-size:17px!important;line-height:inherit!important;letter-spacing:normal!important}
   #inicio .us_custom_63638f30{width:100%!important;max-width:none!important;font-size:22px!important;line-height:1.08!important;letter-spacing:normal!important;text-wrap:wrap!important}
   #inicio .hero-discovery-line{white-space:normal!important}
-  #inicio .mobile-reflow-hero{width:100%!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+  #inicio .mobile-reflow-hero{width:100%!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;animation:none!important;transform:none!important;opacity:1!important}
   #inicio .mobile-reflow-hero .vc_column-inner,#inicio .mobile-reflow-hero .w-image{width:100%!important;margin:0!important;padding:0!important}
-  #inicio .mobile-reflow-hero .w-image-h{width:100%!important;aspect-ratio:1.48 / 1!important;overflow:hidden!important}
+  #inicio .mobile-reflow-hero .w-image-h{width:100%!important;aspect-ratio:1.27 / 1!important;overflow:hidden!important}
   #inicio .mobile-reflow-hero img{display:block!important;width:125%!important;height:auto!important;max-width:none!important;margin:0 0 0 -12.5%!important;object-fit:initial!important;object-position:initial!important;mix-blend-mode:multiply!important}
   #inicio .w-btn-wrapper,#inicio .us_custom_fed19a08{margin:0!important}
 }
@@ -839,9 +838,9 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var heroTitle=document.querySelector('#inicio .us_custom_261f4d04 .w-text-value');
   var heroInvestment=document.querySelector('#inicio .us_custom_3fd5d53b p');
   var heroDiscovery=document.querySelector('#inicio .us_custom_63638f30 .w-text-value');
-  if(heroTitle)heroTitle.innerHTML='Marketing de <strong>baixo</strong><br class="hero-mobile-only"><strong>custo</strong> e <strong>alto impacto.</strong>';
-  if(heroInvestment)heroInvestment.innerHTML='<span class="hero-invest-line">Você já investiu tempo e dinheiro em divulgação,</span><br class="hero-mobile-only"><span class="hero-invest-line">anúncios, redes sociais, cartões, flyers…</span><br class="hero-mobile-only"><strong>E OS RESULTADOS NÃO APARECERAM?</strong>';
-  if(heroDiscovery)heroDiscovery.innerHTML='<span class="hero-discovery-line">Descubra como conseguir</span><br class="hero-mobile-only"><span class="hero-discovery-line">mais clientes e aumentar o seu</span><br class="hero-mobile-only"><span class="hero-discovery-line">faturamento sem gastar uma fortuna.</span>';
+  if(heroTitle)heroTitle.innerHTML='Marketing de <strong>baixo</strong><br class="hero-mobile-only"> <strong>custo</strong> e <strong>alto impacto.</strong>';
+  if(heroInvestment)heroInvestment.innerHTML='<span class="hero-invest-line">Você já investiu tempo e dinheiro em divulgação,</span><br class="hero-mobile-only"> <span class="hero-invest-line">anúncios, redes sociais, cartões, flyers…</span><br class="hero-mobile-only"><strong>E OS RESULTADOS NÃO APARECERAM?</strong>';
+  if(heroDiscovery)heroDiscovery.innerHTML='<span class="hero-discovery-line">Descubra como conseguir</span><br class="hero-mobile-only"> <span class="hero-discovery-line">mais clientes e aumentar o seu</span><br class="hero-mobile-only"> <span class="hero-discovery-line">faturamento sem gastar uma fortuna.</span>';
 })();
 </script>
 <style id="mobile-public-section-v2">
@@ -849,7 +848,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   :root{--mobile-section-space:32px;--mobile-content-gap:18px}
   #inicio .us_custom_246b90a5{font-size:22px!important;line-height:1.15!important}
   .l-main>section .w-hwrapper>.w-text,.l-main>section .copy-kicker{font-size:11px!important;line-height:1.2!important}
-  #publico{margin:0!important;padding:var(--mobile-section-space) 0!important}
+  #publico{margin:0!important;padding:36px 0 var(--mobile-section-space)!important}
   #publico .l-section-h{padding:0 14px!important}
   #publico .us_custom_595be67a>.vc_column-inner{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap)!important}
   #publico .us_custom_595be67a>.vc_column-inner>.w-separator{display:none!important}
@@ -1747,8 +1746,6 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #quemsomos .copy-testimonials-title,
   #pablosanturio .us_custom_3e18fd7c{font-size:24px!important}
 
-  #inicio .us_custom_3fd5d53b,
-  #inicio .us_custom_3fd5d53b strong,
   #publico .public-swipe-hint,
   #solucao .us_custom_3fd5d53b,
   #solucao .us_custom_3fd5d53b p,
