@@ -239,7 +239,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .l-section-h{width:100%!important}
   .w-btn{font-size:.78rem!important}
 
-  #inicio{padding:78px 16px 36px!important;background:#f4f5ed!important}
+  #inicio{padding:100px 16px 36px!important;background:#f4f5ed!important}
   #inicio .l-section-h{padding:0!important}
   #inicio>.l-section-h>.g-cols{display:block!important}
   #inicio .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner{display:flex;flex-direction:column;align-items:stretch}
@@ -817,16 +817,18 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #inicio .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner{gap:var(--hero-mobile-gap)!important}
   #inicio .g-cols.cols_2>.wpb_column:first-child>.vc_column-inner>.w-separator{display:none!important}
   #inicio .hero-mobile-only{display:none!important}
-  #inicio .us_custom_261f4d04{width:100%!important;max-width:none!important;font-size:32px!important;line-height:1.04!important;letter-spacing:normal!important;text-wrap:wrap!important}
+  #inicio .us_custom_261f4d04{width:100%!important;max-width:none!important;font-size:32px!important;line-height:1.1!important;letter-spacing:-.06em!important;text-wrap:wrap!important}
   #inicio .us_custom_261f4d04 .w-text-value{white-space:normal!important}
-  #inicio .us_custom_246b90a5{font-size:17px!important;line-height:1.2!important;letter-spacing:normal!important;text-wrap:wrap!important}
-  #inicio .us_custom_3fd5d53b{width:100%!important;max-width:none!important;font-size:17px!important;line-height:1.2!important;letter-spacing:normal!important}
+  #inicio .us_custom_246b90a5{font-size:17px!important;line-height:1.1!important;letter-spacing:-.05em!important;text-wrap:wrap!important;white-space:nowrap!important}
+  #inicio .us_custom_3fd5d53b{width:100%!important;max-width:none!important;font-size:17px!important;line-height:1.4!important;letter-spacing:0!important}
   #inicio .us_custom_3fd5d53b p{margin:0!important}
+  #inicio .us_custom_3fd5d53b .wpb_wrapper>p:first-child{white-space:nowrap!important;letter-spacing:-.04em!important}
   #inicio .hero-invest-line{white-space:normal!important}
-  #inicio .us_custom_3fd5d53b strong{display:block!important;margin:18px 0 0!important;white-space:nowrap!important;font-size:17px!important;line-height:inherit!important;letter-spacing:normal!important}
-  #inicio .us_custom_63638f30{width:100%!important;max-width:none!important;font-size:22px!important;line-height:1.08!important;letter-spacing:normal!important;text-wrap:wrap!important}
-  #inicio .hero-discovery-line{white-space:normal!important}
-  #inicio .mobile-reflow-hero{width:100%!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;animation:none!important;transform:none!important;opacity:1!important}
+  #inicio .us_custom_3fd5d53b strong{display:block!important;margin:18px 0 0!important;white-space:nowrap!important;font-size:17px!important;line-height:inherit!important;letter-spacing:0!important}
+  #inicio .us_custom_3fd5d53b .hero-invest-result strong{margin-top:0!important}
+  #inicio .us_custom_63638f30{width:100%!important;max-width:none!important;font-size:22px!important;line-height:1.1!important;letter-spacing:-.05em!important;text-wrap:wrap!important}
+  #inicio .hero-discovery-line{display:inline-block!important;white-space:nowrap!important}
+  #inicio .mobile-reflow-hero{width:100%!important;min-height:0!important;margin:18px 0 0!important;padding:0!important;overflow:hidden!important;animation:none!important;transform:none!important;opacity:1!important}
   #inicio .mobile-reflow-hero .vc_column-inner,#inicio .mobile-reflow-hero .w-image{width:100%!important;margin:0!important;padding:0!important}
   #inicio .mobile-reflow-hero .w-image-h{width:100%!important;aspect-ratio:1.27 / 1!important;overflow:hidden!important}
   #inicio .mobile-reflow-hero img{display:block!important;width:125%!important;height:auto!important;max-width:none!important;margin:0 0 0 -12.5%!important;object-fit:initial!important;object-position:initial!important;mix-blend-mode:multiply!important}
@@ -842,7 +844,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   if(heroInvestment){
     var heroInvestmentDetails=document.createElement('p');
     var heroInvestmentResult=document.createElement('p');
-    var heroMobile=window.matchMedia('(max-width:600px)');
+    var heroMobile=window.matchMedia('(max-width:479px)');
     heroInvestmentDetails.className='hero-invest-details';
     heroInvestmentResult.className='hero-invest-result';
     heroInvestmentDetails.hidden=true;
@@ -862,7 +864,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     if(heroMobile.addEventListener)heroMobile.addEventListener('change',updateHeroInvestment);
     else heroMobile.addListener(updateHeroInvestment);
   }
-  if(heroDiscovery)heroDiscovery.innerHTML='<span class="hero-discovery-line">Descubra como conseguir</span><br class="hero-mobile-only"> <span class="hero-discovery-line">mais clientes e aumentar o seu</span><br class="hero-mobile-only"> <span class="hero-discovery-line">faturamento sem gastar uma fortuna.</span>';
+  if(heroDiscovery)heroDiscovery.innerHTML='<span class="hero-discovery-line">Descubra como conseguir mais</span><br class="hero-mobile-only"> <span class="hero-discovery-line">clientes e aumentar o seu</span><br class="hero-mobile-only"> <span class="hero-discovery-line">faturamento sem gastar uma fortuna.</span>';
 })();
 </script>
 <style id="mobile-public-section-v2">
@@ -1662,8 +1664,9 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .comparison-cell{display:flex!important;min-width:0!important;align-items:center!important;justify-content:center!important;padding:10px 8px!important;border:0!important;border-right:0!important;border-bottom:0!important;text-align:center!important}
   #compare .comparison-cell:nth-child(3n){border-right:0!important;border-left:0!important}
   #compare .comparison-feature{display:block!important;align-content:center!important;background:#126861!important;color:#fff!important;text-align:left!important}
-  #compare .comparison-feature strong{display:inline!important;font-size:14px!important;line-height:1!important}
-  #compare .comparison-feature em{display:inline!important;margin:0 0 0 3px!important;font-size:11px!important;font-weight:400!important;line-height:1!important}
+  #compare .comparison-feature:not(.comparison-head){font-size:11px!important;line-height:1.1!important}
+  #compare .comparison-feature strong{display:inline!important;font-size:14px!important;line-height:.85!important}
+  #compare .comparison-feature em{display:inline!important;margin:0 0 0 3px!important;font-size:11px!important;font-weight:400!important;line-height:.85!important}
   #compare .comparison-solo{background:#0b514b!important;color:#fff!important;font-size:12px!important;font-weight:400!important;line-height:1.15!important}
   #compare .comparison-row-light{background:#126861!important}
   #compare .comparison-row-dark{background:#0b514b!important}
@@ -1684,7 +1687,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #compare .comparison-cell:nth-child(3n){position:relative!important;z-index:4!important;margin-right:-4px!important;margin-left:-4px!important;border:0!important;transform:translateZ(0)!important;box-shadow:inset 1px 0 rgba(255,255,255,.26),inset -1px 0 rgba(142,88,0,.12)!important}
   #compare .comparison-ecosystem,#compare .comparison-price.is-ecosystem{margin-top:-1px!important}
   #compare .comparison-cell:nth-child(3){z-index:5!important;border-radius:9px 9px 0 0!important;background:linear-gradient(180deg,#f7c654 0%,#f0b53d 72%)!important;box-shadow:inset 0 1px rgba(255,255,255,.48),inset 1px 0 rgba(255,255,255,.26),inset -1px 0 rgba(142,88,0,.12)!important}
-  #compare .mobile-comparison-table .comparison-cell{outline:1px solid rgba(255,255,255,.9)!important;outline-offset:-1px!important}
+  #compare .mobile-comparison-table .comparison-cell{outline:1px solid rgba(255,255,255,.45)!important;outline-offset:-1px!important}
   #compare .copy-offer-copy{display:block!important;margin:12px 0 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:#126861!important;text-align:left!important}
   #compare .copy-offer-copy p{margin:0!important;color:#126861!important;font-size:10px!important;line-height:1.3!important}
 }
@@ -1775,7 +1778,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #cta4 .us_custom_b2785ebc .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important}
   #cta4 .us_custom_b2785ebc p:empty{display:none!important}
   #cta4 .cta-final-line{display:inline-block!important;white-space:nowrap!important}
-  #cta4 .cta-characters-figure{width:100%!important;margin:0!important;text-align:center!important}
+  #cta4 .cta-characters-figure{display:block!important;width:100%!important;margin:0!important;text-align:center!important}
   #cta4 .cta-characters-figure img{display:block!important;width:100%!important;max-width:468px!important;height:auto!important;margin:0 auto!important}
 }
 </style>
@@ -1801,6 +1804,10 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
       ctaParagraphs[0].insertAdjacentElement('afterend',ctaPromoDetail);
     }
     if(ctaParagraphs[1])ctaParagraphs[1].classList.add('cta-final-body');
+    var ctaCharactersFigure=document.createElement('figure');
+    ctaCharactersFigure.className='cta-characters-figure';
+    ctaCharactersFigure.innerHTML='<img src="/wp-content/uploads/cta-personagens.jpeg" alt="Personagens do Ecossistema Olá Guia">';
+    if(copy)copy.insertAdjacentElement('afterend',ctaCharactersFigure);
     function updateCtaPromo(event){
       if(ctaParagraphs[0])ctaParagraphs[0].innerHTML=event.matches?'Esta promoção de lançamento é extremamente limitada.':'<strong>Esta promoção de lançamento é extremamente limitada. Só para os primeiros.</strong>';
       ctaPromoDetail.hidden=!event.matches;
@@ -1849,7 +1856,6 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #inicio .us_custom_261f4d04 .w-text-value,
   #inicio .hero-invest-line,
   #inicio .us_custom_3fd5d53b strong,
-  #inicio .hero-discovery-line,
   #solucao .solution-fixed-line,
   #olaguia .mobile-tools-heading .tools-intro-line,
   #olaguia2 .mobile-extra-tool:first-child .consulting-line,
@@ -1996,6 +2002,26 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #daniel-kahneman .us_custom_c88609d4{width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:376/312!important;background-position:center top!important;background-size:cover!important}
   #daniel-kahneman .us_custom_fd21518e{width:100%!important;height:auto!important;min-height:0!important;overflow:visible!important}
   #quemsomos .copy-section-heading>p{font-size:20px!important}
+}
+</style>
+<style id="mobile-hero-responsive-typography">
+@media (max-width:600px){
+  #inicio .us_custom_261f4d04{font-size:clamp(32px,calc(18.383px + 4.255vw),36px)!important}
+  #inicio .us_custom_246b90a5{font-size:clamp(22px,calc(15.191px + 2.128vw),24px)!important}
+  #inicio .us_custom_3fd5d53b,
+  #inicio .us_custom_3fd5d53b strong{font-size:clamp(16px,calc(12.596px + 1.064vw),17px)!important}
+  #inicio .us_custom_63638f30{font-size:clamp(18px,calc(7.787px + 3.191vw),21px)!important}
+}
+@media (min-width:480px) and (max-width:600px){
+  #inicio .us_custom_3fd5d53b .wpb_wrapper>p:first-child{white-space:normal!important;letter-spacing:0!important}
+  #inicio .us_custom_3fd5d53b strong{display:inline!important;margin:0!important;white-space:normal!important}
+  #inicio .hero-discovery-line{display:inline!important;white-space:normal!important}
+}@media (max-width:400px){
+  #inicio .us_custom_246b90a5,
+  #inicio .us_custom_3fd5d53b .wpb_wrapper>p:first-child,
+  #inicio .us_custom_3fd5d53b strong,
+  #inicio .hero-discovery-line{white-space:normal!important}
+  #inicio .hero-discovery-line{display:inline!important}
 }
 </style></body>
 </html>
