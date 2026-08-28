@@ -957,4 +957,7 @@
   #olaguia2 .mobile-extra-tool h4{font-size:16px!important;line-height:1.2!important}
   #olaguia .copy-carousel-track .copy-tool-card-content>p,
   #olaguia2 .mobile-extra-tool p{font-size:15px!important;line-height:1.45!important}
+  #olaguia .copy-carousel-viewport{padding-right:0!important;scroll-padding-left:0!important}
+  #olaguia .copy-carousel-track{gap:14px!important}
+  #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 84%!important;scroll-snap-align:start!important}
 }
