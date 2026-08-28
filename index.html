@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   }
   function updateBrainCopy(event){
     if(!brainCopy)return;
-    brainCopy.innerHTML=event.matches?'<p>O cérebro dos seus clientes tende a escolher quem aparece mais.</p><p><strong>Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor.</strong></p><p>Com isso, eles são a primeira e, muitas vezes, a única opção lembrada.</p>':'<p>O cérebro dos seus clientes tende a escolher quem aparece mais. Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor. Com isso, eles são a primeira e, muitas vezes, a única opção lembrada.</p>';
+    brainCopy.innerHTML=event.matches?'<p>O cérebro dos seus clientes tende a escolher quem aparece mais. <strong>Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor.</strong></p><p>Com isso, eles são a primeira e, muitas vezes, a única opção lembrada por quem deseja comprar.</p>':'<p>O cérebro dos seus clientes tende a escolher quem aparece mais. Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor. Com isso, eles são a primeira e, muitas vezes, a única opção lembrada por quem deseja comprar.</p>';
   }
   var mobileImpact=window.matchMedia('(max-width:600px)');
   updateImpactHeading(mobileImpact);

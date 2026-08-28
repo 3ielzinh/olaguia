@@ -522,13 +522,14 @@
   #daniel-kahneman .us_custom_fb37b5dd p:first-child{font-size:13px!important;line-height:1.28!important;letter-spacing:-.025em!important;text-align:center!important}
   #daniel-kahneman .kahneman-line{white-space:nowrap}
   #daniel-kahneman .us_custom_fb37b5dd p:last-child{margin:8px 0 0!important;font-size:15px!important;line-height:1.2!important;text-align:center!important}
-  #daniel-kahneman .us_custom_fb37b5dd p:last-child strong{text-transform:uppercase!important}
+  #daniel-kahneman .us_custom_fb37b5dd p:last-child strong{color:#fff!important;font-size:17px!important;text-transform:uppercase!important}
   #daniel-kahneman .us_custom_5d14945f{font-size:16px!important;line-height:1.25!important;text-align:center!important}
   #daniel-kahneman>.l-section-h>.g-cols.cols_2>.wpb_column:last-child>.vc_column-inner{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important;padding:0!important}
   #daniel-kahneman>.l-section-h>.g-cols.cols_2>.wpb_column:last-child>.vc_column-inner>.w-separator{display:none!important}
   #daniel-kahneman .us_custom_a7f9f7c6,#daniel-kahneman .us_custom_980bb123,#daniel-kahneman .us_custom_980bb123 p,#daniel-kahneman .us_custom_1c37215c{margin:0!important}
   #daniel-kahneman .us_custom_a7f9f7c6{font-size:26px!important;line-height:1.08!important;letter-spacing:-.04em!important}
   #daniel-kahneman .us_custom_980bb123,#daniel-kahneman .us_custom_980bb123 p{font-size:17px!important;line-height:1.3!important}
+  #daniel-kahneman .us_custom_980bb123 p:nth-child(2){font-size:17px!important;line-height:1.3!important;letter-spacing:-.02em!important}
   #daniel-kahneman .us_custom_1c37215c{font-size:22px!important;line-height:1.12!important;letter-spacing:-.035em!important}
 }
 
@@ -860,9 +861,11 @@
   #cta3 p>span:nth-child(2){font-size:17px!important}
   #daniel-kahneman .us_custom_980bb123 p{font-size:17px!important}
   #daniel-kahneman .us_custom_980bb123 .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:18px!important}
-  #daniel-kahneman .us_custom_e8a2a9f1{grid-template-columns:1fr!important;width:80%!important}
-  #daniel-kahneman .us_custom_c88609d4{width:100%!important;height:auto!important;min-height:0!important;aspect-ratio:376/312!important;background-position:center top!important;background-size:cover!important}
+  #daniel-kahneman .us_custom_e8a2a9f1{grid-template-columns:1fr!important;gap:0!important;width:80%!important}
+  #daniel-kahneman .us_custom_c88609d4{width:100%!important;height:270px!important;min-height:270px!important;aspect-ratio:auto!important;background-position:center top!important;background-size:cover!important}
   #daniel-kahneman .us_custom_fd21518e{width:100%!important;height:auto!important;min-height:0!important;overflow:visible!important}
+  #daniel-kahneman .us_custom_fd21518e{padding:0!important;text-align:center!important}
+  #daniel-kahneman .us_custom_fd21518e>.vc_column-inner{width:100%!important;padding:18px 0!important;box-sizing:border-box!important}
   #quemsomos .copy-section-heading>p{font-size:20px!important}
 }
 
@@ -891,6 +894,28 @@
 }
 
 @media (max-width:600px){
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row{align-items:center!important;gap:.65rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{display:inline-grid!important;flex:0 0 1.8rem!important;width:1.8rem!important;height:1.8rem!important;border-radius:50%!important;background:#c38a0a!important;color:#fff!important;font-size:.9rem!important;line-height:1!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span:after{content:none!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{font-size:1.25rem!important;line-height:1.15!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:.35rem 0 .65rem!important;color:#e4b03a!important;font-size:.9rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>p{padding-top:0!important;border-top:0!important;font-size:.9rem!important;line-height:1.45!important}
+}
+
+@media (max-width:600px){
+  #olaguia .copy-carousel-track{gap:1rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card{display:flex!important;flex:0 0 100%!important;min-height:0!important;flex-direction:column!important;background:#fff!important;border:0!important;border-radius:1rem!important;overflow:hidden!important;isolation:isolate!important;box-shadow:0 .03rem .06rem rgba(0,0,0,.1),0 .1rem .3rem rgba(0,0,0,.1)!important;filter:none!important}
+  #olaguia .copy-carousel-track .copy-tool-card:before{display:none!important;content:none!important}
+  #olaguia .copy-carousel-track .copy-tool-card:after{display:none!important}
+  #olaguia .copy-carousel-track .copy-tool-card>img{position:static!important;width:100%!important;height:245px!important;flex:0 0 auto!important;object-fit:cover!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content{position:relative!important;z-index:1!important;display:flex!important;flex:1!important;min-height:0!important;flex-direction:column!important;margin-top:0!important;padding:1.25rem!important;border-radius:0!important;background:#fff!important;color:#126861!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{width:auto!important;height:auto!important;flex:0 0 auto!important;border-radius:0!important;background:transparent!important;color:#d7a22b!important;font-size:1.75rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{color:#126861!important;font-size:1.75rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{color:#072b28!important;font-size:.95rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:auto 0 0!important;padding-top:1rem!important;border-top:2px solid #d7a22b!important;color:#126861!important;font-size:1rem!important;line-height:1.45!important;overflow:visible!important;-webkit-line-clamp:unset!important}
+}
+
+@media (max-width:600px){
   #solucao .us_custom_3fd5d53b > .wpb_wrapper > p:first-child .solution-mobile-break,
   #solucao .us_custom_3fd5d53b > .wpb_wrapper > p:nth-of-type(2) .solution-mobile-break{
     display:initial!important;
@@ -907,4 +932,29 @@
   #solucao .us_custom_3fd5d53b > .wpb_wrapper > p:first-child .solution-mobile-break + .solution-fixed-line::before{
     content:' ';
   }
+}
+
+@media (max-width:600px){
+  #olaguia .copy-carousel-track .copy-tool-card{height:auto!important;min-height:0!important;padding-top:18px!important}
+  #olaguia .copy-carousel-track .copy-tool-card>img{height:185px!important;min-height:0!important;border-radius:10px!important}
+  #olaguia .copy-carousel-track .copy-tool-card:nth-child(4)>img{height:185px!important;min-height:0!important;transform:none!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row{align-items:baseline!important;gap:.45rem!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{display:inline-block!important;width:auto!important;height:auto!important;line-height:1.05!important;vertical-align:baseline!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span:after{content:"."!important;display:inline!important;line-height:inherit!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{line-height:1.05!important}
+}
+
+@media (max-width:600px){
+  #olaguia2 .mobile-extra-tool .mobile-tool-number{font-size:34px!important;line-height:1!important}
+}
+
+@media (max-width:600px){
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{font-size:36px!important;line-height:1!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{font-size:30px!important;line-height:1!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{font-size:16px!important;line-height:1.2!important}
+  #olaguia2 .mobile-extra-tool .mobile-tool-number{font-size:36px!important;line-height:1!important}
+  #olaguia2 .mobile-extra-tool h3{font-size:30px!important;line-height:1!important}
+  #olaguia2 .mobile-extra-tool h4{font-size:16px!important;line-height:1.2!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>p,
+  #olaguia2 .mobile-extra-tool p{font-size:15px!important;line-height:1.45!important}
 }
