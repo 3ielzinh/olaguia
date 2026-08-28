@@ -13,6 +13,7 @@
 }
 
 #quemsomos .copy-testimonials-grid.about-motion-ready article{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s cubic-bezier(.2,.75,.25,1)}
+#daniel-kahneman .quote-mobile-break{display:none}
 #quemsomos .copy-testimonials-grid.about-motion-ready.is-revealed article{opacity:1;transform:translateY(0)}
 #quemsomos .copy-testimonials-grid.about-motion-ready article:nth-child(2){transition-delay:.08s}
 #quemsomos .copy-testimonials-grid.about-motion-ready article:nth-child(3){transition-delay:.16s}
@@ -41,6 +42,8 @@
 #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{color:#126861;font-size:1.75rem;line-height:1.05}
 #olaguia .copy-carousel-track .copy-tool-card-content>h4{color:#072b28}
 #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:auto 0 0;padding-top:1rem;border-top:2px solid #d7a22b;color:#126861;font-size:1rem;line-height:1.45;overflow:visible}
+#olaguia .copy-carousel-track .copy-tool-card{padding:10px 0}
+#olaguia .copy-carousel-track .copy-tool-card-content{padding:10px}
 @media (hover:hover){
 	#olaguia .copy-carousel-track .copy-tool-card{transition:transform .25s ease,box-shadow .25s ease}
 	#olaguia .copy-carousel-track .copy-tool-card:hover{transform:translateY(-4px);box-shadow:0 .03rem .06rem rgba(0,0,0,.1),0 .1rem .3rem rgba(0,0,0,.1)}

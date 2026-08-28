@@ -1,6 +1,8 @@
 .mobile-goals,.mobile-extra-tools,.mobile-layer-list,.mobile-scroll-indicator{display:none}
 @media(max-width:600px){
   #inicio{background:#fff!important}
+  #daniel-kahneman .quote-mobile-break{display:initial!important}
+  #daniel-kahneman .us_custom_5d14945f p em{font-style:italic!important}
   html,body{overflow-x:hidden}
   .l-main>section{overflow:hidden}
   .l-section-h{width:100%!important}
@@ -945,13 +947,20 @@
 }
 
 @media (max-width:600px){
+  #olaguia .copy-carousel-track .copy-tool-card{padding:10px 0!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content{padding:10px!important}
+}
+
+@media (max-width:600px){
   #olaguia2 .mobile-extra-tool .mobile-tool-number{font-size:34px!important;line-height:1!important}
 }
 
 @media (max-width:600px){
-  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{font-size:36px!important;line-height:1!important}
-  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{font-size:30px!important;line-height:1!important}
-  #olaguia .copy-carousel-track .copy-tool-card-content>h4{font-size:16px!important;line-height:1.2!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{font-size:34px!important;line-height:1!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{font-size:28px!important;line-height:1!important}
+  #olaguia .copy-carousel-track .copy-tool-card:nth-child(4) .tool-title-row>h3{white-space:nowrap!important;letter-spacing:-.05em!important}
+  #olaguia .copy-carousel-track .copy-tool-card:nth-child(4) .tool-title-word-small{font-size:24px!important;line-height:1!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:0!important;padding-top:2px!important;font-size:16px!important;line-height:1.2!important}
   #olaguia2 .mobile-extra-tool .mobile-tool-number{font-size:36px!important;line-height:1!important}
   #olaguia2 .mobile-extra-tool h3{font-size:30px!important;line-height:1!important}
   #olaguia2 .mobile-extra-tool h4{font-size:16px!important;line-height:1.2!important}
@@ -960,4 +969,5 @@
   #olaguia .copy-carousel-viewport{padding-right:0!important;scroll-padding-left:0!important}
   #olaguia .copy-carousel-track{gap:14px!important}
   #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 84%!important;scroll-snap-align:start!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:3px 0 0!important;padding-top:12px!important}
 }
