@@ -16,8 +16,10 @@ O comando `npm run build` gera a versão estática em `dist/`, usada automaticam
 
 ## Arquivos principais
 
-- `index.html`: marcação semântica completa e estilos específicos da página.
-- `public/`: imagens, fontes, folhas de estilo e scripts locais.
+- `index.html`: marcação semântica completa, sem tags `<style>` ou atributos `style`.
+- `public/css/`: módulos externos `embedded-base.css`, `embedded-components.css`, `embedded-responsive.css` e `embedded-inline-properties.css`.
+- `work/extract-embedded-css.mjs`: ferramenta de migração e deduplicação dos valores de propriedades inline.
+- `work/build-vercel.mjs`: publica o HTML e os módulos CSS externos sem transformação adicional.
 - `server.mjs`: servidor HTTP local sem dependências externas.
 - `DESIGN_TOKENS.md`: cores, tipografia, dimensões e breakpoint medidos do original.
 - `work/mirror/build-mirror.mjs`: utilitário de reconstrução do espelho a partir da referência pública.
