@@ -838,7 +838,7 @@
 @media (max-width:600px){
   #publico .public-swipe-hint{margin-bottom:-8px!important;font-size:12px!important}
   #olaguia .mobile-tools-heading{gap:0!important;margin-bottom:10px!important;padding-bottom:0!important}
-  #olaguia .mobile-tools-heading p.tools-swipe-hint{margin:0!important;font-size:12px!important}
+  #olaguia .mobile-tools-heading p.tools-swipe-hint{margin:18px 0 0!important;font-size:12px!important}
   #quemsomos .testimonial-swipe-hint{margin-bottom:10px!important;font-size:12px!important}
 }
 
