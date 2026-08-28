@@ -385,7 +385,7 @@
   #sentencas .g-cols.cols_2>.wpb_column:nth-child(2) .w-image{width:100%!important;max-width:none!important;margin:0!important;overflow:visible!important}
   #sentencas .g-cols.cols_2>.wpb_column:nth-child(2) .w-image-h{position:relative!important;width:100%!important;height:auto!important;overflow:visible!important;isolation:auto!important}
   #sentencas .g-cols.cols_2>.wpb_column:nth-child(2) .w-image-h:before,#sentencas .g-cols.cols_2>.wpb_column:nth-child(2) .w-image-h:after{display:none!important;content:none!important}
-  #sentencas .g-cols.cols_2>.wpb_column:nth-child(2) img{position:relative!important;display:block!important;z-index:1!important;left:-5%!important;top:auto!important;bottom:auto!important;width:110%!important;height:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important;mix-blend-mode:multiply!important}
+  #sentencas .g-cols.cols_2>.wpb_column:nth-child(2) img{position:relative!important;display:block!important;z-index:1!important;left:-10%!important;top:auto!important;bottom:auto!important;width:120%!important;height:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important;mix-blend-mode:multiply!important}
   #sentencas .g-cols.cols_2{row-gap:36px!important}
   #sentencas>.l-section-h>.g-cols>.wpb_column>.vc_column-inner>.w-separator{display:none!important}
   #sentencas .us_custom_4d832b34{margin:36px auto 0!important;font-size:22px!important;line-height:1.12!important;letter-spacing:-.035em!important}
@@ -836,10 +836,10 @@
 }
 
 @media (max-width:600px){
-  #publico .public-swipe-hint{margin-bottom:0!important;font-size:12px!important}
-  #olaguia .mobile-tools-heading{margin-bottom:18px!important;padding-bottom:0!important}
+  #publico .public-swipe-hint{margin-bottom:-8px!important;font-size:12px!important}
+  #olaguia .mobile-tools-heading{gap:0!important;margin-bottom:10px!important;padding-bottom:0!important}
   #olaguia .mobile-tools-heading p.tools-swipe-hint{margin:0!important;font-size:12px!important}
-  #quemsomos .testimonial-swipe-hint{margin-bottom:18px!important;font-size:12px!important}
+  #quemsomos .testimonial-swipe-hint{margin-bottom:10px!important;font-size:12px!important}
 }
 
 @media (max-width:600px){
