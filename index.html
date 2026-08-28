@@ -1216,8 +1216,6 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   #olaguia2 .mobile-extra-tool h3{margin:0!important;color:#126861!important;font-size:30px!important;font-weight:800!important;line-height:1!important;letter-spacing:-.045em!important}
   #olaguia2 .mobile-extra-tool h4{margin:0!important;font-size:17px!important;font-style:italic!important;font-weight:400!important;line-height:1.2!important}
   #olaguia2 .mobile-extra-tool p{display:-webkit-box!important;min-height:calc(1.3em * 4)!important;max-height:calc(1.3em * 4)!important;margin:3px 0 0!important;padding-top:12px!important;border-top:2px solid #d7a22b!important;overflow:hidden!important;font-size:15px!important;line-height:1.3!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:4!important}
-  #olaguia2 .mobile-extra-tool:first-child p{min-height:calc(1.3em * 2 + 14px)!important;max-height:calc(1.3em * 2 + 14px)!important;letter-spacing:-.055em!important;-webkit-line-clamp:2!important}
-  #olaguia2 .mobile-extra-tool:first-child .consulting-line{white-space:nowrap}
   #olaguia2 .us_custom_cc0ffe16{margin:0!important}
   #olaguia2 .us_custom_cc0ffe16 .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important}
   #olaguia2 .us_custom_cc0ffe16 h3{margin:0!important}
@@ -1275,7 +1273,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     var secret=continuation.querySelector('.us_custom_7626ac55 .w-text-value');
     if(secret)secret.innerHTML='Um <strong>grande segredo</strong> para o sucesso<br class="ecosystem-mobile-break"> contínuo do seu negócio está aqui:';
     var consultingText=continuation.querySelector('.mobile-extra-tool:first-child p');
-    if(consultingText)consultingText.innerHTML='<span class="consulting-line">Encontro em grupo, por vídeo conferência, para tirar</span><br><span class="consulting-line">suas dúvidas e ajudar com as melhores estratégias para seu negócio.</span>';
+    if(consultingText)consultingText.textContent='Encontro em grupo, por vídeo conferência, para tirar suas dúvidas e ajudar com as melhores estratégias para seu negócio.';
     var finalTexts=continuation.querySelectorAll('.us_custom_cc0ffe16 .wpb_wrapper>h3');
     if(finalTexts[1])finalTexts[1].textContent='Guto precisa mandar o texto';
   }
