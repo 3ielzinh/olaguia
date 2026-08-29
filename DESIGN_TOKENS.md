@@ -28,7 +28,7 @@ Tokens extraídos diretamente dos estilos computados do site de referência em 2
 | Token | Valor |
 |---|---:|
 | Canvas máximo | `1300px` |
-| Conteúdo máximo | `1140px` |
+| Conteúdo — desktop e ultrawide | `60vw`, centralizado |
 | Header desktop | `80px` |
 | Padding vertical de seção — desktop | `64px` |
 | Padding vertical de seção — mobile | `24px` |
@@ -36,6 +36,8 @@ Tokens extraídos diretamente dos estilos computados do site de referência em 2
 | CTA radius | `6.4px` |
 | Sombra padrão | `0 5px 15px rgba(0,0,0,.15)` |
 | Breakpoint do menu móvel | `1000px` |
+| Breakpoint de conteúdo desktop | `1025px` |
+| Breakpoint ultrawide | `1536px` |
 
 ## Estrutura
 
