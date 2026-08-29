@@ -497,8 +497,13 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     function show(){
       if(revealed)return;
       revealed=true;
-      reveal();
-      cleanup();
+      target.getBoundingClientRect();
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          reveal();
+          cleanup();
+        });
+      });
     }
     function check(){
       var bounds=target.getBoundingClientRect();

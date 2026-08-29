@@ -1,15 +1,15 @@
 .wpb_animate_when_almost_visible { opacity: 1; }
 
-#sentencas.sentences-motion-ready .us_custom_13fa9e6c{opacity:0;transform:translate3d(0,22px,0) scale(.985);transition:opacity .58s ease,transform .68s cubic-bezier(.16,1,.3,1)}
-#sentencas.sentences-motion-ready .us_custom_13fa9e6c.is-revealed{opacity:1;transform:translate3d(0,0,0) scale(1)}
+#sentencas.sentences-motion-ready .us_custom_13fa9e6c{opacity:0;transform:translate3d(0,22px,0) scale(.985);animation:none!important;transition:none}
+#sentencas.sentences-motion-ready .us_custom_13fa9e6c.is-revealed{opacity:1;transform:translate3d(0,0,0) scale(1);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.16,1,.3,1)}
 
 @media(prefers-reduced-motion:reduce){
 	#sentencas.sentences-motion-ready .us_custom_13fa9e6c{transform:none;transition:opacity .25s ease}
 }
 
-#quemsomos .copy-testimonials-grid.about-motion-ready article{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s cubic-bezier(.2,.75,.25,1)}
+#quemsomos .copy-testimonials-grid.about-motion-ready article{opacity:0;transform:translateY(22px);transition:none}
 #daniel-kahneman .quote-mobile-break{display:none}
-#quemsomos .copy-testimonials-grid.about-motion-ready.is-revealed article{opacity:1;transform:translateY(0)}
+#quemsomos .copy-testimonials-grid.about-motion-ready.is-revealed article{opacity:1;transform:translateY(0);transition:opacity .72s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.16,1,.3,1)}
 #quemsomos .copy-testimonials-grid.about-motion-ready article:nth-child(2){transition-delay:.08s}
 #quemsomos .copy-testimonials-grid.about-motion-ready article:nth-child(3){transition-delay:.16s}
 #quemsomos .copy-testimonials-grid.about-motion-ready article:nth-child(4){transition-delay:.24s}
