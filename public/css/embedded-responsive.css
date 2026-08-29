@@ -690,16 +690,16 @@
   #pablo-retrato .pablo-portrait-copy{gap:18px!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
   #pablo-retrato .pablo-portrait-copy p{margin:0!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
   #pablo-retrato .pablo-portrait-copy p:last-child{font-weight:800!important}
-  #pablo-lateral{position:relative!important;display:block!important;min-height:0!important;overflow:hidden!important;background:#126861!important}
-  #pablo-lateral .pablo-split-photo{position:absolute!important;inset:0 auto 0 0!important;width:78%!important;height:100%!important;align-self:auto!important;border:0!important;background-position:-58px center!important;background-size:auto 100%!important;box-shadow:none!important}
-  #pablo-lateral .pablo-split-photo:after{background:linear-gradient(90deg,rgba(18,104,97,.18) 0%,rgba(18,104,97,.32) 42%,rgba(18,104,97,.92) 70%,#126861 88%,#126861 100%)!important}
-  #pablo-lateral .pablo-split-content{position:relative!important;z-index:1!important;display:flex!important;width:80%!important;min-width:0!important;max-width:none!important;min-height:0!important;flex-direction:column!important;justify-content:center!important;box-sizing:border-box!important;margin:0 0 0 20%!important;padding:32px 18px!important;border:0!important;background:transparent!important;box-shadow:none!important;color:#fff!important;text-align:center!important}
+  #pablo-lateral{position:relative!important;display:block!important;min-height:497px!important;overflow:hidden!important;background:#172a28!important}
+  #pablo-lateral .pablo-split-photo{position:absolute!important;inset:0 auto 0 0!important;width:78%!important;height:100%!important;overflow:visible!important;align-self:auto!important;border:0!important;background-position:-145px center!important;background-size:auto 100%!important;box-shadow:none!important}
+  #pablo-lateral .pablo-split-photo:after{inset:0!important;width:100%!important;background:linear-gradient(90deg,rgba(23,42,40,.14) 0%,rgba(23,42,40,.3) 18%,rgba(23,42,40,.82) 30%,#172a28 44%,#172a28 100%)!important}
+  #pablo-lateral .pablo-split-content{position:relative!important;z-index:1!important;display:flex!important;width:80%!important;min-width:0!important;max-width:none!important;min-height:497px!important;flex-direction:column!important;justify-content:center!important;box-sizing:border-box!important;margin:0 0 0 20%!important;padding:32px 18px!important;border:0!important;background:transparent!important;box-shadow:none!important;color:#fff!important;text-align:center!important}
   #pablo-lateral .pablo-split-kicker{align-self:center!important;margin:0 0 36px!important;padding:5px 15px!important;font-size:11px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:normal!important}
   #pablo-lateral h2{margin:0 0 6px!important;padding:0!important;font-size:24px!important;font-weight:400!important;line-height:1.08!important;letter-spacing:-.04em!important}
   #pablo-lateral .pablo-split-role{margin:0 0 18px!important;font-size:12px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:-.05em!important}
   #pablo-lateral .pablo-split-copy{gap:18px!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
   #pablo-lateral .pablo-split-copy p{margin:0!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
-  #pablo-lateral .pablo-split-copy p:last-child{font-weight:800!important}
+  #pablo-lateral .pablo-split-copy p:last-child{width:calc(125% + 9px)!important;margin-left:calc(-25% - 9px)!important;font-weight:800!important;text-align:center!important}
   #pablo-lateral h2,#pablo-lateral .pablo-split-role,#pablo-lateral .pablo-split-copy p{color:#fff!important}
   #cta4{margin:0!important;padding:var(--mobile-section-space,32px) 14px!important}
   #cta4 .l-section-h{padding:0!important}

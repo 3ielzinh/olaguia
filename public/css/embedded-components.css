@@ -191,9 +191,9 @@
 .pablo-portrait-copy{display:flex;flex-direction:column;gap:1.1rem}
 .pablo-portrait-copy p{margin:0;color:#fff;font-size:1rem;line-height:1.5}
 .pablo-portrait-copy p:last-child{font-weight:700}
-.pablo-split-section{position:relative;display:block;overflow:hidden;background:#126861;color:#fff}
-.pablo-split-photo{position:absolute;inset:0 auto 0 0;width:78%;height:100%;background:#126861 url('/wp-content/uploads/pablo-retrato-fundo.jpeg') 68% center/cover no-repeat}
-.pablo-split-photo:after{position:absolute;inset:0;content:"";background:linear-gradient(90deg,rgba(18,104,97,.18) 0%,rgba(18,104,97,.32) 42%,rgba(18,104,97,.92) 70%,#126861 88%,#126861 100%)}
+.pablo-split-section{position:relative;display:block;overflow:hidden;background:#172a28;color:#fff}
+.pablo-split-photo{position:absolute;inset:0 auto 0 0;width:78%;height:100%;background:#172a28 url('/wp-content/uploads/pablo-retrato-fundo.jpeg') 68% center/cover no-repeat}
+.pablo-split-photo:after{position:absolute;inset:0;content:"";background:linear-gradient(90deg,rgba(23,42,40,.16) 0%,rgba(23,42,40,.28) 18%,rgba(23,42,40,.72) 34%,rgba(23,42,40,.96) 52%,#172a28 72%,#172a28 100%)}
 .pablo-split-content{position:relative;z-index:1;display:flex;width:70%;box-sizing:border-box;margin-left:30%;flex-direction:column;justify-content:center;padding:4rem clamp(2rem,6vw,6rem);background:transparent;text-align:left}
 .pablo-split-kicker{align-self:flex-start;padding:5px 15px;background:#d7a22b;color:#fff;font-size:.7rem;font-weight:400;line-height:1.2}
 .pablo-split-section h2{margin:2.25rem 0 .4rem;padding:0;color:#fff;font-size:clamp(2rem,4vw,3.5rem);font-weight:400;line-height:1.08;letter-spacing:-.04em}
