@@ -481,6 +481,43 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   scroller.addEventListener('click',function(event){if(moved){event.preventDefault();event.stopPropagation();moved=false}},true);
 })();
 </script>
+<script id="scroll-reveal-helper">
+(function(){
+  window.olaRevealOnScroll=function(target,reveal,threshold){
+    if(!target)return reveal();
+    var observer;
+    var revealed=false;
+    function cleanup(){
+      window.removeEventListener('scroll',check);
+      window.removeEventListener('resize',check);
+      window.removeEventListener('pageshow',check);
+      document.removeEventListener('visibilitychange',check);
+      if(observer)observer.disconnect();
+    }
+    function show(){
+      if(revealed)return;
+      revealed=true;
+      reveal();
+      cleanup();
+    }
+    function check(){
+      var bounds=target.getBoundingClientRect();
+      if(bounds.top<=window.innerHeight*.9&&bounds.bottom>=0)show();
+    }
+    if(typeof window.IntersectionObserver==='function'){
+      observer=new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){if(entry.isIntersecting)show()});
+      },{threshold:threshold||.08,rootMargin:'0px 0px -10% 0px'});
+      observer.observe(target);
+    }
+    window.addEventListener('scroll',check,{passive:true});
+    window.addEventListener('resize',check,{passive:true});
+    window.addEventListener('pageshow',check);
+    document.addEventListener('visibilitychange',check);
+    requestAnimationFrame(check);
+  };
+})();
+</script>
 <script id="mobile-sentences-section-v2-script">
 (function(){
   var section=document.querySelector('#sentencas');
@@ -503,12 +540,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   updateSentenceImage(mobile);
   if(mobile.addEventListener)mobile.addEventListener('change',updateSentenceImage);
   section.classList.add('sentences-motion-ready');
-  if('IntersectionObserver' in window){
-    var observer=new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){if(entry.isIntersecting){section.classList.add('is-revealed');observer.disconnect()}});
-    },{threshold:.18});
-    observer.observe(section);
-  }else section.classList.add('is-revealed');
+  window.olaRevealOnScroll(section.querySelector('.us_custom_13fa9e6c'),function(){section.classList.add('is-revealed')},.18);
 })();
 </script>
 <script id="about-scroll-reveal">
@@ -517,17 +549,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var grid=section&&section.querySelector('.copy-testimonials-grid');
   if(!grid)return;
   grid.classList.add('about-motion-ready');
-  if('IntersectionObserver' in window){
-    var observer=new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          grid.classList.add('is-revealed');
-          observer.disconnect();
-        }
-      });
-    },{threshold:.18});
-    observer.observe(grid);
-  }else grid.classList.add('is-revealed');
+  window.olaRevealOnScroll(grid,function(){grid.classList.add('is-revealed')},.18);
 })();
 </script>
 <script id="mobile-solution-section-v2-script">
@@ -591,12 +613,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
       titleRow.append(number,title);
     });
     ecosystem.classList.add('ecosystem-motion-ready');
-    if('IntersectionObserver' in window){
-      var observer=new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){if(entry.isIntersecting){ecosystem.classList.add('is-revealed');observer.disconnect()}});
-      },{threshold:.08});
-      observer.observe(ecosystem);
-    }else ecosystem.classList.add('is-revealed');
+    window.olaRevealOnScroll(goals,function(){ecosystem.classList.add('is-revealed')},.08);
   }
   var continuation=document.querySelector('#olaguia2');
   if(continuation){

@@ -9,7 +9,7 @@
 #sentencas.sentences-motion-ready .us_custom_13fa9e6c:nth-of-type(7){transition-delay:.36s}
 
 @media(prefers-reduced-motion:reduce){
-	#sentencas.sentences-motion-ready .us_custom_13fa9e6c{opacity:1;transform:none;transition:none}
+	#sentencas.sentences-motion-ready .us_custom_13fa9e6c{transform:none;transition:opacity .25s ease}
 }
 
 #quemsomos .copy-testimonials-grid.about-motion-ready article{opacity:0;transform:translateY(22px);transition:opacity .52s ease,transform .52s cubic-bezier(.2,.75,.25,1)}
@@ -22,7 +22,7 @@
 #quemsomos .copy-testimonials-grid.about-motion-ready article:nth-child(6){transition-delay:.40s}
 
 @media(prefers-reduced-motion:reduce){
-	#quemsomos .copy-testimonials-grid.about-motion-ready article{opacity:1;transform:none;transition:none}
+	#quemsomos .copy-testimonials-grid.about-motion-ready article{transform:none;transition:opacity .25s ease}
 }
 
 /* Keep the first five tool cards visually aligned with cards six and seven. */

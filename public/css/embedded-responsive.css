@@ -400,7 +400,7 @@
   #sentencas.sentences-motion-ready .us_custom_13fa9e6c:nth-of-type(7){transition-delay:.36s!important}
 }
 @media (prefers-reduced-motion:reduce){
-  #sentencas.sentences-motion-ready .us_custom_13fa9e6c{opacity:1!important;transform:none!important;transition:none!important}
+  #sentencas.sentences-motion-ready .us_custom_13fa9e6c{transform:none!important;transition:opacity .25s ease!important}
 }
 
 @media (max-width:600px){
@@ -510,7 +510,7 @@
   #cta3 .w-separator,#cta3 .w-btn-wrapper{display:none!important}
 }
 @media (prefers-reduced-motion:reduce){
-  #olaguia.ecosystem-motion-ready .mobile-goal-card img,#olaguia.ecosystem-motion-ready .mobile-goal-card span{opacity:1!important;transform:none!important;transition:none!important}
+  #olaguia.ecosystem-motion-ready .mobile-goal-card img,#olaguia.ecosystem-motion-ready .mobile-goal-card span{transform:none!important;transition:opacity .25s ease!important}
 }
 
 @media (max-width:600px){
@@ -552,21 +552,25 @@
   #quemsomos .mobile-stats-marquee{display:flex!important;flex-direction:column!important;gap:12px!important;width:100%!important;margin:28px 0!important;overflow:hidden!important}
   #quemsomos .stats-marquee-row{width:100%!important;overflow:hidden!important;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)!important;mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)!important}
   #quemsomos .stats-marquee-track{display:flex!important;width:max-content!important;will-change:transform!important}
-  #quemsomos .stats-marquee-row:first-child .stats-marquee-track{animation:history-stats-left 19s linear infinite!important}
-  #quemsomos .stats-marquee-row:last-child .stats-marquee-track{animation:history-stats-right 16s linear infinite!important}
+  #quemsomos .stats-marquee-row:first-child .stats-marquee-track{-webkit-animation:history-stats-left 19s linear infinite!important;animation:history-stats-left 19s linear infinite!important}
+  #quemsomos .stats-marquee-row:last-child .stats-marquee-track{-webkit-animation:history-stats-right 16s linear infinite!important;animation:history-stats-right 16s linear infinite!important}
   #quemsomos .stats-marquee-set{display:flex!important;gap:12px!important;padding-right:12px!important}
   #quemsomos .stats-marquee-card{display:flex!important;flex:0 0 236px!important;height:96px!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;padding:14px!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:14px!important;background:rgba(255,255,255,.10)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)!important;text-align:center!important}
   #quemsomos .stats-marquee-card strong{color:#fff!important;font-size:29px!important;font-weight:800!important;line-height:1!important;letter-spacing:-.04em!important}
   #quemsomos .stats-marquee-card span{margin-top:8px!important;color:#fff!important;font-size:12px!important;font-weight:700!important;line-height:1.1!important;letter-spacing:.035em!important;text-transform:uppercase!important}
-  #quemsomos .stats-marquee-row:hover .stats-marquee-track,#quemsomos .stats-marquee-row:focus-within .stats-marquee-track{animation-play-state:paused!important}
+  #quemsomos .stats-marquee-row:focus-within .stats-marquee-track{-webkit-animation-play-state:paused!important;animation-play-state:paused!important}
   #quemsomos .copy-about-intro,#quemsomos .copy-testimonials-title,#quemsomos .copy-testimonials-grid,#quemsomos>.l-section-h>.mobile-scroll-indicator{margin-left:14px!important;margin-right:14px!important}
 }
+@-webkit-keyframes history-stats-left{from{-webkit-transform:translateX(0)}to{-webkit-transform:translateX(-50%)}}
 @keyframes history-stats-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@-webkit-keyframes history-stats-right{from{-webkit-transform:translateX(-50%)}to{-webkit-transform:translateX(0)}}
 @keyframes history-stats-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media (hover:hover) and (pointer:fine){
+  #quemsomos .stats-marquee-row:hover .stats-marquee-track{-webkit-animation-play-state:paused!important;animation-play-state:paused!important}
+}
 @media (prefers-reduced-motion:reduce){
-  #quemsomos .stats-marquee-track{animation:none!important;transform:none!important}
-  #quemsomos .stats-marquee-row{overflow-x:auto!important;scrollbar-width:none!important}
-  #quemsomos .stats-marquee-row::-webkit-scrollbar{display:none!important}
+  #quemsomos .stats-marquee-row:first-child .stats-marquee-track{-webkit-animation-duration:38s!important;animation-duration:38s!important}
+  #quemsomos .stats-marquee-row:last-child .stats-marquee-track{-webkit-animation-duration:32s!important;animation-duration:32s!important}
 }
 
 #quemsomos .copy-testimonials-grid>.testimonial-clone{display:none!important}
