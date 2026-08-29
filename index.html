@@ -110,6 +110,35 @@ Todos os direitos reservados.</p>
 </div></div></div></div></div></div></section>
 </footer>	<button id="w-header-show" class="w-header-show" aria-label="Menu"><span>Menu</span></button>
 	<div class="w-header-overlay"></div>
+	<script id="complete-navigation-menu">
+(function(){
+  var list=document.querySelector('.w-nav-list.level_1');
+  if(!list)return;
+  var nav=list.closest('.w-nav');
+  var useMobileMenu=window.matchMedia('(max-width:1279px)').matches;
+  nav.classList.toggle('type_mobile',useMobileMenu);
+  nav.classList.toggle('type_desktop',!useMobileMenu);
+  var items=[
+    ['Público','#publico'],
+    ['Problema','#sentencas'],
+    ['Solução','#solucao'],
+    ['O Ecossistema','#olaguia'],
+    ['Segredo','#daniel-kahneman'],
+    ['Quem somos','#quemsomos'],
+    ['Como funciona','#pergunta'],
+    ['Condição Especial','#cta4'],
+    ['O Criador','#pablo-lateral']
+  ];
+  list.innerHTML=items.map(function(item,index){
+    var id=206+index;
+    return '<li id="menu-item-'+id+'" class="menu-item menu-item-type-custom menu-item-object-custom w-nav-item level_1 menu-item-'+id+'"><a class="w-nav-anchor level_1" href="'+item[1]+'"><span class="w-nav-title">'+item[0]+'</span></a></li>';
+  }).join('')+'<li class="w-nav-close"></li>';
+  var options=list.nextElementSibling;
+  if(options&&options.classList.contains('w-nav-options')){
+    options.onclick=function(){return {mobileWidth:1280,mobileBehavior:1}};
+  }
+})();
+	</script>
 		<script id="us-global-settings">
 		// Store some global theme options used in JS
 		window.$us = window.$us || {};
@@ -126,7 +155,7 @@ Todos os direitos reservados.</p>
 		$us.langOptions.magnificPopup.tCounter = '%curr% de %total%';
 
 		$us.navOptions = ( $us.navOptions || {} );
-		$us.navOptions.mobileWidth = 900;
+    $us.navOptions.mobileWidth = 1280;
 		$us.navOptions.togglable = true;
 		$us.ajaxUrl = '/wp-admin/admin-ajax.php';
 		$us.templateDirectoryUri = '/wp-content/themes/site';
