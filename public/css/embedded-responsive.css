@@ -701,6 +701,7 @@
   #pablo-lateral .pablo-split-role{margin:0 0 18px!important;font-size:12px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:-.05em!important}
   #pablo-lateral .pablo-split-copy{gap:18px!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
   #pablo-lateral .pablo-split-copy p{margin:0!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
+  #pablo-lateral .pablo-split-copy p:nth-child(-n+2){font-size:13px!important}
   #pablo-lateral .pablo-split-copy p:last-child{width:calc(125% + 9px)!important;margin-top:0!important;margin-left:calc(-25% - 9px)!important;font-weight:400!important;text-align:center!important;text-transform:uppercase!important}
   #pablo-lateral h2,#pablo-lateral .pablo-split-role,#pablo-lateral .pablo-split-copy p{color:#fff!important}
   #cta4{margin:0!important;padding:var(--mobile-section-space,32px) 14px!important}

@@ -132,7 +132,8 @@ Os valores abaixo sao os tamanhos realmente computados pelo navegador. Textos re
 - Selo `O CRIADOR` - **11px**
 - `Pablo Santurio` - **24px**
 - `Editor da Revista...` - **12px**
-- Tres paragrafos da biografia - **15px**
+- Dois primeiros paragrafos da biografia - **13px**
+- Terceiro paragrafo da biografia - **15px**
 
 ## Dobra 14 - CTA final
 
