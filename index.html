@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     var goals=ecosystem.querySelector('.mobile-goals');
     var carousel=ecosystem.querySelector('.copy-carousel');
     if(mainHeading)mainHeading.innerHTML='<strong>O Ecossistema Olá Guia</strong>';
-    if(mainIntro)mainIntro.textContent='Imagine ter um arsenal completo de ferramentas para:';
+    if(mainIntro)mainIntro.innerHTML='Imagine ter um <strong>arsenal completo de ferramentas para:</strong>';
     if(goals&&carousel&&!ecosystem.querySelector('.mobile-tools-heading')){
       var toolsHeading=document.createElement('div');
       toolsHeading.className='mobile-tools-heading';
@@ -606,7 +606,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     if(consultingText)consultingText.textContent='Encontro em grupo, por vídeo conferência, para tirar suas dúvidas e ajudar com as melhores estratégias para seu negócio.';
   }
   var finalTexts=document.querySelectorAll('#cta3 .us_custom_cc0ffe16 .wpb_wrapper>h3');
-  if(finalTexts[1])finalTexts[1].textContent='Sabe por quê? Porque uma solução assim não existia!';
+  if(finalTexts[1])finalTexts[1].innerHTML='Sabe por quê? <strong>Porque uma solução assim não existia!</strong>';
   var cta3Intro=document.querySelector('#cta3 .us_custom_cta3_intro');
   var cta3IntroText=cta3Intro&&cta3Intro.querySelector('.wpb_wrapper>p');
   if(cta3IntroText)cta3IntroText.innerHTML='Agora você terá acesso a uma estrutura de marketing completa e integrada, <strong>pensada para a realidade do seu negócio e por um valor que cabe no seu orçamento.</strong>';
@@ -656,6 +656,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   if(!section)return;
   var heading=section.querySelector('.copy-section-heading h2');
   if(heading)heading.innerHTML='<strong>Nossa História</strong>';
+  var historyIntro=section.querySelector('.copy-section-heading p');
+  if(historyIntro)historyIntro.innerHTML='Por trás do Ecossistema Olá Guia há <strong>uma história de paixão, resiliência e inovação.</strong>';
   var aboutIntro=section.querySelector('.copy-about-intro');
   if(aboutIntro)aboutIntro.innerHTML='São mais de 20 anos dedicados à nossa missão: <strong>ajudar profissionais liberais e negócios locais a conquistar novos clientes e multiplicar suas vendas.</strong>';
   var stats=section.querySelector('.copy-stats-grid');
@@ -879,7 +881,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   function updateIntro(event){
     if(!intro)return;
     intro.classList.toggle('access-intro-primary',event.matches);
-    intro.textContent=event.matches?'O Ecossistema Olá Guia opera em um Clube de Assinatura, com um valor mensal que cabe no seu bolso.':'O Ecossistema Olá Guia opera em um Clube de Assinatura, com um valor mensal que cabe no seu bolso. Você não precisa mais contratar vários profissionais. Agora terá uma estrutura de divulgação completa.';
+    intro.innerHTML=event.matches?'O Ecossistema Olá Guia opera em um Clube de Assinatura, <strong>com um valor mensal que cabe no seu bolso.</strong>':'O Ecossistema Olá Guia opera em um Clube de Assinatura, <strong>com um valor mensal que cabe no seu bolso.</strong> Você não precisa mais contratar vários profissionais. Agora terá uma estrutura de divulgação completa.';
     introDetail.hidden=!event.matches;
     if(event.matches)introDetail.innerHTML='<strong>Você não precisa mais contratar vários profissionais.</strong> Agora terá uma estrutura de divulgação completa.';
   }
