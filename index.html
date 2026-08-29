@@ -931,6 +931,25 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   }
 })();
 </script>
+<script id="pablo-portrait-section-script">
+(function(){
+  var pablo=document.querySelector('#pablosanturio');
+  var cta=document.querySelector('#cta4');
+  if(!pablo||!cta||document.querySelector('#pablo-retrato'))return;
+  var section=document.createElement('section');
+  section.id='pablo-retrato';
+  section.className='pablo-portrait-section';
+  section.setAttribute('aria-labelledby','pablo-retrato-titulo');
+  section.innerHTML='<div class="pablo-portrait-content"><span class="pablo-portrait-kicker">O CRIADOR</span><h2 id="pablo-retrato-titulo">Pablo Santurio</h2><p class="pablo-portrait-role">Editor da Revista Olá Guia e criador do Ecossistema.</p><div class="pablo-portrait-copy"><p>Pablo abandonou uma carreira de sucesso em uma das maiores consultorias globais, onde reestruturava grandes corporações, para seguir o sonho de morar à beira da praia e trabalhar de bermuda e tênis.</p><p>Mais do que um estilo de vida, foi um propósito: usar sua experiência para auxiliar empreendedores e profissionais liberais com consultoria, marketing e publicidade.</p><p>Sua paixão é traduzir as estratégias dos grandes para a realidade de quem mais precisa.</p></div></div>';
+  pablo.insertAdjacentElement('afterend',section);
+  var splitSection=document.createElement('section');
+  splitSection.id='pablo-lateral';
+  splitSection.className='pablo-split-section';
+  splitSection.setAttribute('aria-labelledby','pablo-lateral-titulo');
+  splitSection.innerHTML='<div class="pablo-split-photo" role="img" aria-label="Retrato de Pablo Santurio"></div><div class="pablo-split-content"><span class="pablo-split-kicker">O CRIADOR</span><h2 id="pablo-lateral-titulo">Pablo Santurio</h2><p class="pablo-split-role">Editor da Revista Olá Guia e criador do Ecossistema.</p><div class="pablo-split-copy"><p>Pablo abandonou uma carreira de sucesso em uma das maiores consultorias globais, onde reestruturava grandes corporações, para seguir o sonho de morar à beira da praia e trabalhar de bermuda e tênis.</p><p>Mais do que um estilo de vida, foi um propósito: usar sua experiência para auxiliar empreendedores e profissionais liberais com consultoria, marketing e publicidade.</p><p>Sua paixão é traduzir as estratégias dos grandes para a realidade de quem mais precisa.</p></div></div>';
+  section.insertAdjacentElement('afterend',splitSection);
+})();
+</script>
 <script id="mobile-creator-final-cta-v2-script">
 (function(){
   var pablo=document.querySelector('#pablosanturio');

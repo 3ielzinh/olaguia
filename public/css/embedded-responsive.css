@@ -681,6 +681,26 @@
   #pablosanturio .us_custom_980bb123 p:last-child{font-weight:800!important;letter-spacing:normal!important}
   #pablosanturio .us_custom_78d71f1f{margin:0!important}
   #pablosanturio .us_custom_78d71f1f img{filter:brightness(.88) saturate(.96)!important}
+  #pablo-retrato{min-height:796px!important;background-position:center top!important}
+  #pablo-retrato:before{background:linear-gradient(180deg,rgba(4,24,23,.12) 0%,rgba(4,24,23,.28) 32%,rgba(4,24,23,.88) 58%,rgba(4,24,23,.98) 100%)!important}
+  #pablo-retrato .pablo-portrait-content{display:flex!important;width:100%!important;flex-direction:column!important;margin:0!important;padding:410px 14px 32px!important;text-align:center!important}
+  #pablo-retrato .pablo-portrait-kicker{align-self:center!important;margin:0 0 36px!important;padding:5px 15px!important;font-size:11px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:normal!important}
+  #pablo-retrato h2{margin:0 0 6px!important;padding:0!important;font-size:24px!important;font-weight:400!important;line-height:1.08!important;letter-spacing:-.04em!important}
+  #pablo-retrato .pablo-portrait-role{margin:0 0 18px!important;font-size:12px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:-.05em!important}
+  #pablo-retrato .pablo-portrait-copy{gap:18px!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
+  #pablo-retrato .pablo-portrait-copy p{margin:0!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
+  #pablo-retrato .pablo-portrait-copy p:last-child{font-weight:800!important}
+  #pablo-lateral{position:relative!important;display:block!important;min-height:0!important;overflow:hidden!important;background:#126861!important}
+  #pablo-lateral .pablo-split-photo{position:absolute!important;inset:0 auto 0 0!important;width:78%!important;height:100%!important;align-self:auto!important;border:0!important;background-position:-58px center!important;background-size:auto 100%!important;box-shadow:none!important}
+  #pablo-lateral .pablo-split-photo:after{background:linear-gradient(90deg,rgba(18,104,97,.18) 0%,rgba(18,104,97,.32) 42%,rgba(18,104,97,.92) 70%,#126861 88%,#126861 100%)!important}
+  #pablo-lateral .pablo-split-content{position:relative!important;z-index:1!important;display:flex!important;width:80%!important;min-width:0!important;max-width:none!important;min-height:0!important;flex-direction:column!important;justify-content:center!important;box-sizing:border-box!important;margin:0 0 0 20%!important;padding:32px 18px!important;border:0!important;background:transparent!important;box-shadow:none!important;color:#fff!important;text-align:center!important}
+  #pablo-lateral .pablo-split-kicker{align-self:center!important;margin:0 0 36px!important;padding:5px 15px!important;font-size:11px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:normal!important}
+  #pablo-lateral h2{margin:0 0 6px!important;padding:0!important;font-size:24px!important;font-weight:400!important;line-height:1.08!important;letter-spacing:-.04em!important}
+  #pablo-lateral .pablo-split-role{margin:0 0 18px!important;font-size:12px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:-.05em!important}
+  #pablo-lateral .pablo-split-copy{gap:18px!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
+  #pablo-lateral .pablo-split-copy p{margin:0!important;font-size:15px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
+  #pablo-lateral .pablo-split-copy p:last-child{font-weight:800!important}
+  #pablo-lateral h2,#pablo-lateral .pablo-split-role,#pablo-lateral .pablo-split-copy p{color:#fff!important}
   #cta4{margin:0!important;padding:var(--mobile-section-space,32px) 14px!important}
   #cta4 .l-section-h{padding:0!important}
   #cta4 .vc_column-inner{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important;padding:0!important}
