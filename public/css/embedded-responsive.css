@@ -420,7 +420,7 @@
   #solucao .mobile-solution-points li{font-size:16px!important;line-height:1.35!important}
   #solucao .mobile-solution-points .mobile-solution-intro{margin:0 0 2px!important;padding:0!important;color:#126861!important;font-size:17px!important;font-weight:700!important;line-height:1.25!important}
   #solucao .mobile-solution-points .mobile-solution-intro:before{display:none!important;content:none!important}
-  #solucao .us_custom_f9903d7d:last-of-type{font-size:22px!important;line-height:1.12!important;text-align:center!important}
+  #solucao .us_custom_f9903d7d:last-of-type{margin-top:8px!important;font-size:22px!important;line-height:1.12!important;text-align:center!important}
 }
 
 .solution-mobile-break{display:none}
@@ -487,7 +487,7 @@
   #olaguia2 .ecosystem-mobile-break{display:initial}
   #olaguia2 .mobile-extra-tools{display:grid!important;gap:var(--mobile-content-gap,18px)!important;margin:0 0 var(--mobile-section-space,32px)!important}
   #olaguia2 .mobile-extra-tool{display:block!important;width:100%!important;padding:18px 0!important;border:0!important;border-radius:16px!important;overflow:hidden!important;background:#fff!important;color:#173b38!important;box-shadow:0 6px 14px rgba(2,44,40,.16)!important}
-  #olaguia2 .mobile-extra-tool>img{display:block!important;width:100%!important;height:185px!important;object-fit:cover!important;border-radius:10px!important}
+  #olaguia2 .mobile-extra-tool>img{display:block!important;width:100%!important;height:140px!important;object-fit:cover!important;object-position:center!important;border-radius:10px!important}
   #olaguia2 .mobile-extra-tool>div{display:flex!important;flex-direction:column!important;gap:8px!important;padding:18px!important}
   #olaguia2 .mobile-extra-tool h3{margin:0!important;color:#126861!important;font-size:30px!important;font-weight:800!important;line-height:1!important;letter-spacing:-.045em!important}
   #olaguia2 .mobile-extra-tool h4{margin:0!important;font-size:17px!important;font-style:italic!important;font-weight:400!important;line-height:1.2!important}
@@ -827,8 +827,10 @@
   #cta3 .us_custom_cta3_intro p,
   #cta3 .commitment-title,
   #cta3 .commitment-body{font-weight:400!important}
+  #cta3 .us_custom_cc0ffe16 h3:first-child{font-weight:700!important}
   #cta3 .us_custom_cc0ffe16 .wpb_wrapper{gap:10px!important}
-  #cta3 .us_custom_cc0ffe16 h3:last-child{font-size:24px!important;line-height:1.2!important}
+  #solucao .us_custom_7e646980{font-size:21px!important}
+  #cta3 .us_custom_cc0ffe16 h3:last-child{font-size:21px!important;line-height:1.2!important}
 }
 
 @media (max-width:600px){
@@ -896,7 +898,7 @@
 
 @media (max-width:600px){
   #solucao .us_custom_3fd5d53b .wpb_wrapper>p{font-size:17px!important}
-  #olaguia .copy-section-heading>p{font-size:24px!important}
+  #olaguia .copy-section-heading>p{font-size:21px!important}
   #olaguia .copy-tool-card-content .tool-title-row>span,
   #olaguia2 .mobile-extra-tool .mobile-tool-number{color:#d7a22b!important;font-size:32px!important}
   #olaguia .copy-tool-card-content>h4{margin-top:1px!important;padding-top:8px!important}
@@ -912,13 +914,13 @@
   #daniel-kahneman .us_custom_fd21518e{padding:0!important;text-align:center!important}
   #daniel-kahneman .us_custom_fd21518e>.vc_column-inner{width:100%!important;padding:18px 0 28px!important;box-sizing:border-box!important;background:#343640!important}
   #daniel-kahneman .us_custom_5d14945f{box-sizing:border-box!important;padding:0 18px!important}
-  #quemsomos .copy-section-heading>p{font-size:20px!important}
+  #quemsomos .copy-section-heading>p{font-size:21px!important}
 }
 
 @media (max-width:600px){
   #inicio .us_custom_261f4d04{font-size:clamp(32px,calc(18.383px + 4.255vw),36px)!important}
-  #inicio .us_custom_246b90a5,
-  #olaguia .copy-section-heading p{font-size:24px!important}
+  #inicio .us_custom_246b90a5{font-size:24px!important}
+  #olaguia .copy-section-heading p{font-size:21px!important}
   #inicio .us_custom_3fd5d53b,
   #inicio .us_custom_3fd5d53b strong{font-size:clamp(16px,calc(12.596px + 1.064vw),17px)!important}
   #inicio .us_custom_63638f30{font-size:clamp(18px,calc(7.787px + 3.191vw),21px)!important}
