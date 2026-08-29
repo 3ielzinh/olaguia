@@ -608,6 +608,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var finalTexts=document.querySelectorAll('#cta3 .us_custom_cc0ffe16 .wpb_wrapper>h3');
   if(finalTexts[1])finalTexts[1].textContent='Sabe por quê? Porque uma solução assim não existia!';
   var cta3Intro=document.querySelector('#cta3 .us_custom_cta3_intro');
+  var cta3IntroText=cta3Intro&&cta3Intro.querySelector('.wpb_wrapper>p');
+  if(cta3IntroText)cta3IntroText.innerHTML='Agora você terá acesso a uma estrutura de marketing completa e integrada, <strong>pensada para a realidade do seu negócio e por um valor que cabe no seu orçamento.</strong>';
   if(cta3Intro&&!document.querySelector('#cta3 .cta3-main-image')){
     var cta3Figure=document.createElement('figure');
     cta3Figure.className='cta3-main-image';
@@ -615,7 +617,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     cta3Intro.insertAdjacentElement('afterend',cta3Figure);
   }
   var commitment=document.querySelector('#cta3 .us_custom_b2785ebc .wpb_wrapper>p');
-  if(commitment)commitment.innerHTML='<span class="commitment-title">Nosso compromisso é claro:</span><span class="commitment-body">Você se dedica ao coração do seu negócio, que é atender seus clientes, enquanto nós cuidamos da sua divulgação.</span>';
+  if(commitment)commitment.innerHTML='<span class="commitment-title">Nosso compromisso é claro</span><span class="commitment-body">Você se dedica ao coração do seu negócio, que é atender seus clientes, enquanto nós cuidamos da sua divulgação.</span>';
 })();
 </script>
 <script id="mobile-psychology-section-v2-script">
@@ -654,11 +656,24 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   if(!section)return;
   var heading=section.querySelector('.copy-section-heading h2');
   if(heading)heading.innerHTML='<strong>Nossa História</strong>';
+  var aboutIntro=section.querySelector('.copy-about-intro');
+  if(aboutIntro)aboutIntro.innerHTML='São mais de 20 anos dedicados à nossa missão: <strong>ajudar profissionais liberais e negócios locais a conquistar novos clientes e multiplicar suas vendas.</strong>';
   var stats=section.querySelector('.copy-stats-grid');
-  if(!stats||section.querySelector('.mobile-stats-marquee'))return;
-  var source=Array.from(stats.children).map(function(item){
-    return {value:item.querySelector('strong')?.textContent||'',label:item.querySelector('span')?.textContent||''};
+  var historyStats=[
+    {value:'20',label:'anos'},
+    {value:'7',label:'Cidades'},
+    {value:'1.217',label:'Edições'},
+    {value:'14 Milhões',label:'Revistas'},
+    {value:'1270',label:'Clientes atendidos'}
+  ];
+  if(stats)Array.from(stats.children).forEach(function(item,index){
+    var stat=historyStats[index];
+    if(!stat)return;
+    item.querySelector('strong').textContent=stat.value;
+    item.querySelector('span').textContent=stat.label;
   });
+  if(!stats||section.querySelector('.mobile-stats-marquee'))return;
+  var source=historyStats;
   var marquee=document.createElement('div');
   marquee.className='mobile-stats-marquee';
   marquee.setAttribute('aria-label','Indicadores da história do Olá Guia');
@@ -860,7 +875,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     while(item.firstChild)copy.appendChild(item.firstChild);
     item.appendChild(copy);
   });
-  if(heading)heading.innerHTML='Como você pode <strong>ter acesso a isso tudo?</strong>';
+  if(heading)heading.innerHTML='<strong>Como você pode ter acesso a isso tudo?</strong>';
   function updateIntro(event){
     if(!intro)return;
     intro.classList.toggle('access-intro-primary',event.matches);
@@ -935,19 +950,14 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
 (function(){
   var pablo=document.querySelector('#pablosanturio');
   var cta=document.querySelector('#cta4');
-  if(!pablo||!cta||document.querySelector('#pablo-retrato'))return;
-  var section=document.createElement('section');
-  section.id='pablo-retrato';
-  section.className='pablo-portrait-section';
-  section.setAttribute('aria-labelledby','pablo-retrato-titulo');
-  section.innerHTML='<div class="pablo-portrait-content"><span class="pablo-portrait-kicker">O CRIADOR</span><h2 id="pablo-retrato-titulo">Pablo Santurio</h2><p class="pablo-portrait-role">Editor da Revista Olá Guia e criador do Ecossistema.</p><div class="pablo-portrait-copy"><p>Pablo abandonou uma carreira de sucesso em uma das maiores consultorias globais, onde reestruturava grandes corporações, para seguir o sonho de morar à beira da praia e trabalhar de bermuda e tênis.</p><p>Mais do que um estilo de vida, foi um propósito: <strong>usar sua experiência para auxiliar empreendedores e profissionais liberais com consultoria, marketing e publicidade.</strong></p><p>Sua paixão é traduzir as estratégias dos grandes para a realidade de quem mais precisa.</p></div></div>';
-  pablo.insertAdjacentElement('afterend',section);
+  if(!pablo||!cta||document.querySelector('#pablo-lateral'))return;
   var splitSection=document.createElement('section');
   splitSection.id='pablo-lateral';
   splitSection.className='pablo-split-section';
   splitSection.setAttribute('aria-labelledby','pablo-lateral-titulo');
   splitSection.innerHTML='<div class="pablo-split-photo" role="img" aria-label="Retrato de Pablo Santurio"></div><div class="pablo-split-content"><span class="pablo-split-kicker">O CRIADOR</span><h2 id="pablo-lateral-titulo">Pablo Santurio</h2><p class="pablo-split-role">Editor da Revista Olá Guia e criador do Ecossistema.</p><div class="pablo-split-copy"><p>Pablo abandonou uma carreira de sucesso em uma das maiores consultorias globais, onde reestruturava grandes corporações, para seguir o sonho de morar à beira da praia e trabalhar de bermuda e tênis.</p><p>Mais do que um estilo de vida, foi um propósito: <strong>usar sua experiência para auxiliar empreendedores e profissionais liberais com consultoria, marketing e publicidade.</strong></p><p>Sua paixão é traduzir as estratégias dos grandes para a realidade de quem mais precisa.</p></div></div>';
-  section.insertAdjacentElement('afterend',splitSection);
+  cta.insertAdjacentElement('beforebegin',splitSection);
+  pablo.remove();
 })();
 </script>
 <script id="mobile-creator-final-cta-v2-script">
@@ -961,6 +971,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   }
   var cta=document.querySelector('#cta4');
   if(cta){
+    var ctaPreButton=cta.querySelector('.cta4-pre-btn');
+    if(ctaPreButton)ctaPreButton.textContent='Clique no botão abaixo agora!';
     var copy=cta.querySelector('.us_custom_b2785ebc');
     var ctaParagraphs=copy?Array.from(copy.querySelectorAll('.wpb_wrapper>p')).filter(function(p){return p.textContent.trim()}):[];
     var ctaMobile=window.matchMedia('(max-width:600px)');

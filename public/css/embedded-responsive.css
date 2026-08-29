@@ -502,7 +502,7 @@
   #cta3 .l-section-h{padding:0!important}
   #cta3 .us_custom_cta3_intro{margin:var(--mobile-content-gap,18px) 0 var(--mobile-section-space,32px)!important}
   #cta3 .us_custom_cta3_intro p{margin:0!important;font-size:17px!important;font-weight:400!important;line-height:1.3!important;text-align:center!important}
-  #cta3 .cta3-main-image{width:calc(100% + 36px)!important;margin:0 -18px var(--mobile-section-space,32px)!important;border-radius:0!important}
+  #cta3 .cta3-main-image{width:calc(100% + 36px)!important;height:181px!important;margin:0 -18px var(--mobile-section-space,32px)!important;border-radius:0!important}
   #cta3 .cta3-main-image img{width:100%!important;height:auto!important}
   #cta3 .us_custom_b2785ebc,#cta3 .us_custom_b2785ebc p{margin:0!important}
   #cta3 .commitment-title{display:block!important;margin:0 0 var(--mobile-content-gap,18px)!important;font-size:26px!important;font-weight:800!important;line-height:1.08!important}
@@ -716,7 +716,8 @@
   #cta4 .us_custom_b2785ebc .wpb_wrapper{display:flex!important;flex-direction:column!important;gap:var(--mobile-content-gap,18px)!important}
   #cta4 .us_custom_b2785ebc p:empty{display:none!important}
   #cta4 .cta-final-line{display:inline-block!important;white-space:nowrap!important}
-  #cta4 .cta-characters-figure{display:flex!important;justify-content:center!important;width:100%!important;margin:0!important;overflow:visible!important;text-align:center!important}
+  #cta4 .cta-characters-figure{position:relative!important;display:flex!important;justify-content:center!important;width:100%!important;margin:0!important;overflow:visible!important;text-align:center!important}
+  #cta4 .cta-characters-figure:after{position:absolute!important;right:16px!important;bottom:-30px!important;left:16px!important;height:30px!important;content:""!important;background:linear-gradient(180deg,rgba(5,69,64,.5) 0%,rgba(5,69,64,.27) 46%,rgba(18,104,97,0) 100%)!important;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)!important;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)!important;filter:blur(1px)!important;pointer-events:none!important}
   #cta4 .cta-characters-figure img{display:block!important;flex:none!important;width:424px!important;max-width:none!important;height:auto!important;margin:0!important}
   #cta4 .w-btn-wrapper{width:100%!important;margin:0!important;text-align:center!important}
   #cta4 .w-btn-wrapper>.w-btn{display:inline-block!important;width:339px!important;max-width:100%!important;text-align:center!important}
@@ -907,7 +908,8 @@
   #daniel-kahneman .us_custom_c88609d4{width:100%!important;height:270px!important;min-height:270px!important;aspect-ratio:auto!important;background-position:center top!important;background-size:cover!important}
   #daniel-kahneman .us_custom_fd21518e{width:100%!important;height:auto!important;min-height:0!important;overflow:visible!important}
   #daniel-kahneman .us_custom_fd21518e{padding:0!important;text-align:center!important}
-  #daniel-kahneman .us_custom_fd21518e>.vc_column-inner{width:100%!important;padding:18px 0!important;box-sizing:border-box!important;background:#343640!important}
+  #daniel-kahneman .us_custom_fd21518e>.vc_column-inner{width:100%!important;padding:18px 0 28px!important;box-sizing:border-box!important;background:#343640!important}
+  #daniel-kahneman .us_custom_5d14945f{box-sizing:border-box!important;padding:0 18px!important}
   #quemsomos .copy-section-heading>p{font-size:20px!important}
 }
 
@@ -1010,5 +1012,8 @@
   #olaguia .copy-carousel-track{gap:14px!important}
   #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 84%!important;scroll-snap-align:start!important}
   #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:3px 0 0!important;padding-top:12px!important}
-  #pergunta .copy-how-content>p.access-intro-primary{font-family:Geist,sans-serif!important;font-size:24px!important;font-weight:400!important;line-height:1.1!important;color:#126861!important;text-align:center!important}
+  #pergunta .copy-how-content>p.access-intro-primary{font-family:Geist,sans-serif!important;font-size:21px!important;font-weight:400!important;line-height:1.1!important;color:#126861!important;text-align:center!important}
+  #pergunta .copy-how-content>p.copy-how-close{font-size:17px!important}
+  #cta4 .us_custom_21f37c85 .w-text-value{font-size:36px!important}
+  #cta4 .us_custom_b2785ebc p:nth-of-type(2)>strong{font-size:24px!important}
 }
