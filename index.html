@@ -540,7 +540,9 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   updateSentenceImage(mobile);
   if(mobile.addEventListener)mobile.addEventListener('change',updateSentenceImage);
   section.classList.add('sentences-motion-ready');
-  window.olaRevealOnScroll(section.querySelector('.us_custom_13fa9e6c'),function(){section.classList.add('is-revealed')},.18);
+  Array.from(section.querySelectorAll('.us_custom_13fa9e6c')).forEach(function(item){
+    window.olaRevealOnScroll(item,function(){item.classList.add('is-revealed')},.24);
+  });
 })();
 </script>
 <script id="about-scroll-reveal">
@@ -894,6 +896,13 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     while(item.firstChild)copy.appendChild(item.firstChild);
     item.appendChild(copy);
   });
+  var layers=section.querySelector('.mobile-layer-list');
+  if(layers){
+    layers.classList.add('layers-motion-ready');
+    Array.from(layers.children).forEach(function(item){
+      window.olaRevealOnScroll(item,function(){item.classList.add('is-revealed')},.24);
+    });
+  }
   if(heading)heading.innerHTML='<strong>Como você pode ter acesso a isso tudo?</strong>';
   function updateIntro(event){
     if(!intro)return;
