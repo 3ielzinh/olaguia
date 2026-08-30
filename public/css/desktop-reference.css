@@ -64,26 +64,6 @@
     background: var(--desktop-dot-active, #bd8509);
   }
 
-  .desktop-carousel-progress {
-    position: relative;
-    width: min(420px, 72%);
-    height: 3px;
-    margin: .2rem auto 0;
-    overflow: hidden;
-    border-radius: 999px;
-    background: var(--desktop-progress-bg, rgba(18, 104, 97, .14));
-  }
-
-  .desktop-carousel-progress span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    background: var(--desktop-progress-fg, #bd8509);
-    transform: translateX(0);
-    transition: transform .3s ease;
-  }
-
   /* The desktop testimonials become a native, touch-friendly three-up carousel. */
   #us_post_list_y2f6.desktop-comments-carousel {
     --desktop-control-bg: #fff;
@@ -93,8 +73,6 @@
     --desktop-control-border: rgba(255, 255, 255, .6);
     --desktop-dot-bg: rgba(255, 255, 255, .38);
     --desktop-dot-active: #d7a22b;
-    --desktop-progress-bg: rgba(255, 255, 255, .25);
-    --desktop-progress-fg: #d7a22b;
   }
 
   #us_post_list_y2f6 .desktop-comments-viewport {
@@ -121,20 +99,24 @@
     top: auto !important;
     left: auto !important;
     flex: 0 0 calc((100% - 1.4rem) / 3);
-    height: auto !important;
-    min-height: 222px;
+    display: flex;
+    height: 260px !important;
+    min-height: 260px !important;
     margin: 0 !important;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
 
   #us_post_list_y2f6 .desktop-comments-viewport > .w-grid-item > .w-grid-item-h {
-    height: auto !important;
-    min-height: 222px;
+    display: flex;
+    flex: 1 1 auto;
+    height: 100% !important;
+    min-height: 0;
   }
 
-  #us_post_list_y2f6 .desktop-carousel-progress {
-    margin-bottom: .1rem;
+  #us_post_list_y2f6 .desktop-comments-viewport > .w-grid-item > .w-grid-item-h > .w-vwrapper {
+    flex: 1 1 auto;
+    min-height: 0;
   }
 
   /* Keep the original Owl carousel behavior, but expose the same lower passador. */
@@ -166,8 +148,7 @@
     }
 
     .desktop-carousel-arrow,
-    .desktop-carousel-dots button,
-    .desktop-carousel-progress span {
+    .desktop-carousel-dots button {
       transition: none;
     }
   }

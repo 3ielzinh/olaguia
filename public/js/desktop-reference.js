@@ -27,12 +27,7 @@
     controls.appendChild(dots);
     controls.appendChild(next);
 
-    var progress = document.createElement('div');
-    progress.className = 'desktop-carousel-progress';
-    progress.setAttribute('aria-hidden', 'true');
-    progress.innerHTML = '<span></span>';
-
-    return { controls: controls, previous: previous, dots: dots, next: next, progress: progress };
+    return { controls: controls, previous: previous, dots: dots, next: next };
   }
 
   function commentsCarousel() {
@@ -66,7 +61,6 @@
 
     var ui = createControls('Navegação dos depoimentos');
     viewport.insertAdjacentElement('afterend', ui.controls);
-    ui.controls.insertAdjacentElement('afterend', ui.progress);
 
     var starts = [];
     var positions = [];
@@ -97,7 +91,6 @@
         ui.dots.appendChild(dot);
       });
 
-      ui.progress.firstElementChild.style.width = (100 / starts.length) + '%';
       active = Math.min(active, starts.length - 1);
       update(active);
     }
@@ -109,9 +102,6 @@
         dot.classList.toggle('is-active', selected);
         dot.setAttribute('aria-selected', selected ? 'true' : 'false');
       });
-      ui.previous.disabled = active === 0;
-      ui.next.disabled = active === starts.length - 1;
-      ui.progress.firstElementChild.style.transform = 'translateX(' + (active * 100) + '%)';
     }
 
     function go(pageIndex, animate) {
@@ -119,7 +109,7 @@
       positions = starts.map(function (cardIndex) {
         return Math.max(0, Math.min(cards[cardIndex].offsetLeft - cards[0].offsetLeft, Math.max(0, viewport.scrollWidth - viewport.clientWidth)));
       });
-      var target = Math.max(0, Math.min(starts.length - 1, pageIndex));
+      var target = ((pageIndex % starts.length) + starts.length) % starts.length;
       if (animate === false || reducedMotion) {
         viewport.style.scrollBehavior = 'auto';
         viewport.scrollLeft = positions[target];
@@ -182,7 +172,6 @@
     grid.dataset.desktopControlsReady = 'true';
     var ui = createControls('Navegação das ferramentas');
     viewport.insertAdjacentElement('afterend', ui.controls);
-    ui.controls.insertAdjacentElement('afterend', ui.progress);
 
     originalDots.forEach(function (_, index) {
       var dot = document.createElement('button');
@@ -193,7 +182,6 @@
       ui.dots.appendChild(dot);
     });
 
-    ui.progress.firstElementChild.style.width = (100 / originalDots.length) + '%';
     ui.previous.addEventListener('click', function () { originalPrev.click(); });
     ui.next.addEventListener('click', function () { originalNext.click(); });
 
@@ -207,7 +195,6 @@
       });
       ui.previous.disabled = originalPrev.classList.contains('disabled');
       ui.next.disabled = originalNext.classList.contains('disabled');
-      ui.progress.firstElementChild.style.transform = 'translateX(' + (active * 100) + '%)';
     }
 
     var observer = new MutationObserver(sync);
