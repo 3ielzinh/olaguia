@@ -11,6 +11,18 @@
 <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwcria.cloud%2Fsites%2Folaguia%2F&#038;format=xml" />
 <link rel="canonical" href="/" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script id="desktop-reference-loader">
+(function(){
+  var desktopPage = window.matchMedia('(min-width:1025px)');
+  function openDesktopReference(){
+    if (desktopPage.matches && window.location.pathname === '/') {
+      window.location.replace('/desktop.html' + window.location.search + window.location.hash);
+    }
+  }
+  openDesktopReference();
+  desktopPage.addEventListener('change', openDesktopReference);
+})();
+</script>
 <meta name="theme-color" content="#f2f4f7">
 <meta name="description" content="Já gastou com anúncios, redes sociais e flyers sem ver resultado? Descubra como atrair mais clientes e aumentar seu faturamento sem gastar uma fortuna. Conheça o Ecossistema Olá Guia!">
 <meta property="og:description" content="Já gastou com anúncios, redes sociais e flyers sem ver resultado? Descubra como atrair mais clientes e aumentar seu faturamento sem gastar uma fortuna. Conheça o Ecossistema Olá Guia!">

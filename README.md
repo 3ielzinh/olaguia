@@ -24,6 +24,10 @@ O comando `npm run build` gera a versão estática em `dist/`, usada automaticam
 - `DESIGN_TOKENS.md`: cores, tipografia, dimensões e breakpoint medidos do original.
 - `work/mirror/build-mirror.mjs`: utilitário de reconstrução do espelho a partir da referência pública.
 
+## Desktop e mobile
+
+Em larguras desktop (a partir de 1025px), a página carrega `public/desktop.html`, uma cópia local da referência publicada. Em larguras menores, o `index.html` atual continua sendo usado para preservar a versão mobile já validada.
+
 ## Verificação
 
 - 18 seções semânticas.
