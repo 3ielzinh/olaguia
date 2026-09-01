@@ -38,6 +38,10 @@
   #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:3px 0 0;padding-top:12px}
   #olaguia2 .mobile-extra-tool{min-height:420px}
   #olaguia2 .mobile-extra-tool>img{height:225px}
+  #olaguia2 .mobile-extra-tool h3{font-size:28px;line-height:1.05}
+  #olaguia2 .mobile-extra-tool .mobile-tool-number{color:#d7a22b;font-size:34px;line-height:1}
+  #olaguia2 .mobile-extra-tool h4{font-size:16px;line-height:1.2}
+  #olaguia2 .mobile-extra-tool p{font-size:15px;line-height:1.45}
 }
 @media(max-width:600px){
   #inicio{background:#fff!important}
