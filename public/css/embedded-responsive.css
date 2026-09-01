@@ -1310,6 +1310,10 @@
   #pablo-lateral .pablo-split-photo:before{
     display:none!important;
   }
+  #pablo-lateral .pablo-split-photo:after{
+    display:none!important;
+    content:none!important;
+  }
   #pablo-lateral .pablo-split-content{
     width:auto!important;
     min-height:inherit!important;
