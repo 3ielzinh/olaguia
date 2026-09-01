@@ -690,11 +690,11 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   if(bias)bias.textContent='VIÉS DA DISPONIBILIDADE:';
   if(quote)quote.innerHTML='<em>“Não é mágica, é ciência.<br class="quote-mobile-break"> Uma pessoa, ao precisar de um serviço ou produto, sempre irá recorrer àquele de que se lembra mais facilmente.”</em>';
   function updateImpactHeading(event){
-    if(impactHeading)impactHeading.innerHTML=event.matches?'Como isso <strong>impacta o seu negócio?</strong>':'Como isso impacta o seu negócio?';
+    if(impactHeading)impactHeading.innerHTML='Como isso <strong>impacta o seu negócio?</strong>';
   }
   function updateBrainCopy(event){
     if(!brainCopy)return;
-    brainCopy.innerHTML=event.matches?'<p>O cérebro dos seus clientes tende a escolher quem aparece mais. <strong>Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor.</strong></p><p>Com isso, eles são a primeira e, muitas vezes, a única opção lembrada por quem deseja comprar.</p>':'<p>O cérebro dos seus clientes tende a escolher quem aparece mais. Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor. Com isso, eles são a primeira e, muitas vezes, a única opção lembrada por quem deseja comprar.</p>';
+    brainCopy.innerHTML='<p>O cérebro dos seus clientes tende a escolher quem aparece mais. <strong>Por isso os grandes investem pesado em publicidade para estar sempre na mente do consumidor.</strong></p><p>Com isso, eles são a primeira e, muitas vezes, a única opção lembrada por quem deseja comprar.</p>';
   }
   var mobileImpact=window.matchMedia('(max-width:600px)');
   updateImpactHeading(mobileImpact);
