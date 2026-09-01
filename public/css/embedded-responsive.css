@@ -1182,6 +1182,15 @@
 }
 
 @media (min-width:601px){
+  #compare{
+    background:#e1e3dd!important;
+    background-image:none!important;
+  }
+  #compare .l-section-img,
+  #compare .l-section-overlay{display:none!important}
+}
+
+@media (min-width:601px){
   #pablo-lateral .pablo-split-inner{
     width:100%!important;
     max-width:none!important;
