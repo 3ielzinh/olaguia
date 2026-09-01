@@ -236,4 +236,11 @@
   body section#olaguia2 .w-grid-item-h {
     align-items: stretch !important;
   }
+
+  body section#olaguia2 .w-grid,
+  body section#olaguia2 .w-grid-list,
+  body section#olaguia2 .w-grid-item,
+  body section#olaguia2 .w-grid-item-h {
+    display: block !important;
+  }
 }
