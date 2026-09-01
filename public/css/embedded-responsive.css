@@ -45,6 +45,8 @@
   #olaguia2 .mobile-extra-tool .mobile-tool-number{color:#d7a22b;font-size:34px;line-height:1}
   #olaguia2 .mobile-extra-tool h4{font-size:16px;line-height:1.2}
   #olaguia2 .mobile-extra-tool p{font-size:15px;line-height:1.45}
+  #cta3 .commitment-title{display:block;margin:0 0 .65rem;font-size:28px;font-weight:700;line-height:1.08}
+  #cta3 .commitment-body{display:block;font-size:21px;font-weight:400;line-height:1.35}
 }
 @media(max-width:600px){
   #inicio{background:#fff!important}
