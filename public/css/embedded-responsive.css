@@ -1,6 +1,6 @@
 .mobile-goals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.5rem 0 2.5rem}
-.mobile-goal-card{position:relative;overflow:hidden;min-height:190px;border-radius:.8rem;box-shadow:0 .45rem 1.25rem rgba(18,104,97,.12)}
-.mobile-goal-card img{display:block;width:100%;height:100%;min-height:190px;object-fit:cover}
+.mobile-goal-card{position:relative;width:100%;overflow:hidden;min-height:0;aspect-ratio:1.45;border-radius:.8rem;box-shadow:0 .45rem 1.25rem rgba(18,104,97,.12)}
+.mobile-goal-card img{display:block;width:100%;height:100%;min-height:0;object-fit:cover}
 .mobile-goal-card span{position:absolute;right:0;bottom:16px;min-width:72%;padding:.55rem .8rem;border-radius:1.5rem 0 0 1.5rem;background:#bd8509;color:#fff;font-size:.82rem;font-weight:800;text-align:center}
 .mobile-tools-heading{display:flex;flex-direction:column;gap:1rem;margin:0 0 1.25rem;text-align:center}
 .mobile-tools-heading h2,.mobile-tools-heading p{margin:0}
@@ -15,6 +15,15 @@
 .mobile-extra-tool p{margin:.25rem 0 0;padding-top:.75rem;border-top:2px solid #d7a22b;color:#345c58;font-size:.9rem;line-height:1.35}
 .mobile-layer-list,.mobile-scroll-indicator{display:none}
 #olaguia2 .w-grid,#olaguia2 .us_custom_bc3e13b3{display:none}
+#olaguia .copy-carousel-track .copy-tool-card{display:flex;flex:0 0 calc((100% - 2rem)/3);min-height:0;height:auto;flex-direction:column;background:#fff;border:0;border-radius:1rem;overflow:hidden;isolation:isolate;box-shadow:0 .03rem .06rem rgba(0,0,0,.1),0 .1rem .3rem rgba(0,0,0,.1);filter:none}
+#olaguia .copy-carousel-track .copy-tool-card:before,#olaguia .copy-carousel-track .copy-tool-card:after{display:none;content:none}
+#olaguia .copy-carousel-track .copy-tool-card>img{position:static;display:block;width:100%;height:220px;min-height:0;flex:0 0 auto;object-fit:cover}
+#olaguia .copy-carousel-track .copy-tool-card-content{position:relative;z-index:1;display:flex;flex:1;min-height:0;flex-direction:column;align-items:stretch;margin-top:0;padding:1.25rem;background:#fff;color:#126861}
+#olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row{display:flex;align-items:baseline;gap:.45rem;min-width:0}
+#olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{color:#d7a22b;font-size:1.75rem;line-height:1}
+#olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{color:#126861;font-size:1.75rem;line-height:1.05}
+#olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:.35rem 0 .65rem;color:#072b28;font-size:.95rem;font-style:italic;font-weight:400}
+#olaguia .copy-carousel-track .copy-tool-card-content>p{margin:auto 0 0;padding-top:1rem;border-top:2px solid #d7a22b;color:#126861;font-size:1rem;line-height:1.45;overflow:visible}
 @media(max-width:600px){
   #inicio{background:#fff!important}
   #daniel-kahneman .quote-mobile-break{display:initial!important}
