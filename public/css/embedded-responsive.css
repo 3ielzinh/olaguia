@@ -1286,7 +1286,7 @@
 
 /* Final desktop creator treatment: white section and portrait close to copy. */
 @media (min-width:601px){
-  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:36% 64%!important;width:100%!important;max-width:none!important}
+  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:44% 56%!important;width:100%!important;max-width:none!important}
   #pablo-lateral{
     background:#fff!important;
     background-image:none!important;
@@ -1301,8 +1301,9 @@
     height:auto!important;
     min-height:inherit!important;
     background-color:#fff!important;
-    background-size:cover!important;
+    background-size:auto 100%!important;
     background-position:center top!important;
+    background-repeat:no-repeat!important;
     -webkit-mask-image:none!important;
     mask-image:none!important;
   }
