@@ -28,7 +28,7 @@
 #olaguia .copy-carousel-progress{display:none}
 @media (min-width:601px){
   #olaguia .copy-carousel-track{gap:14px}
-  #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 84%;padding:10px 0;scroll-snap-align:start}
+  #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 30%;padding:10px 0;scroll-snap-align:start}
   #olaguia .copy-carousel-track .copy-tool-card>img{height:185px}
   #olaguia .copy-carousel-track .copy-tool-card-content{display:flex;min-height:0;padding:10px}
   #olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:0;padding-top:2px}
