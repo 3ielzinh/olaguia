@@ -26,7 +26,7 @@ O comando `npm run build` gera a versão estática em `dist/`, usada automaticam
 
 ## Desktop e mobile
 
-Em larguras desktop (a partir de 1025px), a página carrega `public/desktop.html`, uma cópia local da referência publicada. Em larguras menores, o `index.html` atual continua sendo usado para preservar a versão mobile já validada.
+Desktop e mobile usam o mesmo `index.html`. As diferenças de layout, tipografia, espaçamento, navegação e carrosséis são controladas pelas media queries e scripts responsivos da própria página.
 
 ## Verificação
 
