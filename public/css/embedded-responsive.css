@@ -718,6 +718,15 @@
 #compare .copy-offer-copy{display:block;margin:1.5rem auto 0;color:#fff;text-align:center}
 @media (min-width:601px){
   #compare .comparison-prompt{margin:1.25rem 0;color:#fff;font-size:1.5rem;font-weight:400;text-align:center}
+  #compare .comparison-feature strong{font-size:17px}
+  #compare .comparison-feature em{font-size:13px}
+  #compare .comparison-solo{font-size:16px}
+  #compare .comparison-ecosystem{font-size:21px}
+  #compare .comparison-head{font-size:15px}
+  #compare .comparison-price small{font-size:11px}
+  #compare .comparison-price strong{font-size:25px}
+  #compare .comparison-price span{font-size:11px}
+  #compare .copy-offer-copy{box-sizing:border-box;width:calc(100% - 340px);max-width:none;margin:.75rem 0 0;padding:.65rem 1rem;border-left:3px solid #d5a02a;border-radius:0 .5rem .5rem 0;background:rgba(4,48,45,.35);text-align:left}
 }
 @media (max-width:600px){
   #compare{margin:0!important;padding:var(--mobile-section-space,32px) 14px!important}
