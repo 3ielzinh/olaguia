@@ -1221,6 +1221,42 @@
   #pablo-lateral .pablo-split-copy p{color:#23413e!important}
 }
 
+@media (min-width:601px){
+  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:32% 68%!important;width:100%!important;max-width:none!important}
+  #pablo-lateral .pablo-split-photo{position:relative!important;inset:auto!important;width:auto!important;height:auto!important;min-height:inherit!important;background-size:cover!important;background-position:center top!important;-webkit-mask-image:none!important;mask-image:none!important}
+  #pablo-lateral .pablo-split-photo:before{display:none!important}
+  #pablo-lateral .pablo-split-content{width:auto!important;min-height:inherit!important;margin:0!important;padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,4vw,6rem)!important;background:#fff!important;text-align:left!important}
+}
+
+@media (min-width:601px){
+  #pablo-lateral .pablo-split-inner{
+    display:grid!important;
+    grid-template-columns:32% 68%!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+  #pablo-lateral .pablo-split-photo{
+    position:relative!important;
+    inset:auto!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:inherit!important;
+    background-size:cover!important;
+    background-position:center top!important;
+    -webkit-mask-image:none!important;
+    mask-image:none!important;
+  }
+  #pablo-lateral .pablo-split-photo:before{display:none!important}
+  #pablo-lateral .pablo-split-content{
+    width:auto!important;
+    min-height:inherit!important;
+    margin:0!important;
+    padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,4vw,6rem)!important;
+    background:#fff!important;
+    text-align:left!important;
+  }
+}
+
 /* Desktop creator fold: solid color at the left, with a soft transition into
    the atmospheric background and portrait. */
 @media (min-width:601px){
@@ -1250,6 +1286,7 @@
 
 /* Final desktop creator treatment: white section and portrait close to copy. */
 @media (min-width:601px){
+  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:32% 68%!important;width:100%!important;max-width:none!important}
   #pablo-lateral{
     background:#fff!important;
     background-image:none!important;
@@ -1258,20 +1295,28 @@
   #pablo-lateral:before,
   #pablo-lateral:after{display:none!important}
   #pablo-lateral .pablo-split-photo{
+    position:relative!important;
+    inset:auto!important;
     width:55%!important;
+    height:auto!important;
+    min-height:inherit!important;
     background-color:#fff!important;
-    background-position:right center!important;
-    -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 58%,rgba(0,0,0,.82) 73%,rgba(0,0,0,.38) 88%,transparent 100%)!important;
-    mask-image:linear-gradient(90deg,#000 0%,#000 58%,rgba(0,0,0,.82) 73%,rgba(0,0,0,.38) 88%,transparent 100%)!important;
+    background-size:cover!important;
+    background-position:center top!important;
+    -webkit-mask-image:none!important;
+    mask-image:none!important;
   }
   #pablo-lateral .pablo-split-photo:before{
-    background:linear-gradient(90deg,transparent 0%,transparent 68%,rgba(255,255,255,.45) 86%,#fff 100%),linear-gradient(180deg,#fff 0%,transparent 12%,transparent 86%,#fff 100%)!important;
+    display:none!important;
   }
   #pablo-lateral .pablo-split-content{
-    width:55%!important;
-    margin-left:45%!important;
-    padding:clamp(3.5rem,4.6vw,7.5rem) clamp(1.5rem,3vw,4rem)!important;
+    width:auto!important;
+    min-height:inherit!important;
+    margin:0!important;
+    padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,4vw,6rem)!important;
     color:#23413e!important;
+    background:#fff!important;
+    text-align:left!important;
   }
   #pablo-lateral h2,
   #pablo-lateral .pablo-split-role,
