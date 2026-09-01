@@ -1222,7 +1222,7 @@
 }
 
 @media (min-width:601px){
-  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:32% 68%!important;width:100%!important;max-width:none!important}
+  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:36% 64%!important;width:100%!important;max-width:none!important}
   #pablo-lateral .pablo-split-photo{position:relative!important;inset:auto!important;width:auto!important;height:auto!important;min-height:inherit!important;background-size:cover!important;background-position:center top!important;-webkit-mask-image:none!important;mask-image:none!important}
   #pablo-lateral .pablo-split-photo:before{display:none!important}
   #pablo-lateral .pablo-split-content{width:auto!important;min-height:inherit!important;margin:0!important;padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,4vw,6rem)!important;background:#fff!important;text-align:left!important}
@@ -1286,7 +1286,7 @@
 
 /* Final desktop creator treatment: white section and portrait close to copy. */
 @media (min-width:601px){
-  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:32% 68%!important;width:100%!important;max-width:none!important}
+  #pablo-lateral .pablo-split-inner{display:grid!important;grid-template-columns:36% 64%!important;width:100%!important;max-width:none!important}
   #pablo-lateral{
     background:#fff!important;
     background-image:none!important;
@@ -1297,7 +1297,7 @@
   #pablo-lateral .pablo-split-photo{
     position:relative!important;
     inset:auto!important;
-    width:55%!important;
+    width:auto!important;
     height:auto!important;
     min-height:inherit!important;
     background-color:#fff!important;
@@ -1313,7 +1313,7 @@
     width:auto!important;
     min-height:inherit!important;
     margin:0!important;
-    padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,4vw,6rem)!important;
+    padding:clamp(3.5rem,4.6vw,7.5rem) clamp(1.5rem,2vw,3rem)!important;
     color:#23413e!important;
     background:#fff!important;
     text-align:left!important;
