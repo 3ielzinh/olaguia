@@ -999,8 +999,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     prompt.className='comparison-prompt';
     prompt.innerHTML='Pense e <strong>compare:</strong>';
     function updatePromptPosition(event){
-      if(event.matches)table.querySelector('.comparison-header-spacer').appendChild(prompt);
-      else picture.insertAdjacentElement('beforebegin',prompt);
+      table.querySelector('.comparison-header-spacer').appendChild(prompt);
     }
     updatePromptPosition(mobile);
     if(mobile.addEventListener)mobile.addEventListener('change',updatePromptPosition);
