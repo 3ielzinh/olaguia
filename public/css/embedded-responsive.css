@@ -1207,6 +1207,9 @@
     text-align:left!important;
   }
   #compare .comparison-prompt strong{font-weight:800!important}
+  #compare .copy-section-heading h2,
+  #compare .copy-section-heading>p,
+  #compare .copy-offer-copy p{color:#126861!important}
 }
 
 @media (min-width:601px){
