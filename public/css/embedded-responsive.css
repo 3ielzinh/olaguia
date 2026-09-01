@@ -30,8 +30,11 @@
   #olaguia .copy-carousel-track{gap:14px}
   #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 30%;padding:10px 0;scroll-snap-align:start}
   #olaguia .copy-carousel-track .copy-tool-card>img{height:185px}
-  #olaguia .copy-carousel-track .copy-tool-card-content{display:flex;min-height:0;padding:10px}
-  #olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:0;padding-top:2px}
+  #olaguia .copy-carousel-track .copy-tool-card-content{display:flex;height:210px;min-height:210px;padding:10px;justify-content:flex-start!important}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row{min-height:34px}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>span{font-size:34px;line-height:1}
+  #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{font-size:28px;line-height:1.05}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{min-height:22px;margin:0;padding-top:2px}
   #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:3px 0 0;padding-top:12px}
   #olaguia2 .mobile-extra-tool{min-height:420px}
   #olaguia2 .mobile-extra-tool>img{height:225px}
