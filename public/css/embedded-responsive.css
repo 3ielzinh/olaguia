@@ -25,6 +25,14 @@
 #olaguia .copy-carousel-track .copy-tool-card-content .tool-title-row>h3{color:#126861;font-size:1.75rem;line-height:1.05}
 #olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:.35rem 0 .65rem;color:#072b28;font-size:.95rem;font-style:italic;font-weight:400}
 #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:auto 0 0;padding-top:1rem;border-top:2px solid #d7a22b;color:#126861;font-size:1rem;line-height:1.45;overflow:visible}
+#olaguia .copy-carousel-progress{display:none}
+@media (min-width:601px){
+  #olaguia .copy-carousel-track .copy-tool-card-content{display:grid;grid-template-rows:auto 1.5rem minmax(7.35rem,1fr);align-content:start;min-height:250px}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{align-self:start;margin:.35rem 0 0}
+  #olaguia .copy-carousel-track .copy-tool-card-content>p{align-self:stretch;margin:0;padding-top:1rem}
+  #olaguia2 .mobile-extra-tool{min-height:420px}
+  #olaguia2 .mobile-extra-tool>img{height:225px}
+}
 @media(max-width:600px){
   #inicio{background:#fff!important}
   #daniel-kahneman .quote-mobile-break{display:initial!important}
@@ -457,7 +465,6 @@
   #solucao .us_custom_7e646980,#solucao .us_custom_3fd5d53b p:first-child{letter-spacing:-.035em!important}
 }
 
-.mobile-tools-heading{display:none}
 .ecosystem-mobile-break{display:none}
 @media (max-width:600px){
   #olaguia{margin:0!important;padding:var(--mobile-section-space,32px) 14px 0!important}
