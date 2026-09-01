@@ -27,9 +27,12 @@
 #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:auto 0 0;padding-top:1rem;border-top:2px solid #d7a22b;color:#126861;font-size:1rem;line-height:1.45;overflow:visible}
 #olaguia .copy-carousel-progress{display:none}
 @media (min-width:601px){
-  #olaguia .copy-carousel-track .copy-tool-card-content{display:grid;grid-template-rows:auto 1.5rem minmax(7.35rem,1fr);align-content:start;min-height:250px}
-  #olaguia .copy-carousel-track .copy-tool-card-content>h4{align-self:start;margin:.35rem 0 0}
-  #olaguia .copy-carousel-track .copy-tool-card-content>p{align-self:stretch;margin:0;padding-top:1rem}
+  #olaguia .copy-carousel-track{gap:14px}
+  #olaguia .copy-carousel-track .copy-tool-card{flex:0 0 84%;padding:10px 0;scroll-snap-align:start}
+  #olaguia .copy-carousel-track .copy-tool-card>img{height:185px}
+  #olaguia .copy-carousel-track .copy-tool-card-content{display:flex;min-height:0;padding:10px}
+  #olaguia .copy-carousel-track .copy-tool-card-content>h4{margin:0;padding-top:2px}
+  #olaguia .copy-carousel-track .copy-tool-card-content>p{margin:3px 0 0;padding-top:12px}
   #olaguia2 .mobile-extra-tool{min-height:420px}
   #olaguia2 .mobile-extra-tool>img{height:225px}
 }
