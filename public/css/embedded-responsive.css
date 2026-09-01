@@ -203,7 +203,11 @@
   #rodape{padding:38px 16px!important}
 }
 
-.mobile-solution-points{display:none}
+.mobile-solution-points{display:grid;gap:.6rem;margin:.5rem 0 1rem;padding:1.1rem;border-radius:1rem;background:#f4f5ed;list-style:none;text-align:left}
+.mobile-solution-points li{position:relative;padding-left:1.6rem;color:#126861;font-size:.9rem;line-height:1.35}
+.mobile-solution-points li:before{content:'';position:absolute;left:0;top:.28rem;width:.7rem;height:.7rem;border:2px solid #bd8509;border-radius:50%;background:rgba(189,133,9,.14);box-shadow:inset 0 0 0 2px #f4f5ed}
+#solucao .desktop-solution-points{display:none!important}
+#solucao .us_custom_3fd5d53b p:nth-of-type(2){color:#e1ad35!important;font-weight:800!important}
 @media(max-width:600px){
   #inicio{background:#fff!important}
   #inicio .us_custom_3fd5d53b strong{display:block;margin-top:.2rem;white-space:nowrap;text-transform:uppercase;font-size:.8rem;letter-spacing:-.015em}
