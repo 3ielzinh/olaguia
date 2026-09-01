@@ -197,6 +197,22 @@
 .pablo-split-copy{display:flex;flex-direction:column;gap:1.125rem}
 .pablo-split-copy p{margin:0;color:#fff;font-size:1rem;font-weight:400;line-height:1.5}
 .pablo-split-copy p:last-child{font-weight:800}
+
+/* Desktop creator fold — blend the portrait into the textured background instead of
+   exposing a hard image edge. The two-column structure stays intact. */
+@media(min-width:601px){
+  #pablo-lateral{min-height:clamp(560px,27.7vw,700px);isolation:isolate;background-color:#132f2c;background-image:linear-gradient(90deg,rgba(9,39,36,.95) 0%,rgba(9,39,36,.9) 52%,rgba(9,39,36,.94) 100%),url('/wp-content/uploads/bg-offwhite.jpg');background-position:center;background-size:cover;color:#fff}
+  #pablo-lateral:before{position:absolute;z-index:-1;inset:0;content:"";background:radial-gradient(ellipse at 50% 48%,rgba(35,91,84,.22),transparent 66%);pointer-events:none}
+  #pablo-lateral .pablo-split-inner{min-height:inherit}
+  @media(min-width:1025px){#pablo-lateral .pablo-split-inner{box-sizing:border-box;width:60vw;max-width:60vw;margin-right:auto;margin-left:auto}}
+  #pablo-lateral .pablo-split-photo{width:78%;background-color:transparent;background-size:auto 100%;background-position:30% center;isolation:isolate;-webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 15%,rgba(0,0,0,.15) 22%,#000 33%,#000 43%,rgba(0,0,0,.35) 53%,transparent 64%);mask-image:linear-gradient(90deg,transparent 0%,transparent 15%,rgba(0,0,0,.15) 22%,#000 33%,#000 43%,rgba(0,0,0,.35) 53%,transparent 64%)}
+  #pablo-lateral .pablo-split-photo:before{position:absolute;z-index:1;inset:0;content:"";background:linear-gradient(90deg,rgba(19,47,44,.86) 0%,rgba(19,47,44,.68) 7%,rgba(19,47,44,.24) 17%,transparent 29%,transparent 70%,rgba(19,47,44,.14) 82%,rgba(19,47,44,.56) 96%,#132f2c 100%),linear-gradient(180deg,#132f2c 0%,transparent 13%,transparent 84%,#132f2c 100%);pointer-events:none}
+  #pablo-lateral .pablo-split-photo:after{background:linear-gradient(90deg,transparent 0%,rgba(23,42,40,.05) 26%,rgba(23,42,40,.16) 56%,rgba(23,42,40,.52) 78%,#132f2c 100%)}
+  #pablo-lateral:after{position:absolute;z-index:0;right:0;bottom:0;left:0;height:28px;content:"";background:linear-gradient(180deg,transparent,rgba(13,69,65,.38));pointer-events:none}
+  #pablo-lateral .pablo-split-content{width:56%;margin-left:40%;padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,6vw,10rem)}
+  @media (min-width:601px) and (max-width:1535px){#pablo-lateral .pablo-split-content{width:70%;margin-left:30%;padding:clamp(3.5rem,4.6vw,7.5rem) clamp(2rem,4vw,6rem)}}
+}
+
 #cta3 .cta3-main-image{width:min(760px,100%);margin:2rem auto;overflow:hidden;border-radius:.625rem}
 #cta3 .cta3-main-image img{display:block;width:100%;height:auto}
 #cta4 .l-section-overlay{background:rgba(7,43,40,.92)!important}

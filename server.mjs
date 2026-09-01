@@ -15,7 +15,7 @@ const types = {
 createServer(async (request, response) => {
   try {
     const pathname = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
-    let file = path.resolve(root, pathname === '/' ? 'index.html' : `public${pathname}`);
+    let file = path.resolve(root, pathname === '/desktop.html' ? 'work/mirror/original.html' : pathname === '/' ? 'index.html' : `public${pathname}`);
     if (!file.startsWith(root)) throw new Error('invalid path');
     if ((await stat(file)).isDirectory()) file = path.join(file, 'index.html');
     response.writeHead(200, { 'Content-Type': types[path.extname(file).toLowerCase()] || 'application/octet-stream' });

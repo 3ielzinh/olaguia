@@ -9,6 +9,7 @@ const outputDir = path.join(projectRoot, 'dist');
 await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 await copyFile(path.join(projectRoot, 'index.html'), path.join(outputDir, 'index.html'));
+await copyFile(path.join(projectRoot, 'work', 'mirror', 'original.html'), path.join(outputDir, 'desktop.html'));
 await cp(path.join(projectRoot, 'public'), outputDir, { recursive: true });
 
 console.log(`Vercel static output created at ${outputDir}`);
