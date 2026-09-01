@@ -697,8 +697,8 @@
 .mobile-comparison-table{display:grid}
 #compare .copy-compare-table{display:none}
 #compare .mobile-comparison-table{width:100%;grid-template-columns:minmax(0,1fr) 170px 170px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none}
-#compare .comparison-header-spacer{display:flex;min-height:72px;align-items:center;justify-content:center;padding:8px;background:#126861;color:#fff;font-weight:800;text-align:center}
-#compare .comparison-cell{display:flex;min-width:0;align-items:center;justify-content:center;padding:14px 12px;border:1px solid rgba(255,255,255,.45);color:#fff;text-align:center}
+#compare .comparison-header-spacer{display:flex;min-height:58px;align-items:center;justify-content:center;padding:6px;background:#126861;color:#fff;font-weight:800;text-align:center}
+#compare .comparison-cell{display:flex;min-width:0;align-items:center;justify-content:center;padding:9px 12px;border:1px solid rgba(255,255,255,.45);color:#fff;text-align:center}
 #compare .comparison-feature{background:#126861;color:#fff;text-align:left}
 #compare .comparison-feature strong{display:inline;font-size:16px}
 #compare .comparison-feature em{display:block;margin:3px 0 0;color:#cfd8d6;font-size:12px}
@@ -706,10 +706,10 @@
 #compare .comparison-row-light{background:#126861}
 #compare .comparison-row-dark{background:#0b514b}
 #compare .comparison-ecosystem{background:#f0b53d;color:#fff;font-size:20px;font-weight:800}
-#compare .comparison-head{min-height:82px;padding:12px 10px;background:#0a4a45;color:#fff;font-size:14px;font-weight:800;line-height:1.15;text-transform:uppercase}
+#compare .comparison-head{min-height:68px;padding:9px 10px;background:#0a4a45;color:#fff;font-size:14px;font-weight:800;line-height:1.15;text-transform:uppercase}
 #compare .comparison-head.is-ecosystem{display:flex;flex-direction:column;gap:8px;background:#f0b53d}
 #compare .comparison-head.is-ecosystem img{width:34px;height:34px;filter:brightness(0) invert(1);object-fit:contain}
-#compare .comparison-price{display:flex;min-height:112px;flex-direction:column;background:#0b514b;color:#fff;grid-row:9}
+#compare .comparison-price{display:flex;min-height:92px;flex-direction:column;background:#0b514b;color:#fff;grid-row:9}
 #compare .comparison-price:not(.is-ecosystem){grid-column:2}
 #compare .comparison-price.is-ecosystem{grid-column:3;background:linear-gradient(180deg,#f0b53d 0%,#eaaa24 100%);color:#0d403c}
 #compare .comparison-price small{font-size:10px;font-weight:700;text-transform:uppercase}
