@@ -888,8 +888,8 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     scroller.addEventListener('pointercancel',finish);
     scroller.addEventListener('click',function(event){if(moved){event.preventDefault();event.stopPropagation();moved=false}},true);
     var carouselMobile=window.matchMedia('(max-width:600px)');
-    function initializeLoop(event){
-      if(event.matches&&articles.length>1)requestAnimationFrame(function(){jumpTo(1);update()});
+    function initializeLoop(){
+      if(articles.length>1)requestAnimationFrame(function(){jumpTo(1);update()});
     }
     initializeLoop(carouselMobile);
     if(carouselMobile.addEventListener)carouselMobile.addEventListener('change',initializeLoop);
