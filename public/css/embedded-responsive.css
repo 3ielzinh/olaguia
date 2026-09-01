@@ -1171,8 +1171,35 @@
   }
   #compare.copy-compare-section .copy-offer-copy p{
     margin:0!important;
-    font-size:10px!important;
+    font-size:12px!important;
     font-style:italic!important;
     line-height:1.3!important;
+  }
+}
+
+/* Desktop creator fold: solid color at the left, with a soft transition into
+   the atmospheric background and portrait. */
+@media (min-width:601px){
+  #pablo-lateral{
+    background-color:#132f2c!important;
+    background-image:linear-gradient(90deg,#132f2c 0%,#132f2c 34%,rgba(19,47,44,.96) 49%,rgba(19,47,44,.78) 68%,rgba(19,47,44,.58) 100%),url('/wp-content/uploads/bg-offwhite.jpg')!important;
+    background-position:center!important;
+    background-size:cover!important;
+  }
+  #pablo-lateral:before{
+    background:linear-gradient(90deg,rgba(19,47,44,.2) 0%,rgba(19,47,44,.26) 48%,rgba(19,47,44,.58) 100%)!important;
+  }
+  #pablo-lateral .pablo-split-photo{
+    width:70%!important;
+    background-position:24% center!important;
+    -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 12%,rgba(0,0,0,.96) 38%,rgba(0,0,0,.7) 57%,rgba(0,0,0,.24) 73%,transparent 86%)!important;
+    mask-image:linear-gradient(90deg,#000 0%,#000 12%,rgba(0,0,0,.96) 38%,rgba(0,0,0,.7) 57%,rgba(0,0,0,.24) 73%,transparent 86%)!important;
+  }
+  #pablo-lateral .pablo-split-photo:before{
+    background:linear-gradient(90deg,rgba(19,47,44,.28) 0%,rgba(19,47,44,.08) 30%,transparent 55%,rgba(19,47,44,.42) 86%,#132f2c 100%),linear-gradient(180deg,#132f2c 0%,transparent 14%,transparent 84%,#132f2c 100%)!important;
+  }
+  #pablo-lateral .pablo-split-content{
+    position:relative!important;
+    z-index:2!important;
   }
 }
