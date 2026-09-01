@@ -1152,3 +1152,15 @@
   #pergunta .copy-how-content>p.copy-how-close{font-size:17px!important}
   #cta4 .us_custom_21f37c85 .w-text-value{font-size:36px!important;letter-spacing:-.06em!important}
 }
+
+/* Keep the comparison footnote aligned with the table's left edge on desktop. */
+@media (min-width:601px){
+  #compare.copy-compare-section .copy-offer-copy{
+    box-sizing:border-box!important;
+    width:calc(100% - 340px)!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    text-align:left!important;
+  }
+}
