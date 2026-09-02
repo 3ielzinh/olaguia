@@ -668,7 +668,7 @@
     order: 2;
     position: relative !important;
     overflow: hidden !important;
-    background-color: #dce3dc !important;
+    background-color: #126861 !important;
     background-size: cover !important;
     background-position: center 28% !important;
     box-shadow: none !important;
@@ -679,7 +679,7 @@
     inset: 0 !important;
     display: block !important;
     content: "" !important;
-    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.88) 10%, rgba(255, 255, 255, 0.34) 23%, rgba(255, 255, 255, 0) 36%), linear-gradient(180deg, rgba(8, 55, 51, 0.2) 0%, transparent 34%, rgba(8, 55, 51, 0.42) 100%) !important;
+    background: linear-gradient(90deg, #126861 0%, #126861 10%, rgba(18, 104, 97, 0.82) 18%, rgba(18, 104, 97, 0.42) 26%, rgba(18, 104, 97, 0) 36%, rgba(18, 104, 97, 0) 64%, rgba(18, 104, 97, 0.42) 74%, rgba(18, 104, 97, 0.82) 82%, #126861 90%, #126861 100%), linear-gradient(180deg, rgba(8, 55, 51, 0.12) 0%, transparent 34%, rgba(8, 55, 51, 0.28) 100%) !important;
     pointer-events: none !important;
   }
 

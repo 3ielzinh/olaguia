@@ -100,9 +100,9 @@
 <meta name="msapplication-TileImage" content="/wp-content/uploads/favicon-olaguia.png" />
 <noscript></noscript>  <link rel="stylesheet" href="/css/embedded-base.css">
   <link rel="stylesheet" href="/css/embedded-components.css">
-  <link rel="stylesheet" href="/css/embedded-responsive.css">
+  <link rel="stylesheet" href="/css/embedded-responsive.css?v=3">
   <link rel="stylesheet" href="/css/embedded-inline-properties.css">
-  <link rel="stylesheet" href="/css/desktop-layout.css?v=2">
+  <link rel="stylesheet" href="/css/desktop-layout.css?v=3">
 </head>
 <body class="home wp-singular page-template-default page page-id-198 wp-theme-site l-body Impreza_8.42 us-core_8.42 header_hor headerinpos_top state_default wpb-js-composer js-comp-ver-8.7.2 vc_responsive" itemscope itemtype="https://schema.org/FAQPage">
 		<div class="l-preloader">
@@ -766,6 +766,14 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     });
     cta3Layout.append(cta3Copy,cta3Figure);
     cta3Inner.appendChild(cta3Layout);
+    var cta3Mobile=window.matchMedia('(max-width:600px)');
+    function updateCta3ImagePosition(){
+      if(cta3Mobile.matches)cta3Intro.insertAdjacentElement('afterend',cta3Figure);
+      else cta3Layout.appendChild(cta3Figure);
+    }
+    updateCta3ImagePosition();
+    if(cta3Mobile.addEventListener)cta3Mobile.addEventListener('change',updateCta3ImagePosition);
+    else cta3Mobile.addListener(updateCta3ImagePosition);
   }
   var commitment=document.querySelector('#cta3 .us_custom_b2785ebc .wpb_wrapper>p');
   if(commitment)commitment.innerHTML='<span class="commitment-title">Nosso compromisso é claro</span><span class="commitment-body">Você se dedica ao coração do seu negócio, que é atender seus clientes, <strong>enquanto nós cuidamos da sua divulgação.</strong></span>';
