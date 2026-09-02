@@ -1367,8 +1367,8 @@
 
 /* Swap the creator and CTA color treatments after all section overrides. */
 #pablo-lateral{
-  background-color:#126861!important;
-  background-image:linear-gradient(90deg,rgba(18,104,97,.9) 0%,rgba(18,104,97,.9) 28%,rgba(18,104,97,.96) 52%,#126861 72%,#126861 100%),url('/wp-content/uploads/bg-offwhite.jpg')!important;
+  background-color:#072b28!important;
+  background-image:linear-gradient(90deg,rgba(7,43,40,.92) 0%,rgba(7,43,40,.92) 28%,rgba(7,43,40,.96) 52%,#072b28 72%,#072b28 100%),url('/wp-content/uploads/bg-offwhite.jpg')!important;
   background-position:center,left center!important;
   background-size:100% 100%,72% 100%!important;
   background-repeat:no-repeat!important;
@@ -1379,7 +1379,7 @@
 #pablo-lateral .pablo-split-photo:after{
   display:block!important;
   content:""!important;
-  background:linear-gradient(90deg,rgba(18,104,97,0) 0%,rgba(18,104,97,.18) 34%,rgba(18,104,97,.62) 70%,#126861 100%),linear-gradient(180deg,rgba(18,104,97,0) 0%,rgba(18,104,97,.3) 82%,#126861 100%)!important;
+  background:linear-gradient(90deg,rgba(7,43,40,0) 0%,rgba(7,43,40,.18) 34%,rgba(7,43,40,.62) 70%,#072b28 100%),linear-gradient(180deg,rgba(7,43,40,0) 0%,rgba(7,43,40,.3) 82%,#072b28 100%)!important;
   pointer-events:none!important;
 }
 #pablo-lateral h2,
@@ -1400,7 +1400,7 @@
 #cta4 .w-btn{box-shadow:0 .45rem 1.2rem rgba(3,42,39,.22)}
 
 @media(max-width:600px){
-  #pablo-lateral{background-color:#126861!important}
+  #pablo-lateral{background-color:#072b28!important}
   #pablo-lateral .pablo-split-photo,
   #pablo-lateral .pablo-split-content{background-color:transparent!important}
   #cta4{background:#fff!important}
