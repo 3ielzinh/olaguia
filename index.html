@@ -102,7 +102,7 @@
   <link rel="stylesheet" href="/css/embedded-components.css">
   <link rel="stylesheet" href="/css/embedded-responsive.css">
   <link rel="stylesheet" href="/css/embedded-inline-properties.css">
-  <link rel="stylesheet" href="/css/desktop-layout.css">
+  <link rel="stylesheet" href="/css/desktop-layout.css?v=2">
 </head>
 <body class="home wp-singular page-template-default page page-id-198 wp-theme-site l-body Impreza_8.42 us-core_8.42 header_hor headerinpos_top state_default wpb-js-composer js-comp-ver-8.7.2 vc_responsive" itemscope itemtype="https://schema.org/FAQPage">
 		<div class="l-preloader">
@@ -174,9 +174,15 @@ Todos os direitos reservados.</p>
   var list=document.querySelector('.w-nav-list.level_1');
   if(!list)return;
   var nav=list.closest('.w-nav');
-  var useMobileMenu=window.matchMedia('(max-width:1279px)').matches;
-  nav.classList.toggle('type_mobile',useMobileMenu);
-  nav.classList.toggle('type_desktop',!useMobileMenu);
+  function useCollapsedMenu(){
+    nav.classList.add('type_mobile');
+    nav.classList.remove('type_desktop','open_on_hover');
+  }
+  useCollapsedMenu();
+  window.addEventListener('load',function(){
+    window.setTimeout(useCollapsedMenu,0);
+  },{once:true});
+  window.addEventListener('resize',useCollapsedMenu);
   var items=[
     ['Público','#publico'],
     ['Problema','#sentencas'],
@@ -196,6 +202,25 @@ Todos os direitos reservados.</p>
   if(options&&options.classList.contains('w-nav-options')){
     options.onclick=function(){return {mobileWidth:1280,mobileBehavior:1}};
   }
+  var control=nav.querySelector('.w-nav-control');
+  function isDesktop(){return window.matchMedia('(min-width:1280px)').matches;}
+  function closeMenu(){
+    nav.classList.remove('menu-open');
+    control.setAttribute('aria-expanded','false');
+  }
+  control.addEventListener('click',function(event){
+    if(!isDesktop())return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    nav.classList.toggle('menu-open');
+    control.setAttribute('aria-expanded',String(nav.classList.contains('menu-open')));
+  },true);
+  list.addEventListener('click',function(event){
+    if(isDesktop()&&event.target.closest('.w-nav-anchor'))closeMenu();
+  });
+  document.addEventListener('click',function(event){
+    if(isDesktop()&&!nav.contains(event.target))closeMenu();
+  });
 })();
 	</script>
 		<script id="us-global-settings">
@@ -294,7 +319,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var heroColumn=document.querySelector('#inicio>.l-section-h>.g-cols>.wpb_column:nth-child(2)');
   var heroPlaceholder=document.createComment('hero-desktop-position');
   var heroImage=heroColumn&&heroColumn.querySelector('img');
-  var heroDesktopSrc=heroImage&&heroImage.getAttribute('src');
+  var heroDesktopSrc='/wp-content/uploads/hero-mobile-olaguia-transparent.png';
   if(heroColumn)heroColumn.parentNode.insertBefore(heroPlaceholder,heroColumn);
 
   var solutionColumn=document.querySelector('#solucao>.l-section-h>.g-cols>.wpb_column:first-child');
@@ -394,12 +419,13 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
         var heroButton=heroInner&&heroInner.querySelector('.w-btn-wrapper');
         if(heroInner)heroInner.insertBefore(heroColumn,heroButton);
         heroColumn.classList.add('mobile-reflow-hero');
-        heroImage.src='/wp-content/uploads/hero-mobile-olaguia.jpg';
+        heroImage.src='/wp-content/uploads/hero-mobile-olaguia-transparent.png';
         heroImage.removeAttribute('srcset');
       }else{
         heroPlaceholder.parentNode.insertBefore(heroColumn,heroPlaceholder.nextSibling);
         heroColumn.classList.remove('mobile-reflow-hero');
         heroImage.src=heroDesktopSrc;
+        heroImage.removeAttribute('srcset');
       }
     }
     if(solutionColumn){
@@ -728,6 +754,19 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     cta3Figure.innerHTML='<img src="/wp-content/uploads/cta3-ecossistema-integrado.jpeg" alt="Empreendedora conectada a diferentes canais digitais">';
     cta3Intro.insertAdjacentElement('afterend',cta3Figure);
   }
+  var cta3Inner=cta3Intro&&cta3Intro.closest('.vc_column-inner');
+  if(cta3Inner&&!cta3Inner.querySelector('.cta3-desktop-layout')){
+    var cta3Layout=document.createElement('div');
+    var cta3Copy=document.createElement('div');
+    var cta3Figure=cta3Inner.querySelector('.cta3-main-image');
+    cta3Layout.className='cta3-desktop-layout';
+    cta3Copy.className='cta3-desktop-copy';
+    Array.from(cta3Inner.children).forEach(function(element){
+      if(element!==cta3Figure)cta3Copy.appendChild(element);
+    });
+    cta3Layout.append(cta3Copy,cta3Figure);
+    cta3Inner.appendChild(cta3Layout);
+  }
   var commitment=document.querySelector('#cta3 .us_custom_b2785ebc .wpb_wrapper>p');
   if(commitment)commitment.innerHTML='<span class="commitment-title">Nosso compromisso é claro</span><span class="commitment-body">Você se dedica ao coração do seu negócio, que é atender seus clientes, <strong>enquanto nós cuidamos da sua divulgação.</strong></span>';
 })();
@@ -776,9 +815,9 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var historyStats=[
     {value:'20',label:'anos'},
     {value:'7',label:'Cidades'},
-    {value:'1.217',label:'Edições'},
-    {value:'14 Milhões',label:'Revistas'},
-    {value:'1270',label:'Clientes atendidos'}
+    {value:'1.800',label:'edições da revista Olá Guia'},
+    {value:'20',label:'milhões de revistas distribuídas'},
+    {value:'2.000',label:'clientes atendidos'}
   ];
   if(stats)Array.from(stats.children).forEach(function(item,index){
     var stat=historyStats[index];
@@ -839,15 +878,21 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   }
   var loopArticles=articles.slice();
   if(articles.length>1){
-    var cloneLast=articles[articles.length-1].cloneNode(true);
-    var cloneFirst=articles[0].cloneNode(true);
-    cloneLast.classList.add('testimonial-clone');
-    cloneFirst.classList.add('testimonial-clone');
-    cloneLast.setAttribute('aria-hidden','true');
-    cloneFirst.setAttribute('aria-hidden','true');
-    scroller.insertBefore(cloneLast,articles[0]);
-    scroller.appendChild(cloneFirst);
-    loopArticles=[cloneLast].concat(articles,[cloneFirst]);
+    var leadingClones=document.createDocumentFragment();
+    var trailingClones=document.createDocumentFragment();
+    articles.forEach(function(article){
+      var leadingClone=article.cloneNode(true);
+      var trailingClone=article.cloneNode(true);
+      leadingClone.classList.add('testimonial-clone');
+      trailingClone.classList.add('testimonial-clone');
+      leadingClone.setAttribute('aria-hidden','true');
+      trailingClone.setAttribute('aria-hidden','true');
+      leadingClones.appendChild(leadingClone);
+      trailingClones.appendChild(trailingClone);
+    });
+    scroller.insertBefore(leadingClones,articles[0]);
+    scroller.appendChild(trailingClones);
+    loopArticles=Array.from(scroller.querySelectorAll(':scope>article'));
   }
   var indicator=scroller.parentNode.querySelector(':scope>.mobile-scroll-indicator');
   if(indicator&&!section.querySelector('.testimonial-carousel-controls')){
@@ -871,7 +916,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     scroller.insertAdjacentElement('afterend',controls);
     var dots=Array.from(indicator.children);
     var activeIndex=0;
-    var physicalIndex=articles.length>1?1:0;
+    var physicalIndex=articles.length>1?articles.length:0;
     var loopTimer;
     function cardLeft(index){
       return loopArticles[index].offsetLeft-loopArticles[0].offsetLeft;
@@ -894,15 +939,13 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     function normalizeLoop(){
       if(articles.length<2)return;
       physicalIndex=nearestPhysical();
-      if(physicalIndex===0)jumpTo(articles.length);
-      else if(physicalIndex===loopArticles.length-1)jumpTo(1);
+      if(physicalIndex<articles.length)jumpTo(physicalIndex+articles.length);
+      else if(physicalIndex>=articles.length*2)jumpTo(physicalIndex-articles.length);
       update();
     }
     function update(){
       physicalIndex=nearestPhysical();
-      if(physicalIndex===0)activeIndex=articles.length-1;
-      else if(physicalIndex===loopArticles.length-1)activeIndex=0;
-      else activeIndex=physicalIndex-1;
+      activeIndex=physicalIndex%articles.length;
       dots.forEach(function(dot,index){
         dot.classList.toggle('is-active',index===activeIndex);
         dot.setAttribute('aria-selected',index===activeIndex?'true':'false');
@@ -916,10 +959,10 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     }
     function goTo(index){
       activeIndex=(index+articles.length)%articles.length;
-      goToPhysical(activeIndex+1);
+      goToPhysical(activeIndex+articles.length);
     }
-    previous.addEventListener('click',function(){goToPhysical(activeIndex===0?0:activeIndex)});
-    next.addEventListener('click',function(){goToPhysical(activeIndex===articles.length-1?loopArticles.length-1:activeIndex+2)});
+    previous.addEventListener('click',function(){goToPhysical(physicalIndex-1)});
+    next.addEventListener('click',function(){goToPhysical(physicalIndex+1)});
     dots.forEach(function(dot,index){dot.addEventListener('click',function(){goTo(index)})});
     scroller.addEventListener('scroll',function(){
       requestAnimationFrame(update);
@@ -948,7 +991,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     scroller.addEventListener('click',function(event){if(moved){event.preventDefault();event.stopPropagation();moved=false}},true);
     var carouselMobile=window.matchMedia('(max-width:600px)');
     function initializeLoop(){
-      if(articles.length>1)requestAnimationFrame(function(){jumpTo(1);update()});
+      if(articles.length>1)requestAnimationFrame(function(){jumpTo(articles.length);update()});
     }
     initializeLoop(carouselMobile);
     if(carouselMobile.addEventListener)carouselMobile.addEventListener('change',initializeLoop);

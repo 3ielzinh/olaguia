@@ -1120,6 +1120,8 @@
   .ush_menu_2.type_desktop>.w-nav-list.level_1{visibility:hidden!important;pointer-events:none!important}
 }
 
+.ush_menu_2 .w-nav-control{display:flex!important}
+
 @media (min-width:1280px){
   .ush_menu_2 .w-nav-anchor.level_1{padding-right:7px!important;padding-left:7px!important;font-size:13px!important}
 }
@@ -1127,6 +1129,10 @@
 @media (min-width:1536px){
   .l-main>.l-section>.l-section-h{width:60vw!important;max-width:60vw!important;margin-right:auto!important;margin-left:auto!important}
   #pablo-lateral .pablo-split-inner{width:60vw!important;max-width:60vw!important;margin-right:auto!important;margin-left:auto!important}
+}
+
+@media (min-width:1024px){
+  #olaguia2 .w-grid{display:none!important}
 }
 
 @media (max-width:600px){
