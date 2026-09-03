@@ -766,17 +766,25 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
     });
     cta3Layout.append(cta3Copy,cta3Figure);
     cta3Inner.appendChild(cta3Layout);
-    var cta3Mobile=window.matchMedia('(max-width:600px)');
-    function updateCta3ImagePosition(){
-      if(cta3Mobile.matches)cta3Intro.insertAdjacentElement('afterend',cta3Figure);
-      else cta3Layout.appendChild(cta3Figure);
-    }
-    updateCta3ImagePosition();
-    if(cta3Mobile.addEventListener)cta3Mobile.addEventListener('change',updateCta3ImagePosition);
-    else cta3Mobile.addListener(updateCta3ImagePosition);
   }
   var commitment=document.querySelector('#cta3 .us_custom_b2785ebc .wpb_wrapper>p');
   if(commitment)commitment.innerHTML='<span class="commitment-title">Nosso compromisso é claro</span><span class="commitment-body">Você se dedica ao coração do seu negócio, que é atender seus clientes, <strong>enquanto nós cuidamos da sua divulgação.</strong></span>';
+  var cta3ResponsiveLayout=document.querySelector('#cta3 .cta3-desktop-layout');
+  var cta3ResponsiveCopy=cta3ResponsiveLayout&&cta3ResponsiveLayout.querySelector('.cta3-desktop-copy');
+  var cta3ResponsiveFigure=cta3ResponsiveLayout&&cta3ResponsiveLayout.querySelector('.cta3-main-image');
+  var cta3CommitmentBlock=cta3ResponsiveCopy&&cta3ResponsiveCopy.querySelector('.us_custom_b2785ebc');
+  var cta3MobileBreakpoint=window.matchMedia('(max-width:600px)');
+  function positionCta3Image(){
+    if(!cta3ResponsiveLayout||!cta3ResponsiveCopy||!cta3ResponsiveFigure||!cta3CommitmentBlock)return;
+    if(cta3MobileBreakpoint.matches){
+      cta3ResponsiveCopy.insertBefore(cta3ResponsiveFigure,cta3CommitmentBlock);
+    }else{
+      cta3ResponsiveLayout.appendChild(cta3ResponsiveFigure);
+    }
+  }
+  positionCta3Image();
+  if(cta3MobileBreakpoint.addEventListener)cta3MobileBreakpoint.addEventListener('change',positionCta3Image);
+  else cta3MobileBreakpoint.addListener(positionCta3Image);
 })();
 </script>
 <script id="mobile-psychology-section-v2-script">
@@ -792,7 +800,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   var brainCopy=section.querySelector('.us_custom_980bb123 .wpb_wrapper');
   if(kicker)kicker.textContent='O SEGREDO';
   if(heading)heading.innerHTML='<strong>Uma revelação</strong> que muda a forma como você vende.';
-  if(bio)bio.innerHTML='<em><span class="kahneman-line">Daniel Kahneman, psicólogo que ganhou o</span><br><span class="kahneman-line">Prêmio Nobel de Economia, desvendou um dos</span><br><span class="kahneman-line">pilares do comportamento humano nas decisões.</span></em>';
+  if(bio)bio.innerHTML='<em><span class="kahneman-line">Daniel Kahneman, psicólogo que ganhou o</span><br> <span class="kahneman-line">Prêmio Nobel de Economia, desvendou um dos</span><br> <span class="kahneman-line">pilares do comportamento humano nas decisões.</span></em>';
   if(bias)bias.textContent='VIÉS DA DISPONIBILIDADE:';
   if(quote)quote.innerHTML='<em>“Não é mágica, é ciência.<br class="quote-mobile-break"> Uma pessoa, ao precisar de um serviço ou produto, sempre irá recorrer àquele de que se lembra mais facilmente.”</em>';
   function updateImpactHeading(event){

@@ -644,6 +644,9 @@
   #quemsomos .testimonial-carousel-controls .mobile-scroll-indicator button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:rgba(255,255,255,.35);cursor:pointer}
   #quemsomos .testimonial-carousel-controls .mobile-scroll-indicator button.is-active{width:24px;background:#d7a22b}
 }
+@media (min-width:601px) and (max-width:1023px){
+  #quemsomos .copy-testimonials-grid article{flex:0 0 calc(100% - 120px)!important;scroll-snap-align:start!important}
+}
 @media (max-width:600px){
   #quemsomos .copy-about-intro{margin-top:0!important;margin-bottom:var(--mobile-content-gap,18px)!important;font-size:18px!important;line-height:1.35!important}
   #quemsomos .copy-testimonials-title{display:block!important;margin-top:18px!important;margin-bottom:var(--mobile-content-gap,18px)!important;padding:0!important;font-size:26px!important;line-height:1.08!important;letter-spacing:-.04em!important;text-align:left!important}
@@ -1111,8 +1114,8 @@
 }
 
 @media (min-width:1025px){
-  .l-main>.l-section>.l-section-h{box-sizing:border-box!important;width:60vw!important;max-width:60vw!important;margin-right:auto!important;margin-left:auto!important}
-  #pablo-lateral .pablo-split-inner{box-sizing:border-box!important;width:60vw!important;max-width:60vw!important;min-height:inherit!important;margin-right:auto!important;margin-left:auto!important}
+  .l-main>.l-section>.l-section-h{box-sizing:border-box!important;width:100%!important;max-width:1140px!important;margin-right:auto!important;margin-left:auto!important}
+  #pablo-lateral .pablo-split-inner{box-sizing:border-box!important;width:100%!important;max-width:1140px!important;min-height:inherit!important;margin-right:auto!important;margin-left:auto!important}
 }
 
 @media (max-width:1279px){
@@ -1127,8 +1130,8 @@
 }
 
 @media (min-width:1536px){
-  .l-main>.l-section>.l-section-h{width:60vw!important;max-width:60vw!important;margin-right:auto!important;margin-left:auto!important}
-  #pablo-lateral .pablo-split-inner{width:60vw!important;max-width:60vw!important;margin-right:auto!important;margin-left:auto!important}
+  .l-main>.l-section>.l-section-h{width:100%!important;max-width:1140px!important;margin-right:auto!important;margin-left:auto!important}
+  #pablo-lateral .pablo-split-inner{width:100%!important;max-width:1140px!important;margin-right:auto!important;margin-left:auto!important}
 }
 
 @media (min-width:1024px){
