@@ -1025,9 +1025,11 @@
 
   #cta4 .cta-characters-figure img {
     display: block !important;
-    width: 424px !important;
+    width: min(554px, calc((100% - 32px) / 2)) !important;
     max-width: 100% !important;
     height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
     margin: 0 auto !important;
   }
 }
