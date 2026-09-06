@@ -742,7 +742,7 @@
   #daniel-kahneman > .l-section-h {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-template-rows: auto auto !important;
+    grid-template-rows: auto auto auto !important;
     column-gap: 48px !important;
     align-items: center !important;
   }
@@ -862,6 +862,67 @@
   body section#olaguia2 .w-grid-item,
   body section#olaguia2 .w-grid-item-h {
     display: block !important;
+  }
+
+
+  /* --- SECAO 6: devolver as 3 imagens (mesmas do mobile) --- */
+  body section#olaguia .mobile-goals {
+    display: grid !important;
+  }
+
+  /* --- SECAO 6: hint "ARRASTE PARA O LADO" acima do carrossel, sem duplicar o titulo --- */
+  body section#olaguia .mobile-tools-heading {
+    display: flex !important;
+  }
+
+  body section#olaguia .mobile-tools-heading h2 {
+    display: none !important;
+  }
+
+  /* --- SECAO 6: setas do carrossel centralizadas na altura dos cards, nas bordas --- */
+  body section#olaguia .copy-carousel-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+  }
+
+  body section#olaguia .copy-carousel-prev {
+    left: 0.75rem !important;
+  }
+
+  body section#olaguia .copy-carousel-next {
+    right: 0.75rem !important;
+  }
+
+  /* --- SECAO 7: mesmo fundo da secao 6 --- */
+  body section#olaguia2 {
+    background: var(--color-header-middle-bg) !important;
+  }
+
+  body section#olaguia2 .l-section-img,
+  body section#olaguia2 .l-section-overlay {
+    display: none !important;
+  }
+
+  body section#olaguia2 h2,
+  body section#olaguia2 h3,
+  body section#olaguia2 p,
+  body section#olaguia2 strong {
+    color: var(--color-content-heading) !important;
+  }
+
+  body section#olaguia2 .us_custom_bc3e13b3 {
+    display: none !important;
+  }
+
+  /* --- SECAO 7: cards de Consultoria/Biblioteca menos esticados --- */
+  body section#olaguia2 .mobile-extra-tools {
+    max-width: 860px !important;
+  }
+
+  body section#olaguia2 .mobile-extra-tool > img {
+    height: 190px !important;
   }
 
   /* Keep desktop content inside a fluid reading width at every desktop size. */
@@ -1031,5 +1092,262 @@
     aspect-ratio: 4 / 3 !important;
     object-fit: cover !important;
     margin: 0 auto !important;
+  }
+
+  /* --- PADRONIZACAO DE TAMANHOS: titulo 40px / subtitulo 26px / fechamento 32px --- */
+  /* Titulo (40px) */
+  #publico h2.w-text,
+  #sentencas h2,
+  #solucao h2,
+  #olaguia .copy-section-heading h2,
+  #olaguia2 h2,
+  #cta3 .us_custom_cc0ffe16 .wpb_wrapper > h3:first-child,
+  #quemsomos .copy-section-heading h2 strong,
+  #pergunta .copy-how-content h2 strong,
+  #compare .copy-section-heading h2,
+  #pablo-lateral-titulo {
+    font-size: 40px !important;
+  }
+
+  /* Subtitulo (26px) */
+  #daniel-kahneman .us_custom_a7f9f7c6 .w-text-value,
+  #quemsomos .copy-section-heading p {
+    font-size: 26px !important;
+  }
+
+  /* Fechamento (32px) */
+  #daniel-kahneman .us_custom_1c37215c .w-text-value,
+  #pergunta .copy-how-content h3 {
+    font-size: 32px !important;
+  }
+
+  /* --- Selos/kickers padronizados iguais ao de #publico (fonte, estrutura do card e cor) --- */
+  #sentencas .us_custom_360d1ee3,
+  #solucao .us_custom_fd38ac54,
+  #olaguia .copy-kicker,
+  #daniel-kahneman .copy-kicker,
+  #quemsomos .copy-kicker,
+  #pergunta .copy-kicker,
+  #compare .copy-kicker,
+  #pablo-lateral .pablo-split-kicker {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    line-height: 1.1 !important;
+    padding: 5px 15px !important;
+    border-radius: 0.4em !important;
+    background: var(--color-content-link-hover) !important;
+    color: #fff !important;
+  }
+
+  /* --- SECAO 7 (Acha que acabou?): cards centralizados no container --- */
+  body section#olaguia2 .mobile-extra-tools {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* --- SECAO 7: titulo/subtitulo na cor padrao do site (verde) --- */
+  body section#olaguia2 .l-section-h .g-cols > .wpb_column:first-child .vc_column-inner {
+    color: var(--color-content-heading) !important;
+  }
+
+  /* --- SECAO 7: mesmo espacamento do mobile entre o texto e os cards --- */
+  body section#olaguia2 .g-cols.cols_1 {
+    gap: 18px !important;
+  }
+
+  /* --- SECAO 7: reduzir espaco entre o bloco de cima (carrossel da secao 6) e o titulo --- */
+  body section#olaguia2 {
+    padding-top: 12px !important;
+  }
+
+  body section#olaguia {
+    padding-bottom: 24px !important;
+  }
+
+  /* --- SECAO 6: garantir exatamente 3 cards visiveis (sem o 4o espiando na borda) --- */
+  /* O gap do track foi dobrado para 32px (2rem), mas a largura dos cards ainda usava
+     a formula antiga (30%, calculada para um gap de 14px). Isso sobrava ~52px de
+     espaco vazio, o suficiente para o 4o card aparecer cortado na borda direita. */
+  body section#olaguia .copy-carousel-track .copy-tool-card {
+    flex: 0 0 calc((100% - 64px) / 3) !important;
+  }
+
+  /* --- SECAO 6: mais distancia entre os cards e os passadores (dots) no rodape --- */
+  body section#olaguia .copy-carousel-viewport {
+    padding-bottom: 2rem !important;
+  }
+
+  /* --- SECAO 3 (Solucao): o card da checklist esticava ate a largura total da
+     coluna, sobrando um vao branco vazio a direita do texto curto. Encolher
+     para o tamanho do proprio conteudo. --- */
+  body #solucao .mobile-solution-points {
+    width: fit-content !important;
+    max-width: 100% !important;
+  }
+
+  /* --- "Entendeu a importancia de se divulgar?" vira uma linha centralizada,
+     abaixo da foto do Daniel e do texto lateral (mesma altura do fim do card) --- */
+  #daniel-kahneman > .l-section-h > .us_custom_1c37215c {
+    grid-column: 1 / 3 !important;
+    grid-row: 3 !important;
+    align-self: start !important;
+    max-width: none !important;
+    width: 100% !important;
+    margin: 32px 0 0 !important;
+    text-align: center !important;
+  }
+
+  /* --- SECAO 6: espacamento do hint "ARRASTE PARA O LADO" ate o carrossel,
+     igual ao padrao usado em #quemsomos .testimonial-swipe-hint (margin-bottom: .65rem) --- */
+  body section#olaguia .mobile-tools-heading {
+    padding-bottom: 0 !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  /* --- SECAO "Nossa Historia": dobrar o espacamento nos dois pontos marcados
+     (paragrafo->stats e stats->paragrafo "Sao mais de 20 anos"), e aumentar
+     a fonte desse ultimo paragrafo para 20px --- */
+  #quemsomos .copy-stats-grid {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+
+  #quemsomos .copy-about-intro {
+    font-size: 20px !important;
+  }
+
+  /* --- SECAO "O que dizem nossos clientes": esconder o carrossel/grid mobile
+     e mostrar o carrossel desktop (3 cards, setas <> e passadores), igual ao
+     padrao do primeiro carrossel (#olaguia) --- */
+  #quemsomos .copy-testimonials-grid,
+  #quemsomos .testimonial-swipe-hint,
+  #quemsomos .testimonial-carousel-controls,
+  #quemsomos > .l-section-h > .mobile-scroll-indicator {
+    display: none !important;
+  }
+
+  #quemsomos .desktop-testimonials-carousel {
+    display: block !important;
+  }
+
+  #quemsomos .desktop-testimonials-carousel .copy-carousel-controls {
+    margin-bottom: 1.35rem;
+  }
+
+  #quemsomos .dt-track {
+    display: flex !important;
+    align-items: stretch !important;
+    gap: 2rem !important;
+  }
+
+  #quemsomos .copy-testimonial-card {
+    display: flex !important;
+    flex: 0 0 calc((100% - 64px) / 3) !important;
+    min-height: 250px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.7rem;
+    border-radius: 1rem;
+    background: #fff;
+    color: #3e4544;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.12);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  #quemsomos .copy-testimonial-card p {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.55;
+  }
+
+  #quemsomos .copy-testimonial-card .testimonial-stars {
+    margin: 14px 0 0;
+    color: #bd8509;
+    font-size: 19px;
+    line-height: 1;
+    letter-spacing: 3px;
+    text-align: center;
+  }
+
+  #quemsomos .copy-testimonial-card span:not(.testimonial-stars) {
+    display: block;
+    margin-top: 1.25rem;
+    color: #126861;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  #quemsomos .dt-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.25rem 0.15rem 0.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  #quemsomos .dt-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  #quemsomos .dt-dots-bottom {
+    margin-top: 1.35rem;
+  }
+
+  /* --- Correcao: setas do carrossel de depoimentos devem flutuar sobre as
+     bordas dos cards (igual ao primeiro carrossel #olaguia), nao ficar numa
+     barra separada acima. Os dots de baixo tambem precisam ficar centralizados
+     (estavam colados na borda esquerda, cortados). --- */
+  #quemsomos .desktop-testimonials-carousel {
+    position: relative;
+  }
+
+  #quemsomos .dt-prev,
+  #quemsomos .dt-next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 5 !important;
+  }
+
+  #quemsomos .dt-prev {
+    left: 0.75rem !important;
+  }
+
+  #quemsomos .dt-next {
+    right: 0.75rem !important;
+  }
+
+  #quemsomos .dt-dots-bottom {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 1.35rem;
+  }
+
+  /* --- Remover os passadores (dots) do carrossel de depoimentos: com o loop
+     infinito ativo, o dot inativo quase nao aparece sobre o fundo escuro e
+     fica parecendo um elemento solto/quebrado. Ficam so as setas <>. --- */
+  #quemsomos .dt-dots-top,
+  #quemsomos .dt-dots-bottom {
+    display: none !important;
+  }
+
+  #quemsomos .desktop-testimonials-carousel .copy-carousel-controls {
+    margin-bottom: 0.5rem;
+    min-height: 1px;
+  }
+
+  /* --- Secao "O CRIADOR" (Pablo Santurio): o bloco de texto (kicker, titulo,
+     cargo e paragrafos) ficava colado na borda esquerda da secao. Aumentar o
+     espaco a esquerda para jogar o texto mais para a direita, sem mudar a
+     largura/posicao geral do card ou a foto. --- */
+  #pablo-lateral .pablo-split-content {
+    padding-left: clamp(3rem, 6vw, 6rem) !important;
   }
 }
