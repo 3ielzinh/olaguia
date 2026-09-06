@@ -1351,3 +1351,407 @@
     padding-left: clamp(3rem, 6vw, 6rem) !important;
   }
 }
+
+/* Additional navigation at the card edges below the ecosystem carousel. */
+#olaguia .copy-carousel-footer-arrow { display: none !important; }
+@media (min-width: 1025px) {
+  body section#olaguia .copy-carousel-controls {
+    display: grid !important;
+    grid-template-columns: 32px 1fr 32px !important;
+    align-items: center !important;
+    width: 100%;
+    margin: 0 !important;
+  }
+  body section#olaguia .copy-carousel-controls .copy-carousel-dots {
+    justify-content: center !important;
+  }
+  body section#olaguia .copy-carousel-controls .copy-carousel-footer-arrow {
+    display: grid !important;
+    position: static !important;
+    transform: none !important;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #quemsomos .dt-footer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.35rem;
+  }
+  #quemsomos .dt-footer-controls .copy-carousel-arrow {
+    position: static !important;
+    transform: none !important;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #quemsomos .dt-footer-controls .dt-dots-bottom {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    gap: 8px;
+  }
+  #quemsomos .dt-footer-controls .dt-dots-bottom button {
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,.5);
+  }
+  #quemsomos .dt-footer-controls .dt-dots-bottom button.is-active {
+    width: 24px;
+    background: #d7a22b;
+  }
+}
+
+/* Match the total horizontal inset of the How it works content. */
+@media (min-width: 1025px) {
+  #cta3 .cta3-desktop-layout,
+  #pablo-lateral .pablo-split-inner {
+    width: 100% !important;
+    max-width: 960px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #pablo-lateral {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+  #pablo-lateral .pablo-split-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+/* Clearer hierarchy and balanced image for the ecosystem invitation. */
+@media (min-width: 1025px) {
+  #cta3 { padding-top: 72px !important; padding-bottom: 72px !important; }
+  #cta3 .cta3-desktop-layout {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr) !important;
+    gap: 48px !important;
+    align-items: center !important;
+  }
+  #cta3 .cta3-desktop-copy { gap: 18px !important; }
+  #cta3 .cta3-desktop-copy h3,
+  #cta3 .cta3-desktop-copy p,
+  #cta3 .cta3-desktop-copy .w-btn-wrapper { text-align: left !important; }
+  #cta3 .us_custom_cc0ffe16 .wpb_wrapper > h3:first-child {
+    font-size: 40px !important;
+    font-weight: 700 !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.035em !important;
+    margin: 0 0 18px !important;
+    white-space: normal !important;
+  }
+  #cta3 .us_custom_cc0ffe16 .wpb_wrapper > h3:nth-child(2) {
+    font-size: 26px !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    color: #e5bd62 !important;
+  }
+  #cta3 .us_custom_cta3_intro p,
+  #cta3 .commitment-body {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    color: #e0eae7 !important;
+  }
+  #cta3 .commitment-title {
+    display: block;
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
+  }
+  #cta3 .us_custom_b2785ebc {
+    border-left: 3px solid #d7a22b;
+    padding-left: 18px;
+  }
+  #cta3 .us_custom_b2785ebc p { margin: 0 !important; }
+  #cta3 .cta3-main-image {
+    height: 460px !important;
+    align-self: center !important;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  #cta3 .cta3-main-image img {
+    display: block;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: left center !important;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  #cta3 .cta3-desktop-copy .w-btn-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  #cta3 .cta3-desktop-copy .us_custom_cc0ffe16 .wpb_wrapper > h3:nth-child(2) {
+    text-align: center !important;
+  }
+}
+
+/* Final invitation: one reading column, with the illustration alongside. */
+@media (min-width: 1025px) {
+  #cta4 { padding-top: 72px !important; padding-bottom: 72px !important; }
+  #cta4 .l-section-h > .g-cols > .wpb_column > .vc_column-inner {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    column-gap: 48px;
+    row-gap: 18px;
+    max-width: 960px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  #cta4 .vc_column-inner > .w-separator { display: none !important; }
+  #cta4 .us_custom_21f37c85 {
+    grid-column: 1;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+  #cta4 .us_custom_21f37c85 .w-text-value {
+    font-size: 52px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.035em !important;
+  }
+  #cta4 .us_custom_b2785ebc { grid-column: 1; margin: 0 !important; }
+  #cta4 .us_custom_b2785ebc p.cta-promo-primary {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    margin: 0 0 18px !important;
+    text-wrap: pretty !important;
+  }
+  #cta4 .us_custom_b2785ebc p.cta-final-body {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    text-wrap: pretty !important;
+  }
+  #cta4 .us_custom_b2785ebc p:empty { display: none; }
+  #cta4 .cta-characters-figure {
+    grid-column: 2;
+    grid-row: 1 / 6;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    align-self: center;
+  }
+  #cta4 .cta-characters-figure img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  #cta4 .cta4-pre-btn {
+    grid-column: 1;
+    margin: 6px 0 -8px !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+  }
+  #cta4 .w-btn-wrapper { grid-column: 1; margin: 0 !important; text-align: center !important; }
+  #cta4 p.cta4-post-btn {
+    grid-column: 1;
+    max-width: 420px;
+    margin: 0 auto !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    opacity: .8;
+  }
+}
+
+/* Shared spacing for the tools and testimonials carousels. */
+@media (min-width: 1025px) {
+  body section#olaguia .copy-carousel-viewport,
+  #quemsomos .dt-viewport {
+    padding: 4px 2px 32px !important;
+    margin: 0 !important;
+  }
+  body section#olaguia .copy-carousel-controls,
+  #quemsomos .dt-footer-controls {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 32px;
+  }
+  #quemsomos .desktop-testimonials-carousel > .copy-carousel-controls {
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body section#olaguia .mobile-tools-heading {
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+  }
+  body section#olaguia .tools-swipe-hint,
+  #quemsomos .testimonial-swipe-hint {
+    display: block !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+  body section#olaguia .tools-swipe-hint { margin: 0 !important; }
+  #quemsomos .testimonial-swipe-hint { margin: 0 0 12px !important; color: #fff !important; }
+  body section#olaguia .copy-carousel-dots,
+  #quemsomos .dt-footer-controls .dt-dots-bottom { gap: 8px !important; }
+  body section#olaguia .copy-carousel-dots button,
+  #quemsomos .dt-footer-controls .dt-dots-bottom button { width: 8px !important; height: 8px !important; }
+  body section#olaguia .copy-carousel-dots button.is-active,
+  #quemsomos .dt-footer-controls .dt-dots-bottom button.is-active { width: 24px !important; background: #d7a22b !important; }
+}
+
+/* Final decision: centered heading and a compact invitation beside the characters. */
+@media (min-width: 1025px) {
+  #cta4 .l-section-h > .g-cols > .wpb_column > .vc_column-inner {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    column-gap: 56px;
+    row-gap: 16px;
+  }
+  #cta4 .us_custom_21f37c85 {
+    grid-column: 1 / -1 !important;
+    grid-row: 1;
+    text-align: center !important;
+    margin-bottom: 24px !important;
+  }
+  #cta4 .cta-characters-figure {
+    grid-column: 1 !important;
+    grid-row: 2 / 6 !important;
+    align-self: center;
+  }
+  #cta4 .us_custom_b2785ebc {
+    grid-column: 2 !important;
+    grid-row: 2;
+    padding: 20px 0 0;
+  }
+  #cta4 .us_custom_b2785ebc p.cta-promo-primary {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 20px !important;
+  }
+  #cta4 .us_custom_b2785ebc p.cta-promo-primary strong {
+    display: block;
+    color: #ae790d !important;
+    margin-top: 4px;
+  }
+  #cta4 .us_custom_b2785ebc p.cta-final-body {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+  #cta4 .cta4-pre-btn {
+    grid-column: 2 !important;
+    grid-row: 3;
+    text-align: left !important;
+    margin: 8px 0 -6px !important;
+    font-size: 14px !important;
+  }
+  #cta4 .w-btn-wrapper {
+    grid-column: 2 !important;
+    grid-row: 4;
+    text-align: left !important;
+  }
+  #cta4 .w-btn-wrapper .w-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: 0 6px 16px rgba(174,121,13,.16) !important;
+  }
+  #cta4 p.cta4-post-btn {
+    grid-column: 2 !important;
+    grid-row: 5;
+    text-align: left !important;
+    max-width: none !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+  }
+}
+
+/* Keep the pointing characters directly above the final action. */
+@media (min-width: 1025px) {
+  #cta4 .l-section-h > .g-cols > .wpb_column > .vc_column-inner {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 18px;
+    justify-items: center;
+  }
+  #cta4 .us_custom_21f37c85 {
+    grid-column: 1 !important;
+    grid-row: 1;
+    margin-bottom: 0 !important;
+  }
+  #cta4 .us_custom_21f37c85 .w-text-value { font-size: 52px !important; }
+  #cta4 .us_custom_b2785ebc {
+    grid-column: 1 !important;
+    grid-row: 2;
+    max-width: 800px;
+    padding: 0;
+  }
+  #cta4 .us_custom_b2785ebc p.cta-promo-primary {
+    font-size: 32px !important;
+    text-align: center !important;
+    text-wrap: balance !important;
+  }
+  #cta4 .us_custom_b2785ebc p.cta-promo-primary strong { display: inline; margin: 0; }
+  #cta4 .us_custom_b2785ebc p.cta-final-body {
+    font-size: 16px !important;
+    text-align: center !important;
+    max-width: 680px;
+    margin: 0 auto !important;
+  }
+  #cta4 .cta4-pre-btn {
+    grid-column: 1 !important;
+    grid-row: 3;
+    font-size: 16px !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  #cta4 .cta-characters-figure {
+    grid-column: 1 !important;
+    grid-row: 4 !important;
+    max-width: 340px;
+    margin: 0 !important;
+  }
+  #cta4 .w-btn-wrapper {
+    grid-column: 1 !important;
+    grid-row: 5;
+    width: 380px;
+    max-width: 100%;
+    text-align: center !important;
+  }
+  #cta4 .w-btn-wrapper .w-btn { font-size: 16px !important; }
+  #cta4 p.cta4-post-btn {
+    grid-column: 1 !important;
+    grid-row: 6;
+    max-width: 640px !important;
+    font-size: 16px !important;
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  #cta4 .cta-characters-figure {
+    width: 554px !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  #cta4 p.cta4-post-btn {
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  #cta4 .cta-characters-figure { grid-row: 3 !important; }
+  #cta4 .cta4-pre-btn { grid-row: 4 !important; }
+}

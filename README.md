@@ -1,6 +1,6 @@
 # Clone local — Ecossistema Olá Guia
 
-Clone estático fiel de `https://wcria.cloud/sites/olaguia/`, implementado em HTML, CSS e JavaScript puros com assets armazenados localmente.
+Site do Ecossistema Olá Guia, implementado em HTML, CSS e JavaScript puros com assets armazenados localmente.
 
 ## Executar
 
@@ -22,7 +22,6 @@ O comando `npm run build` gera a versão estática em `dist/`, usada automaticam
 - `work/build-vercel.mjs`: publica o HTML e os módulos CSS externos sem transformação adicional.
 - `server.mjs`: servidor HTTP local sem dependências externas.
 - `DESIGN_TOKENS.md`: cores, tipografia, dimensões e breakpoint medidos do original.
-- `work/mirror/build-mirror.mjs`: utilitário de reconstrução do espelho a partir da referência pública.
 
 ## Desktop e mobile
 
