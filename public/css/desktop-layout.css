@@ -1759,3 +1759,19 @@
   #cta4 .cta-characters-figure { grid-row: 3 !important; }
   #cta4 .cta4-pre-btn { grid-row: 4 !important; }
 }
+
+/* Espaçamento do título das ferramentas em relação às fotos, no desktop. */
+@media (min-width: 1025px) {
+  body section#olaguia .mobile-goals {
+    margin-bottom: 64px !important;
+  }
+  body section#olaguia .mobile-tools-heading h2 {
+    font-size: 40px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body section#olaguia .mobile-tools-heading {
+    gap: 64px !important;
+  }
+}
