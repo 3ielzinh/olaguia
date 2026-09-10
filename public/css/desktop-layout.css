@@ -870,13 +870,17 @@
     display: grid !important;
   }
 
-  /* --- SECAO 6: hint "ARRASTE PARA O LADO" acima do carrossel, sem duplicar o titulo --- */
+  body section#olaguia .mobile-goal-card {
+    height: 154px;
+  }
+
+  /* --- SECAO 6: titulo das ferramentas e hint acima do carrossel --- */
   body section#olaguia .mobile-tools-heading {
     display: flex !important;
   }
 
   body section#olaguia .mobile-tools-heading h2 {
-    display: none !important;
+    display: block !important;
   }
 
   /* --- SECAO 6: setas do carrossel centralizadas na altura dos cards, nas bordas --- */
